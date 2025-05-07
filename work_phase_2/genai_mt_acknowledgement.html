@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Work Phase 2</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a
+                href="../index.html"
+                class="home-icon"
+                aria-label="HOME PAGE"
+                style="margin-right: 20px"
+            >
+                🏠
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="menu">
+                <li><a href="index.html" aria-current="home">WP2 Home</a></li>
+                <li>
+                    <a
+                        href="accessibility_assessment.html"
+                        aria-current="accessibility assessment"
+                        >Accessibility Assessment</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="client_needs_analysis.html"
+                        aria-current="client needs analysis"
+                        >Client Needs Analysis</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="ethics_analysis.html"
+                        aria-current="ethics analysis"
+                        >Ethics Analysis</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="genai_mt_acknowledgement.html"
+                        aria-current="genai mt acknowledgement"
+                        >Genai MT Acknowledgement</a
+                    >
+                </li>
+                <li>
+                    <a href="user_stories.html" aria-current="user stories"
+                        >User Stories</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Genai MT Acknowledgement</h1>
+            </header>
+            <section>
+                <div class="value-box">
+                    <h3>Part 1: Task Execution</h3>
+                    <p>
+                        GenAI is asked to complete some concrete tasks like
+                        role-playing for feedback or providing some code:
+                    </p>
+                    <img
+                        src="AI/task 1.png"
+                        alt="Task 1"
+                        width="80%"
+                        style="display: block; margin: 10px auto"
+                    />
+                    <img
+                        src="AI/task 2.png"
+                        alt="Task 2"
+                        width="80%"
+                        style="display: block; margin: 10px auto"
+                    />
+                </div>
+                <div class="value-box">
+                    <h3>Part 2: Explanation</h3>
+                    <p>
+                        GenAI is asked to explain some specific code snippets:
+                    </p>
+                    <img
+                        src="AI/task 3.png"
+                        alt="Task 3"
+                        width="80%"
+                        style="display: block; margin: 10px auto"
+                    />
+                    <img
+                        src="AI/task 4.png"
+                        alt="Task 4"
+                        width="80%"
+                        style="display: block; margin: 10px auto"
+                    />
+                </div>
+                <div class="value-box">
+                    <h3>Part 3: Problem Solving</h3>
+                    <p>GenAI is asked to debug or fix some functionalities:</p>
+                    <img
+                        src="AI/task 5.png"
+                        alt="Task 3"
+                        width="80%"
+                        style="display: block; margin: 10px auto"
+                    />
+                </div>
+            </section>
+        </div>
+        <script type="module" src="js/genai.js"></script>
+    </body>
+</html>

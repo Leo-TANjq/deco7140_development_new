@@ -1,0 +1,29 @@
+@import '../component_skeletons/accordion.css';
+
+.accordion-header{
+    background-color: var(--accent1-color);
+    padding-block: 1rem;
+}
+.accordion.nested .accordion-header {
+    background-color: var(--accent2-color);
+    border: 1px solid var(--accent2-color);
+    border-radius: 10px 10px 0 0;
+}
+
+.accordion.nested .accordion-content {
+    color: var(--accent2-color);
+    border: 1px solid var(--accent2-color);
+    border-radius: 0 0 10px 10px;
+}
+.accordion.nest .accordion-header {
+    background-color: var(--accent3-color);
+    border: 1px solid var(--accent3-color);
+    border-radius: 10px 10px 0 0;
+    color: var(--light-color);
+}
+.accordion.nest .accordion-content {
+    color: var(--accent3-color);
+    border: 1px solid var(--accent3-color);
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 0;
+}

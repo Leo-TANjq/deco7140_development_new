@@ -1,0 +1,71 @@
+/* CSS Reset */
+
+/* 1. Set box-sizing for easier layout management */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Remove default list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* 3. Reset default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 4. Set a unified default font for all text elements */
+body, h1, h2, h3,  h5, h6, p, button, input, select, textarea {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: normal;
+    word-spacing: normal;
+    color: inherit;
+    text-align: left;
+}
+
+/* 5. Ensure images do not exceed their container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 6. Remove table border spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 7. Reset form elements' default styles */
+button, input, select, textarea {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* 8. Disable all animations and transitions */
+*, *::before, *::after {
+    animation: none ;
+    transition: none ;
+}
+
+/* 9. Reset all spacing properties */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* 10. Prevent iOS tap highlight */
+a, button {
+    -webkit-tap-highlight-color: transparent;
+}

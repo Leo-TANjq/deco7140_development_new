@@ -1,0 +1,39 @@
+:root {
+    --color-primary: #999ac6;
+    --color-secondary: #0b3954;
+    --color-light: #fff9ec;
+    --color-dark: #798071;
+    --color-bright: #ff5a5f;
+    --color-background: #fcfafa;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    font-family: "Urbanist",sans-serif;
+}
+h1 {
+    color: var(--color-primary);
+    font-size: 4rem; /*64px*/
+}
+h2 {
+    font-size: 3rem; /*48px*/
+}
+h3 {
+    font-size: 1.5rem; /*24px*/
+}
+h4 {
+    font-weight: bold; /*bold*/
+}
+h5 {
+    font-size: 0.75rem; /*12px*/
+    font-weight: bold; /*bold*/
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    line-height: 1.5;
+}

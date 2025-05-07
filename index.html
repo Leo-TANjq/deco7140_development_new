@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- iPhone -->
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="pwa_icons/ios/60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="pwa_icons/ios/120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="pwa_icons/ios/180.png"
+        />
+        <!-- iPad -->
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="pwa_icons/ios/76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="pwa_icons/ios/152.png"
+        />
+        <!-- iPad Pro -->
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="pwa_icons/ios/167.png"
+        />
+        <!-- Standard favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="pwa_icons/ios/16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="pwa_icons/ios/32.png"
+        />
+        <link rel="manifest" href="/manifest.json" />
+
+        <link rel="stylesheet" href="work_phase_1/css/reset.css" />
+        <link rel="stylesheet" href="work_phase_1/css/base.css" />
+        <link rel="stylesheet" href="work_phase_1/css/layout.css" />
+        <link rel="stylesheet" href="work_phase_1/css/components.css" />
+        <!--Google Fonts Embed- Urbanist-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <title>LEO TAN</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Leo's Home Page</h1>
+            <article>
+                <h2>About Me</h2>
+                <p style="font-weight: 600">
+                    Hi, I'm Leo Tan. I'm a student studying web design in UQ.
+                </p>
+                <p style="font-weight: 600">
+                    My background is in vehicle engineering, and I am passionate
+                    about interative technologies and programming. I've
+                    completed a few projects based on Kinect and OpenCV about
+                    autonomous driving and gesture recognition.
+                </p>
+            </article>
+            <section>
+                <h2>My Work Phases</h2>
+                <a
+                    class="button button-secondary"
+                    href="/work_phase_1/index.html"
+                    style="
+                        background-color: #377771;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        margin: 20px;
+                    "
+                    >Work Phase 1</a
+                >
+                <a
+                    class="button button-secondary"
+                    href="/work_phase_2/index.html"
+                    style="
+                        background-color: #2d728f;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        margin: 20px;
+                    "
+                    >Work Phase 2</a
+                >
+                <a
+                    class="button button-secondary"
+                    href="/work_phase_3/index.html"
+                    style="
+                        background-color: #393e41;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        margin: 20px;
+                    "
+                    >Work Phase 3</a
+                >
+                <a
+                    class="button button-secondary"
+                    href="/work_phase_4/index.html"
+                    style="
+                        background-color: #5c415d;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        margin: 20px;
+                    "
+                    >Work Phase 4</a
+                >
+            </section>
+            <script>
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker
+                        .register("/pwa_service_worker/service-worker.js")
+                        .then((registration) => {
+                            console.log(
+                                "Service Worker registered:",
+                                registration
+                            );
+                        })
+                        .catch((error) => {
+                            console.error(
+                                "Service Worker registration failed:",
+                                error
+                            );
+                        });
+                }
+            </script>
+        </div>
+    </body>
+</html>

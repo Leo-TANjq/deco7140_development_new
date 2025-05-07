@@ -1,0 +1,415 @@
+.interactive-highlight {
+    position: relative; /* Allows for positioning of extra elements (e.g., tooltip numbers) */
+    background-color: rgba(
+        255,
+        215,
+        0,
+        0.3
+    ); /* Light yellow highlight with 30% transparency */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
+    padding: 2px 5px; /* Adds small space inside the highlight for better readability */
+    border-radius: 5px; /* Rounds the corners slightly for a softer look */
+    transition: background 0.3s ease; /* Smooth transition effect when background changes */
+}
+
+.interactive-highlight::after {
+    content: attr(data-card); /* See the explanation */
+    position: absolute; /* Positions the tooltip relative to the highlighted text */
+    top: -5px; /* Moves the tooltip slightly above the highlighted text */
+    right: -15px; /* Moves the tooltip slightly to the right of the highlighted text */
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 120px; /* Sets a fixed width for the tooltip */
+    height: 30px; /* Sets a fixed height, making the tooltip a perfect circle */
+    display: flex; /* Uses Flexbox to center the text inside the circle */
+    align-items: center; /* Vertically centers the text inside the tooltip */
+    justify-content: center; /* Horizontally centers the text inside the tooltip */
+    border-radius: 10%; /* Creates rounded corners */
+    opacity: 0; /* Initially hides the tooltip */
+    transition: opacity 0.3s ease; /* Smoothly fades in the tooltip by changing the opacity */
+}
+
+/* Show Number on Hover (Desktop) */
+@media (hover: hover) {
+    .interactive-highlight:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Show Number on Tap (Mobile) */
+.interactive-highlight.show-tooltip::after {
+    opacity: 1;
+}
+
+.value-box {
+    background: #f8f9fa; /* Light background */
+    border-radius: 12px; /* Smooth edges */
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures it scales with screen */
+    margin: 20px auto; /* Adds space around boxes */
+    text-align: center;
+}
+
+.flip-card-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: Single column */
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .flip-card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.flip-card {
+    width: 100%;
+    height: 180px;
+    perspective: 1000px; /* Adds depth to make the flip look 3D */
+    cursor: pointer; /* Adds indication of interactivity */
+    outline: none; /* Removes default focus outline */
+}
+
+/* Flip Card Inner - the rotating part of the card */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* creates a 3D space */
+    transition: transform 0.5s ease-in-out; /* smooth transition for the flip effect */
+}
+
+.flip-card-inner.active {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+/* Front & Back Common Styles */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex; /* we are using flex inside our cards */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* set the colour for the front */
+.flip-card-front {
+    background: var(--border-color);
+    color: white;
+}
+
+/* set the colour for the back */
+.flip-card-back {
+    background: var(--secondary-color);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Mobile-Friendly Flip (Focus & Tap) */
+.flip-card:focus .flip-card-inner,
+.flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* MENU (Mobile First) */
+.menu {
+    justify-content: space-between;
+    list-style: none;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+/* MENU TOGGLE BUTTON */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* SHOW MENU WHEN TOGGLED */
+.menu.show {
+    display: flex;
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 768px) {
+    .menu {
+        display: flex; /* Visible by default on larger screens */
+        position: static;
+        flex-direction: row;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+
+    .menu li {
+        padding: 0 15px;
+    }
+}
+
+.user-name {
+    color: var(--secondary-color);
+}
+
+.interview {
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    margin-bottom: var(--space-5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.response {
+    border-left: 2px solid var(--secondary-color);
+    background-color: color-mix(
+        in srgb,
+        var(--secondary-color) 10%,
+        transparent
+    );
+    padding-left: var(--space-1);
+    padding-top: var(--space-1);
+}
+
+.response ul {
+    margin-inline-start: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.response ul li {
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-1);
+}
+
+.interview ul li::marker {
+    content: "•";
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    .interview ul li::marker {
+        content: "📌";
+        font-size: 1.5em;
+        display: inline-block;
+    }
+
+    .interview:hover {
+        transform: scale(1.01);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .response p {
+        margin-inline-start: var(--space-1);
+    }
+
+    .response ul {
+        margin-inline-start: var(--space-5);
+    }
+}
+
+.question {
+    font-weight: bold;
+}
+
+.interactive-highlight-stories {
+    position: relative;
+    background-color: rgba(255, 215, 0, 0.3);
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.interactive-highlight-stories::after {
+    content: attr(data-userstory);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--accent-color, var(--border-color));
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    width: max-content;
+    max-width: 80vw;
+    padding: 12px 16px;
+    text-align: center;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+    white-space: normal;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+    .interactive-highlight-stories::after {
+        max-width: 60vw; /* Sets a maximum width for larger screens */
+    }
+}
+
+/* Show Number on Hover (Desktop) */
+@media (hover: hover) {
+    .interactive-highlight-stories:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Show Number on Tap (Mobile) */
+.interactive-highlight-stories.show-tooltip::after {
+    opacity: 1;
+}
+
+.principle-box {
+    background: var(--background-color); /* Light background */
+    border-bottom: 1.5px solid var(--border-color);
+    border-right: none;
+    border-left: 4px solid var(--border-color);
+    padding: 20px;
+    padding-left: 30px;
+    width: 100%; /* Ensures it scales with screen */
+    margin: 20px auto; /* Adds space around boxes */
+    text-align: center;
+    margin-block: 0px; /* Removes bottom margin */
+}
+
+.dropdown-btn {
+    border: none;
+    background-color: var(--border-color);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-btn .arrow {
+    margin-right: 10px;
+}
+
+.dropdown-box {
+    display: none;
+    margin-top: 10px;
+}
+
+.detail-card {
+    border-left: 3px solid var(--secondary-color);
+    border-top: 1px solid var(--secondary-color);
+    margin-bottom: 20px;
+}
+.detail-card-title {
+    border: 1px solid var(--secondary-color);
+    border-left: none;
+    border-top: none;
+    padding: 3px;
+    padding-inline-start: 5px;
+    background-color: color-mix(
+        in srgb,
+        var(--secondary-color) 10%,
+        transparent
+    );
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.detail-card-content {
+    border-bottom: 1px solid var(--secondary-color);
+    border-right: 1px solid var(--secondary-color);
+    background-color: color-mix(
+        in srgb,
+        var(--secondary-color) 3%,
+        transparent
+    );
+    padding: 5px;
+}
+.detail-card p {
+    margin: 0;
+}
+
+.detail-card-content {
+    text-align: left;
+}
+
+.detail-card-content ul {
+    list-style: disc outside;
+    margin-left: 0;
+    padding-left: 1.5em;
+}
+
+.detail-card-content li {
+    text-indent: 0;
+}
+
+.interactive-highlight-accessibility {
+    position: relative;
+    background-color: rgba(255, 215, 0, 0.3);
+    cursor: pointer;
+    padding: none;
+    padding-left: 3px;
+    padding-block: 3px;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+    display: inline;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}

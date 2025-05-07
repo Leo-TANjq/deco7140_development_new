@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>WP2 - Client Needs Analysis</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a
+                href="../index.html"
+                class="home-icon"
+                aria-label="HOME PAGE"
+                style="margin-right: 20px"
+            >
+                🏠
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="menu">
+                <li><a href="index.html" aria-current="home">WP2 Home</a></li>
+                <li>
+                    <a
+                        href="accessibility_assessment.html"
+                        aria-current="accessibility assessment"
+                        >Accessibility Assessment</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="client_needs_analysis.html"
+                        aria-current="client needs analysis"
+                        >Client Needs Analysis</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="ethics_analysis.html"
+                        aria-current="ethics analysis"
+                        >Ethics Analysis</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="genai_mt_acknowledgement.html"
+                        aria-current="genai mt acknowledgement"
+                        >Genai MT Acknowledgement</a
+                    >
+                </li>
+                <li>
+                    <a href="user_stories.html" aria-current="user stories"
+                        >User Stories</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Client Needs Analysis</h1>
+            </header>
+
+            <section>
+                <h2>The Client Brief</h2>
+                <h3>About Us</h3>
+                <p>
+                    Our platform connects people through shared hobbies and
+                    subcultures, offering a space to explore, create, and
+                    engage. We ensure the experience is
+                    <span class="interactive-highlight" data-card="value 1"
+                        >fun and inspiring</span
+                    >, with an inclusive environment where
+                    <span class="interactive-highlight" data-card="value 2"
+                        >everyone feels valued</span
+                    >. Whether you're starting out or an expert, we celebrate
+                    <span class="interactive-highlight" data-card="value 3"
+                        >passion and dedication</span
+                    >. With clear guidelines and strong moderation, we maintain
+                    a
+                    <span class="interactive-highlight" data-card="value 4"
+                        >safe and respectful space</span
+                    >
+                    for all. Join us and connect with others who share your
+                    passions.
+                </p>
+                <p>
+                    This brief has been prepared for the internal design teams
+                    at Connect Communities Initiative (CCI). Each design team is
+                    tasked with developing individual concepts and prototypes
+                    for dynamic websites that align with CCI’s mission and
+                    vision. Our mission is to strengthen societal bonds by
+                    creating platforms that celebrate and support the unique
+                    identities of communities across Australia.
+                </p>
+                <h3>Project Overview</h3>
+                <p>
+                    We are commissioning the development of dynamic,
+                    user-friendly websites that represent and support different
+                    communities. Each website should serve as a central hub
+                    where community members can share resources, highlight
+                    events, and foster meaningful connections. The websites must
+                    not include any form of commercial activity, such as
+                    advertising or selling products. However, it is acceptable
+                    to promote resources, events, or services that are directly
+                    beneficial to the community.
+                </p>
+                <p>
+                    The websites must be accessible, mobile-friendly, and
+                    reflect the diverse needs of the selected community focus
+                    area while adhering to our mission of inclusivity,
+                    accessibility, and ethical design. Each website should also
+                    celebrate the unique characteristics of its chosen community
+                    and support meaningful interaction and engagement.
+                </p>
+                <h3>Community Focus Area</h3>
+                <ul class="value-box">
+                    <li style="font-weight: bold; font-size: 1.5rem">
+                        <span style="color: #2c3df2">Subculture</span> and
+                        <span style="color: #2c3df2">Hobbies</span> Community
+                    </li>
+                </ul>
+                <h3>Additional Information</h3>
+                <p><strong>Target Audience</strong></p>
+                <p>Each website must serve two key groups:</p>
+                <ol>
+                    <li>
+                        Community Members: Individuals within the selected
+                        community who seek representation, resources, and
+                        connection.
+                    </li>
+                    <li>
+                        General Audience: Broader society, who can use the
+                        website to learn about the community and its
+                        contributions.
+                    </li>
+                </ol>
+                <p>
+                    Accessibility must be prioritised to ensure seamless
+                    interaction for all users, including those relying on
+                    assistive technologies.
+                </p>
+                <p><strong>Project Goals</strong></p>
+                <ol>
+                    <li>
+                        Represent and celebrate the identity of the chosen
+                        community, recognising and representing the diversity
+                        within the community rather than relying on stereotypes.
+                    </li>
+                    <li>
+                        Provide clear, accessible information and resources to
+                        users.
+                    </li>
+                    <li>
+                        Foster meaningful connections and support within the
+                        community.
+                    </li>
+                    <li>
+                        Ensure ethical, inclusive, and culturally sensitive
+                        design principles are upheld.
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Values - Needs - Features Analysis</h2>
+                <div class="value-box">
+                    <h3>Value 1: Playfulness</h3>
+                    <div class="flip-card-container">
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 1</strong></p>
+                                    <p>
+                                        Users need interactive features that
+                                        make community engagement feel
+                                        lighthearted and fun.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Gamified challenges or quizzes related
+                                        to hobbies that encourage playful
+                                        competition.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 2</strong></p>
+                                    <p>
+                                        Users seek playful challenges or
+                                        activities to spark casual
+                                        participation.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Regular hobby-themed events, such as
+                                        virtual contests or themed weeks, to
+                                        engage users.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-box">
+                    <h3>Value 2: Inclusivity</h3>
+                    <div class="flip-card-container">
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 1</strong></p>
+                                    <p>
+                                        Users need a way to connect with those
+                                        who share the same hobby, regardless of
+                                        background or experience level.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Community directory with group profiles
+                                        that members can contribute to by
+                                        posting events.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 2</strong></p>
+                                    <p>
+                                        Users want clear guidelines and
+                                        moderation that promote respectful,
+                                        welcoming conversations.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Automated content filters and clear
+                                        community guidelines displayed
+                                        prominently on every page.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 3</strong></p>
+                                    <p>
+                                        Users need accessible design that
+                                        accommodates diverse abilities and
+                                        devices.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Multi-device compatibility and
+                                        text-to-speech tools for accessibility.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-box">
+                    <h3>Value3: Passion-Driven Engagement</h3>
+                    <div class="flip-card-container">
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 1</strong></p>
+                                    <p>
+                                        Users want to join discussions that
+                                        reflect their genuine interests, not
+                                        just trending topics.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Personalized content feed based on
+                                        interests and activity, filtering out
+                                        irrelevant trends.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 2</strong></p>
+                                    <p>
+                                        Users need events or content that reward
+                                        and recognize dedication over
+                                        popularity.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Badges or recognition systems for active
+                                        participation, skill-building, and
+                                        contribution.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-box">
+                    <h3>Value4: Safety</h3>
+                    <div class="flip-card-container">
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 1</strong></p>
+                                    <p>
+                                        Users need consistent moderation to
+                                        protect against harassment and hate
+                                        speech.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Real-time content monitoring with
+                                        automated flagging and human moderators.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p><strong>Card 2</strong></p>
+                                    <p>
+                                        Users need reporting tools that are
+                                        simple, transparent, and lead to real
+                                        action.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p><strong>Feature</strong></p>
+                                    <p>
+                                        Easy-to-use reporting button with a
+                                        clear follow-up process and updates on
+                                        actions taken.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script type="module" src="js/client_needs.js"></script>
+    </body>
+</html>

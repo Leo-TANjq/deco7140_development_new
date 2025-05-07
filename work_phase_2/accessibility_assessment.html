@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Work Phase 2</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a
+                href="../index.html"
+                class="home-icon"
+                aria-label="HOME PAGE"
+                style="margin-right: 20px"
+            >
+                🏠
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="menu">
+                <li><a href="index.html" aria-current="home">WP2 Home</a></li>
+                <li>
+                    <a
+                        href="accessibility_assessment.html"
+                        aria-current="accessibility assessment"
+                        >Accessibility Assessment</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="client_needs_analysis.html"
+                        aria-current="client needs analysis"
+                        >Client Needs Analysis</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="ethics_analysis.html"
+                        aria-current="ethics analysis"
+                        >Ethics Analysis</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="genai_mt_acknowledgement.html"
+                        aria-current="genai mt acknowledgement"
+                        >Genai MT Acknowledgement</a
+                    >
+                </li>
+                <li>
+                    <a href="user_stories.html" aria-current="user stories"
+                        >User Stories</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <header style="margin-bottom: 1rem">
+                <h1>Accessibility Assessment</h1>
+            </header>
+            <h2>Success Criteria Analysis</h2>
+            <section
+                class="principle-box"
+                style="border-top: 1.5px solid var(--border-color)"
+            >
+                <h3>1.4.3 Contrast (Minimum)</h3>
+                <p>
+                    Normally the visual presentation of text and images of text
+                    has a contrast ratio of at least 4.5:1.
+                </p>
+
+                <button
+                    class="dropdown-btn"
+                    aria-expanded="false"
+                    aria-controls="dropdown-box-1"
+                >
+                    <span class="arrow">▶</span>
+                    <strong><span class="text">Show</span> Details</strong>
+                </button>
+                <div class="dropdown-box">
+                    <div class="detail-card">
+                        <header class="detail-card-title">Benefits</header>
+                        <p class="detail-card-content">
+                            People with low vision often have difficulty reading
+                            text that does not contrast with its background.
+                            <span
+                                class="interactive-highlight-accessibility"
+                                data-target="card1-1"
+                            >
+                                Providing a minimum luminance contrast ratio
+                                between the text and its background can make the
+                                text more readable
+                            </span>
+                            even if the person does not see the full range of
+                            colors. It also works for the rare individuals who
+                            see no color.
+                        </p>
+                        <header class="detail-card-title">
+                            Relevant Needs
+                        </header>
+                        <div class="detail-card-content">
+                            <div class="flip-card-container">
+                                <div class="flip-card" tabindex="0">
+                                    <div class="flip-card-inner" id="card1-1">
+                                        <div
+                                            class="flip-card-front"
+                                            style="
+                                                background-color: var(
+                                                    --secondary-color
+                                                );
+                                            "
+                                        >
+                                            <p>
+                                                <strong>Requirement</strong>
+                                            </p>
+                                            <p>
+                                                Make sure text stands out from
+                                                the background, especially for
+                                                people with vision issues.
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="flip-card-back"
+                                            style="
+                                                background-color: var(
+                                                    --border-color
+                                                );
+                                            "
+                                        >
+                                            <p><strong>Source</strong></p>
+                                            <p>
+                                                Ethan - Network Engineer from
+                                                user stories.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <header class="detail-card-title">
+                            Implementation
+                        </header>
+                        <p class="detail-card-content">
+                            Provide sufficient contrast between text and its
+                            background by using consistent color combinations.
+                            For example, use dark text on a light background or
+                            light text on a dark background.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="principle-box">
+                <h3>2.1.1 Keyboard Navigation</h3>
+                <p>
+                    All functionality of the content is operable through a
+                    keyboard interface without requiring specific timings for
+                    individual keystrokes, except where the underlying function
+                    requires input that depends on the path of the user's
+                    movement and not just the endpoints.
+                </p>
+
+                <button
+                    class="dropdown-btn"
+                    aria-expanded="false"
+                    aria-controls="dropdown-box-1"
+                >
+                    <span class="arrow">▶</span>
+                    <strong><span class="text">Show</span> Details</strong>
+                </button>
+                <div class="dropdown-box" id="dropdown-box-1">
+                    <div class="detail-card">
+                        <header class="detail-card-title">Benefits</header>
+                        <div class="detail-card-content">
+                            <ul>
+                                <li style="margin-bottom: 10px">
+                                    People who are blind (who
+                                    <span
+                                        class="interactive-highlight-accessibility"
+                                        data-target="card2-1,card2-2"
+                                    >
+                                        cannot use devices
+                                    </span>
+                                    such as mice that require eye-hand
+                                    coordination)
+                                </li>
+                                <li style="margin-bottom: 10px">
+                                    People with low vision (who may
+                                    <span
+                                        class="interactive-highlight-accessibility"
+                                        data-target="card2-1,card2-2"
+                                    >
+                                        have trouble finding or tracking a
+                                        pointer indicator on screen
+                                    </span>
+                                    )
+                                </li>
+                                <li>
+                                    Some people with hand tremors find using a
+                                    mouse very difficult and therefore
+                                    <span
+                                        class="interactive-highlight-accessibility"
+                                        data-target="card2-1,card2-2"
+                                    >
+                                        usually use a keyboard
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <header class="detail-card-title">
+                            Relevant Needs
+                        </header>
+                        <div class="detail-card-content">
+                            <div class="flip-card-container">
+                                <div class="flip-card" tabindex="0">
+                                    <div class="flip-card-inner" id="card2-1">
+                                        <div
+                                            class="flip-card-front"
+                                            style="
+                                                background-color: var(
+                                                    --secondary-color
+                                                );
+                                            "
+                                        >
+                                            <p>
+                                                <strong>Requirement 1</strong>
+                                            </p>
+                                            <p>
+                                                The site should be fully
+                                                navigable using the keyboard
+                                                alone. This is essential for
+                                                those who cannot use a mouse or
+                                                touch screen.
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="flip-card-back"
+                                            style="
+                                                background-color: var(
+                                                    --border-color
+                                                );
+                                            "
+                                        >
+                                            <p><strong>Source</strong></p>
+                                            <p>
+                                                Ethan - Network Engineer from
+                                                user stories.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-card" tabindex="0">
+                                    <div class="flip-card-inner" id="card2-2">
+                                        <div
+                                            class="flip-card-front"
+                                            style="
+                                                background-color: var(
+                                                    --secondary-color
+                                                );
+                                            "
+                                        >
+                                            <p>
+                                                <strong>Requirement 2</strong>
+                                            </p>
+                                            <p>
+                                                I’d need the website to be fully
+                                                navigable using the keyboard.
+                                                Every clickable element should
+                                                have a tab index that lets me
+                                                navigate the site without a
+                                                mouse.
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="flip-card-back"
+                                            style="
+                                                background-color: var(
+                                                    --border-color
+                                                );
+                                            "
+                                        >
+                                            <p><strong>Source</strong></p>
+                                            <p>
+                                                Luna - Lifestyle & Arts
+                                                Enthusiast from user stories.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <header class="detail-card-title">
+                            Implementation
+                        </header>
+                        <p class="detail-card-content">
+                            Ensure that all functionality of the content is
+                            operable through a keyboard interface without
+                            requiring specific timings for individual
+                            keystrokes. This includes all interactive elements
+                            such as links, buttons, and form fields.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="principle-box">
+                <h3>3.2.3 Consistent Navigation</h3>
+                <p>
+                    Navigational mechanisms that are repeated on multiple Web
+                    pages within a set of Web pages occur in the same relative
+                    order each time they are repeated, unless a change is
+                    initiated by the user.
+                </p>
+
+                <button
+                    class="dropdown-btn"
+                    aria-expanded="false"
+                    aria-controls="dropdown-box-1"
+                >
+                    <span class="arrow">▶</span>
+                    <strong><span class="text">Show</span> Details</strong>
+                </button>
+                <div class="dropdown-box" id="dropdown-box-1">
+                    <div class="detail-card">
+                        <header class="detail-card-title">Benefits</header>
+                        <p class="detail-card-content">
+                            The benefit of consistent navigation is that it
+                            helps users to
+                            <span
+                                class="interactive-highlight-accessibility"
+                                data-target="card3-1"
+                            >
+                                learn the interface and find information more
+                                quickly </span
+                            >. It also helps to
+                            <span
+                                class="interactive-highlight-accessibility"
+                                data-target="card3-2"
+                            >
+                                reduce the cognitive load
+                            </span>
+                            on users, as they do not have to relearn the
+                            navigation each time they visit a new page.
+                        </p>
+                        <header class="detail-card-title">
+                            Relevant Needs
+                        </header>
+                        <div class="detail-card-content">
+                            <div class="flip-card-container">
+                                <div class="flip-card" tabindex="0">
+                                    <div class="flip-card-inner" id="card3-1">
+                                        <div
+                                            class="flip-card-front"
+                                            style="
+                                                background-color: var(
+                                                    --secondary-color
+                                                );
+                                            "
+                                        >
+                                            <p>
+                                                <strong>Requirement 1</strong>
+                                            </p>
+                                            <p>
+                                                Easy-to-follow menus, headings,
+                                                and buttons so people don’t get
+                                                lost.
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="flip-card-back"
+                                            style="
+                                                background-color: var(
+                                                    --border-color
+                                                );
+                                            "
+                                        >
+                                            <p><strong>Source</strong></p>
+                                            <p>
+                                                Bob - Younger from user stories.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-card" tabindex="0">
+                                    <div class="flip-card-inner" id="card3-2">
+                                        <div
+                                            class="flip-card-front"
+                                            style="
+                                                background-color: var(
+                                                    --secondary-color
+                                                );
+                                            "
+                                        >
+                                            <p>
+                                                <strong>Requirement 2</strong>
+                                            </p>
+                                            <p>
+                                                Interfaces that are kind, easy
+                                                to understand, and don’t make
+                                                people feel overwhelmed.
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="flip-card-back"
+                                            style="
+                                                background-color: var(
+                                                    --border-color
+                                                );
+                                            "
+                                        >
+                                            <p><strong>Source</strong></p>
+                                            <p>
+                                                Luna - Lifestyle & Arts
+                                                Enthusiast from user stories.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <header class="detail-card-title">
+                            Implementation
+                        </header>
+                        <p class="detail-card-content">
+                            Ensure that repeated components occur in the same
+                            order on each page of a site. Like navigation bars
+                            and titles, they are always in the same place on
+                            each page and keep consistent style.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script type="module" src="js/accessibility.js"></script>
+    </body>
+</html>

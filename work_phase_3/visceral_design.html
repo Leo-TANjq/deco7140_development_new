@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/visceral_design.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+        <title>Viceral Design</title>
+    </head>
+    <body>
+        <nav id="nav-mobile" aria-lable="Main Navigation">
+            <ul>
+                <li>
+                    <a href="../index.html"><span class="icon">⏮️</span></a>
+                </li>
+                <li>
+                    <a href="index.html"><span class="icon">🏠</span></a>
+                </li>
+                <li>
+                    <a href="site_map.html"><span class="icon">🗺️</span></a>
+                </li>
+                <li>
+                    <a href="style_guide.html"><span class="icon">🧭</span></a>
+                </li>
+                <li>
+                    <a href="ethical_response.html"
+                        ><span class="icon">3️⃣</span></a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">4️⃣</span></a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <nav id="nav-desktop" aria-lable="Main Navigation">
+            <ul>
+                <li>
+                    <a href="../index.html">⏮️Return</a>
+                </li>
+                <li>
+                    <a href="index.html">🏠Home</a>
+                </li>
+                <li>
+                    <a href="site_map.html">🗺️Site Map</a>
+                </li>
+                <li>
+                    <a href="style_guide.html">🧭Style Guide</a>
+                </li>
+                <li>
+                    <a href="ethical_response.html">3</a>
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"> 4 </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">WP3 Home</a> &gt;
+                    <a href="style_guide.html">Style Guide</a> &gt; Viceral
+                    Design
+                </div>
+                <h1 class="page-title">Visceral Design</h1>
+                <p class="hero-text m-y-2">
+                    This webpage highlights the principles of visceral design
+                    through intuitive layouts, a harmonious color scheme, and
+                    thoughtful typography.
+                </p>
+                <p>Here I will display my work for this level of design.</p>
+                <article>
+                    <h2 class="m-t-3">Page Layouts</h2>
+                    <section class="gallery m-t-3">
+                        <img
+                            src="assets/H-D.jpg"
+                            alt="Desktop Homepage: Realistic proportions of interface elements—such as the search bar and buttons—ensure they are easily recognizable and understood, helping to establish immediate user trust."
+                        />
+                        <img
+                            src="assets/H-M.jpg"
+                            alt="Mobile Homepage: This webpage perfrom well on mobile, satifsfying the users' need of device adaptability."
+                        />
+                        <img
+                            src="assets/D-D.jpg"
+                            alt="Desktop Discussion: It utilizes a dynamic grid layout for its topic boxes, varying in size but arranged in a structured yet visually appealing way. The balanced arrangement of the boxes fosters an intuitive browsing experience, promoting engagement while also maintaining a sense of order and accessibility."
+                        />
+                        <img
+                            src="assets/D-M.jpg"
+                            alt="Mobile Discussion: The structure is clear and modular, effectively supporting diverse content and meeting the client's requirement for flexible component integration."
+                        />
+                        <img
+                            src="assets/A-D.jpg"
+                            alt="Desktop Activities-Join: The timetable image allows users to quickly grasp current activities without reading all the text above, enhancing visual accessibility and information clarity."
+                        />
+                        <img
+                            src="assets/A-M.jpg"
+                            alt="The consistent navigation bar in this section aligns with WCAG 3.2.3, ensuring that navigation mechanisms remain predictable and accessible across views."
+                        />
+                    </section>
+                    <!-- Large Image Viewer -->
+                    <aside class="viewer" id="viewer" aria-hidden="true">
+                        <button
+                            id="close-viewer"
+                            aria-label="Close image viewer"
+                        >
+                            ✖
+                        </button>
+                        <img id="viewer-img" src="" alt="" />
+                        <p id="viewer-caption"></p>
+                    </aside>
+                </article>
+                <article>
+                    <h2 class="m-t-3">Color Scheme</h2>
+                    <section class="card-container m-t-3">
+                        <div
+                            class="card"
+                            style="background-color: var(--primary-color)"
+                        >
+                            <header style="color: var(--light-color)">
+                                Primary Color
+                            </header>
+                            <p style="color: var(--light-color)">#2C3E50</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--secondary-color)"
+                        >
+                            <header style="color: var(--light-color)">
+                                Secondary Color
+                            </header>
+                            <p style="color: var(--light-color)">#5D5179</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--text-color)"
+                        >
+                            <header style="color: var(--light-color)">
+                                Text Color
+                            </header>
+                            <p style="color: var(--light-color)">#333</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--text-color2)"
+                        >
+                            <header style="color: var(--light-color)">
+                                Text Color2
+                            </header>
+                            <p style="color: var(--light-color)">#4B636E</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--accent3-color)"
+                        >
+                            <header style="color: var(--light-color)">
+                                Accent Color3
+                            </header>
+                            <p style="color: var(--light-color)">#006D77</p>
+                        </div>
+                    </section>
+                    <section
+                        class="card-container m-t-3"
+                        style="background-color: var(--accent3-color)"
+                    >
+                        <div
+                            class="card"
+                            style="background-color: var(--light-color)"
+                        >
+                            <header>Light Color</header>
+                            <p>#F9FAFB</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--background-color)"
+                        >
+                            <header>Background Color</header>
+                            <p>#f1dabf</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--accent1-color)"
+                        >
+                            <header>Accent Color1</header>
+                            <p>#F3D34A</p>
+                        </div>
+                        <div
+                            class="card"
+                            style="background-color: var(--accent2-color)"
+                        >
+                            <header>Accent Color2</header>
+                            <p>#F7AF9D</p>
+                        </div>
+                    </section>
+                </article>
+                <article>
+                    <h2 class="m-t-3">Typography</h2>
+                    <section class="tp-card-container m-t-3">
+                        <div class="tp-card">
+                            <h3>Font Family</h3>
+                            <p>Name: Outfit</p>
+                            <p style="font-weight: bold">Outfit(bold)</p>
+                            <p style="font-style: italic">Outfit(italic)</p>
+                        </div>
+                        <div class="tp-card">
+                            <h1>Heading1</h1>
+                            <p>
+                                Color: Primary Color; Size: 2.8rem, 5.2rem(wide
+                                screen); Weight: 400
+                            </p>
+                        </div>
+                        <div class="tp-card">
+                            <h2>Heading2</h2>
+                            <p>
+                                Color: Text Color; Size: 2.2rem, 3.6rem(wide
+                                screen); Weight: 700
+                            </p>
+                        </div>
+                        <div class="tp-card">
+                            <h3>Heading3</h3>
+                            <p>
+                                Color: Text Color; Size: 1.6rem, 2.4rem(wide
+                                screen); Weight: 700
+                            </p>
+                        </div>
+                        <div class="tp-card">
+                            <p>Here's a paragraph.</p>
+                            <p>
+                                Color: Text Color; Size: 1rem, 1.4rem(wide
+                                screen); Weight: 700; Margin-bottom: 1rem
+                            </p>
+                        </div>
+                        <div class="tp-card">
+                            <h3 class="page-title">Class: Page Title</h3>
+                            <p>
+                                Alignment: Center, Left(wide screen); Margin: 0,
+                                auto
+                            </p>
+                        </div>
+                        <div class="tp-card">
+                            <h3 class="hero-text">Class: Hero Text</h3>
+                            <p>
+                                Color: Text Color2; Size: 1.5rem, 1.8rem(wide
+                                screen); Weight: 500, Alignment: Center,
+                                Left(wide screen); Margin: 0, auto
+                            </p>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </main>
+        <script type="module" src="js/viscral_design.js"></script>
+    </body>
+</html>

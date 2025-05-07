@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Style Guide-Components</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+    </head>
+    <body>
+        <header></header>
+        <div class="container">
+            <h1>Style Guide</h1>
+            <section>
+                <h2>Components</h2>
+            </section>
+            <section>
+                <h3>Buttons</h3>
+                <p>This is a showcase of the different buttons styles</p>
+            </section>
+            <div class="card-container">
+                <div class="simple-card">
+                    <h4>Primary Button</h4>
+                    <button class="button button-primary">Primary</button>
+                </div>
+                <div class="simple-card">
+                    <h4>Secondary Button</h4>
+                    <button class="button button-secondary">Secondary</button>
+                </div>
+                <div class="simple-card">
+                    <h4>Dark Button</h4>
+                    <button class="button button-dark">Dark</button>
+                </div>
+                <div class="simple-card">
+                    <h4>Bright Button</h4>
+                    <button class="button button-bright">Bright</button>
+                </div>
+            </div>
+            <section>
+                <h2>Links</h2>
+                <a class="button button-primary" href="index.html">Work Phase 1</a>
+                <a class="button button-dark" href="typography.html">Typography</a>
+            </section>
+        </div>
+        <!-- Temperature Widget Container -->
+        <div id="temperature-widget" class="temperature-widget"> 
+            <p>Current Temperature: <span id="temperature-value">--</span>°C</p> 
+        </div>
+        <!-- Linking to External JavaScript -->
+        <script type="module" src="js/components.js"></script>
+    </body>
+</html>
