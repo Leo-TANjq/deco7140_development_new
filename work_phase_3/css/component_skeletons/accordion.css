@@ -19,11 +19,6 @@
     border: none;
     cursor: pointer;
 }
-@media (min-width: 768px) {
-    .accordion-header{
-        font-size: 1.2rem;
-    }
-}
 .accordion-content{
     max-height: 0;
     overflow-y: auto;
@@ -38,15 +33,28 @@
 }
 .accordion.nested {
     margin: 0;
-    margin-left: 1rem;
     border-left: 3px solid black;
-    padding-left: 1rem;
-    padding-top: 1rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
 }
 .accordion.nest {
     margin: 0;
-    margin-left: 1rem;
     border-left: 3px solid black;
-    padding-left: 1rem;
-    padding-top: 1rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+}
+@media (min-width: 768px) {
+    .accordion-header{
+        font-size: 1.2rem;
+    }
+    .accordion.nested {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+    .accordion.nest {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
 }

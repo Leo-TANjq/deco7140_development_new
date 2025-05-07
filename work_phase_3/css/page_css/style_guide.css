@@ -1,5 +1,3 @@
-@import '../component_skeletons/card.css';
-
 .card {
     position: relative;
     background-color: var(--accent3-color);
