@@ -1,0 +1,94 @@
+@import "../component_skeletons/table.css";
+@import "../component_skeletons/card.css";
+@import '../component_skeletons/accordion.css';
+@import '../component_skeletons/magic_card.css';
+.value-table h4 {
+    font-size: 1rem;
+}
+.tp-card img {
+    height: 70%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.tp-card {
+    width: 95%;
+    height: auto;
+    min-height: 150px;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .tp-card {
+        min-height: 250px;
+    }
+    .tp-card p {
+        font-size: 1.2rem;
+    }
+}
+.img-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    padding: 0;
+}
+.img-container img {
+    height: 100%;
+    margin: 0;
+    max-width: 100%;
+    object-fit: contain;
+}
+.checklist-container {
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-block: 20px;
+    padding: 20px;
+}
+.checklist-container:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+.checklist-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.checklist {
+    list-style-type: none;
+    padding: 0;
+}
+
+.checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .checklist li {
+        font-size: 1.2rem;
+    }
+}
+.checklist input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #4caf50; /* Green color for checkboxes */
+}
+
+.accordion-header{
+    background-color: var(--accent3-color);
+    padding-block: 1rem;
+}
+.accordion-header h3{
+    color: var(--light-color);
+    font-weight: 600;
+}
+.accordion{
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

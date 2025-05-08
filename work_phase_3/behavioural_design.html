@@ -14,7 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
             rel="stylesheet"
         />
 
@@ -82,11 +82,13 @@
                 </div>
                 <h1 class="page-title">Behavioural Design</h1>
                 <p class="hero-text m-y-2">
+                    Here I will display my work for this level of design.
+                </p>
+                <p>
                     This webpage highlights the principles of visceral design
                     through intuitive layouts, a harmonious color scheme, and
                     thoughtful typography.
                 </p>
-                <p>Here I will display my work for this level of design.</p>
                 <article>
                     <h2 class="m-t-3">Prototypes</h2>
                     <section class="tp-card-container m-t-3">
@@ -215,7 +217,7 @@
                                 aria-expanded="false"
                                 aria-controls="dropdown-box-1"
                             >
-                                <span class="arrow">▼</span>
+                                <span class="arrow">◀</span>
                                 <strong
                                     ><span class="text"
                                         >Hide (active)</span
@@ -244,15 +246,6 @@
                                 No Resource (disabled)
                             </button>
                         </div>
-                    </div>
-                    <div
-                        class="tp-card"
-                        style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            margin-top: 1rem;
-                        "
-                    >
                         <h3>Annotation</h3>
                         <p>Each button type uses consistent color-coding:</p>
                         <p>Green = Join actions (positive, go, submit)</p>
@@ -262,8 +255,92 @@
                             Maroon = Disabled (inaccessible or completed
                             actions)
                         </p>
-                        <p>All buttons have rounded rectangles and bold labels, providing clear affordances of clickability.</p>
-                        <p>Hover and active states include shadow effects or darker borders, strengthening perceived interactivity (Feedback).</p>
+                        <p>
+                            All buttons have rounded rectangles and bold labels,
+                            providing clear affordances of clickability.
+                        </p>
+                        <p>
+                            Hover and active states include shadow effects or
+                            darker borders, strengthening perceived
+                            interactivity (Feedback).
+                        </p>
+                    </div>
+                    <div
+                        class="tp-card"
+                        style="
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-top: 1rem;
+                        "
+                    >
+                        <h3>Form</h3>
+                        <p>
+                            This form allows users to register for a community
+                            by submitting required fields. The data is securely
+                            submitted to a dedicated API endpoint. Upon
+                            successful registration, users receive immediate
+                            on-screen confirmation. If fails, the corresponding
+                            error will be displayed as well.
+                        </p>
+                        <form id="community-form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message (optional)</label>
+                                <input
+                                    type="text"
+                                    id="message"
+                                    name="message"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="photo"
+                                    >Photo (optional, max 10MB)</label
+                                >
+                                <input
+                                    type="file"
+                                    id="photo"
+                                    name="photo"
+                                    accept="image/*"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                                style="font-size: 1rem"
+                            >
+                                Join the Community
+                            </button>
+
+                            <p
+                                id="form-feedback"
+                                class="form-feedback success"
+                                aria-live="polite"
+                                style="display: none"
+                            >
+                                Thanks for being part of our community!
+                            </p>
+                        </form>
                     </div>
                 </article>
             </div>

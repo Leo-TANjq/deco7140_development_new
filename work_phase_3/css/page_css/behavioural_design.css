@@ -1,4 +1,5 @@
 @import '../component_skeletons/card.css';
+@import '../component_skeletons/form.css';
 .tp-card img{
     height: 70%;
     width: auto;
@@ -43,9 +44,9 @@ button{
 
 }
 .join-button.active {
-    border: None;   
+    border: 3px solid #1D460E;   
     background-color: #1D460E;
-    transform: translateY(2px);
+    transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .dropdown-btn {
@@ -85,14 +86,40 @@ button{
 
 }
 .search-button.active {
-    border: None;   
+    border: 3px solid #235181;    
     background-color: #235181;
     transform: translateY(2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 button.disabled {
+    cursor: not-allowed;
+    padding: 0.5rem;
     border: 3px solid #90323D;
     border: None;
     background-color: #90323D;
     color: white;
+}
+.primary-button {
+    padding:0.3rem;
+    cursor: pointer;
+    min-width: 4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #0BA000;
+    color: white;
+    border: 3px solid #0BA000;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.primary-button:hover {
+    border: 3px solid var(--text-color2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+}
+.primary-button:active {
+    border: 3px solid #1D460E;
+    background-color: #1D460E;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

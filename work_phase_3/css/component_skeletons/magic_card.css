@@ -1,0 +1,164 @@
+/* 魔法风格字体导入 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+/* 卡片容器 - 46.8%长宽比 */
+.self-card {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    height: 0;
+    padding-bottom: 46.8%;
+    margin: 30px auto;
+    background: linear-gradient(145deg, 
+        #3d2e1a 0%, 
+        #6d5a3a 50%, 
+        #3d2e1a 100%);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            rgba(255, 215, 0, 0.08), 
+            rgba(212, 175, 55, 0.12)
+        );
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+
+.self-card > div {
+    position: absolute;
+    top: 3%;
+    left: 3%;   
+    width: 94%; 
+    height: 94%; 
+    padding: 3%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(145deg, #1a0638 0%, #3a1b6e 100%);
+    transition: all 0.6s ease;
+    box-sizing: border-box;
+}
+
+
+.self-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.self-card > div:hover {
+    background: 
+        linear-gradient(
+            rgba(255, 215, 0, 0.15), 
+            rgba(212, 175, 55, 0.2)
+        ),
+        linear-gradient(145deg, #1a0638 0%, #3a1b6e 100%);
+    box-shadow: inset 0 0 100px rgba(255, 215, 0, 0.3),
+                0 0 80px rgba(255, 215, 0, 0.5);
+}
+
+.card-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: min(2.5vw, 2.2rem);
+    color: #ffd700;
+    margin-bottom: 8%;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+}
+
+.self-card > div:hover .card-title {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.9),
+                 0 0 5px #fff;
+    transform: scale(1.03);
+}
+
+.card-title::after {
+    content: '✧･ﾟ: *✧･ﾟ:*';
+    display: block;
+    width: 100%;
+    color: #b19cd9;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    margin: 5% auto;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.self-card > div:hover .card-title::after {
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    opacity: 1;
+}
+
+.card-text {
+    font-size: min(1.7vw, 1.3rem);
+    line-height: 1.8;
+    text-align: center;
+    color: #f0e6ff; 
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0 auto;
+    width: 90%;
+    padding: 5% 0;
+    transition: all 0.5s ease;
+    text-shadow: 
+        0 0 8px rgba(179, 136, 255, 0.9), 
+        0 0 3px rgba(255, 255, 255, 0.8); 
+    letter-spacing: 0.3px;
+    font-weight: 500;
+}
+.card-text {
+    color: #f5f0e6;
+    text-shadow: 
+        1px 1px 2px rgba(0,0,0,0.3),
+        0 0 5px rgba(179, 136, 255, 0.7);
+    font-style: italic;
+}
+
+
+.self-card > div:hover .card-text {
+    color: #ffffff;
+    text-shadow: 
+        0 0 12px rgba(204, 153, 255, 1),
+        0 0 5px rgba(255, 215, 0, 0.6),
+        0 0 2px #fff;
+}
+
+.self-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, 
+            transparent 60%, 
+            rgba(106, 90, 205, 0.1) 100%),
+        repeating-linear-gradient(45deg, 
+            rgba(106, 90, 205, 0.05) 0px, 
+            rgba(106, 90, 205, 0.05) 1px, 
+            transparent 1px, 
+            transparent 10px);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .self-card {
+        padding-bottom: 46.8%;
+        max-width: 500px;
+    }
+}
