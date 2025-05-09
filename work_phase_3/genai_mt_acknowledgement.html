@@ -9,77 +9,324 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/genai.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
             rel="stylesheet"
         />
 
         <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
-        <title>Work Phase 3</title>
+        <title>GenAI Use</title>
     </head>
     <body>
-        <nav id="nav-mobile" aria-lable="Main Navigation">
+        <nav id="nav-mobile" aria-label="Main Navigation">
             <ul>
                 <li>
-                    <a href="../index.html"><span class="icon">🏠</span></a>
+                    <a href="../index.html"><span class="icon">⏮️</span></a>
                 </li>
                 <li>
-                    <a href="index.html"><span class="icon">0️⃣</span></a>
+                    <a href="index.html"><span class="icon">🏠</span></a>
                 </li>
                 <li>
-                    <a href="site_map.html"><span class="icon">1️⃣</span></a>
+                    <a href="site_map.html"><span class="icon">🗺️</span></a>
                 </li>
                 <li>
-                    <a href="style_guide.html"><span class="icon">2️⃣</span></a>
+                    <a href="style_guide.html"><span class="icon">🧭</span></a>
                 </li>
                 <li>
-                    <a href="ethical_response.html"
-                        ><span class="icon">3️⃣</span></a
+                    <a href="ethical_response.html" aria-current="page"
+                        ><span class="icon">💁</span></a
                     >
                 </li>
                 <li>
-                    <a href="genai_mt_acknowledgement.html"
-                        ><span class="icon">4️⃣</span></a
+                    <a href="genai_mt_acknowledgement.html" aria-current="page"
+                        ><span class="icon">🤖</span></a
                     >
                 </li>
             </ul>
         </nav>
 
-        <nav id="nav-desktop" aria-lable="Main Navigation">
+        <nav id="nav-desktop" aria-label="Main Navigation">
             <ul>
                 <li>
-                    <a href="../index.html">🏠</a>
+                    <a href="../index.html">⏮️Return</a>
                 </li>
                 <li>
-                    <a href="index.html">WP3 Home</a>
+                    <a href="index.html">🏠Home</a>
                 </li>
                 <li>
-                    <a href="site_map.html">1</a>
+                    <a href="site_map.html">🗺️Site Map</a>
                 </li>
                 <li>
-                    <a href="style_guide.html">2</a>
+                    <a href="style_guide.html">🧭Style Guide</a>
                 </li>
                 <li>
-                    <a href="ethical_response.html">3</a>
+                    <a href="ethical_response.html">💁Ethical Response</a>
                 </li>
                 <li>
-                    <a href="genai_mt_acknowledgement.html"> 4 </a>
+                    <a href="genai_mt_acknowledgement.html" aria-current="page"
+                        >🤖GenAI Use</a
+                    >
                 </li>
             </ul>
         </nav>
 
         <main>
             <div class="container">
-                <h1 class="page-title">Leo's WP3 Home Page</h1>
+                <h1 class="page-title">GenAI Use</h1>
                 <p class="hero-text m-y-2">
-                    Welcome to my Work Phase 3 home page!
+                    Here are GenAI supports I have requested for web page
+                    establishment.
                 </p>
-                <p>Here I will display my work for this phase.</p>
+                <p>
+                    Examples are shown below reflecting how Generative AI has enhanced the development of
+                    this webpage through three key applications: drafting stylished components,
+                    generating code explanations, and creating images.
+                </p>
+                <section class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>Table Creation</h3>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                In this part, I am going to prompt generative AI
+                                to generate css code styling a table, where I
+                                can display my value mapping.
+                            </p>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                My Prompt:
+                            </p>
+                            <p>
+                                Design a responsive HTML table based on CSS that
+                                adapts elegantly to small screens.
+                            </p>
+                            <p>
+                                On desktop, it should be a traditional 3-column
+                                layout with alternating row colors, clear
+                                borders, and a soft box shadow.
+                            </p>
+                            <p>
+                                On mobile (below 768px), hide the table headers
+                                and display each row as a card with full-width
+                                blocks, soft corner radius, and subtle shadow.
+                                Each cell should show a label with the column
+                                name. Ensure accessible font sizes, consistent
+                                padding, and remove any unwanted spacing or
+                                borders at the bottom of the last item.
+                                <span style="font-weight: bold"
+                                    >(Responsive Design)</span
+                                >
+                            </p>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                The Table Responded by AI:
+                            </p>
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Name">Alice Smith</td>
+                                        <td data-label="Role">Designer</td>
+                                        <td data-label="Location">New York</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Name">Bob Johnson</td>
+                                        <td data-label="Role">Developer</td>
+                                        <td data-label="Location">London</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Name">Clara Lee</td>
+                                        <td data-label="Role">Manager</td>
+                                        <td data-label="Location">Toronto</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                Comment:
+                            </p>
+                            <p>
+                                It generally achieves the goal, but some details
+                                like color variables and size should be updated
+                                by providing additonal requirements.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="accordion m-y-4">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>Code Explanation</h3>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                Here an example is provided to show how to use
+                                generative AI to explain a code snippet.
+                            </p>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                My Prompt:
+                            </p>
+                            <p>In the following code:</p>
+                            <p>const response = await fetch(endpointUrl, {</p>
+                            <p>method: 'POST',</p>
+                            <p>headers: customHeaders,</p>
+                            <p>body: formData</p>
+                            <p>});</p>
+                            <p>const data = await response.json();</p>
+                            <p style="margin-top: 1rem">
+                                What is the purpose of using await here, and
+                                what are the prerequisites for using it? Is it
+                                necessary to use this keyword? What would happen
+                                if I don't use await?
+                            </p>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                AI Response:
+                            </p>
+                            <img
+                                src="assets/AI1.png"
+                                alt="Response 1"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI2.png"
+                                alt="Response 2"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI3.png"
+                                alt="Response 3"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI4.png"
+                                alt="Response 4"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI5.png"
+                                alt="Response 5"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI6.png"
+                                alt="Response 6"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI7.png"
+                                alt="Response 7"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI8.png"
+                                alt="Response 8"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI9.png"
+                                alt="Response 9"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI10.png"
+                                alt="Response 10"
+                                class="half-size"
+                            />
+                            <img
+                                src="assets/AI11.png"
+                                alt="Response 11"
+                                class="half-size"
+                            />
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                Comment:
+                            </p>
+                            <p>
+                                The AI response is quite comprehensive and
+                                detailed. It explains the purpose of using
+                                "await" in the context of asynchronous
+                                programming, the prerequisit es for using it,
+                                and the consequences of not using it. It also
+                                provides a clear understanding of how
+                                "async/await" works in JavaScript.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="accordion m-y-4">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>Image Generation</h3>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                Imagery is a powerful tool for conveying
+                                information and evoking emotions. Generative AI
+                                can assist in creating images that align with
+                                the content and purpose of a webpage.
+                            </p>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                My Prompt:
+                            </p>
+                            <p>
+                                Please generate an image according to
+                                information below:
+                            </p>
+                            <p>Core Expression: Viscral Design</p>
+                            <p>
+                                Theme: Intuitive, sensory-impacting beauty that
+                                inspires instinctive emotions.
+                            </p>
+                            <p>
+                                Image: a crystal clear deep blue ocean with a
+                                suspended droplet in the center reflecting a
+                                rainbow halo; the background is a soft gradient
+                                twilight with subtle starlight.
+                            </p>
+                            <p>
+                                Details: an abstract eye is reflected in the
+                                droplet, symbolizing “intuition”; flowing golden
+                                lines around the droplet enhance the dynamic
+                                aesthetic.
+                            </p>
+                            <p>
+                                Keywords: ethereal, liquid elegance, vibrant
+                                colors, organic shapes, surreal, glowing light,
+                                high detail, 4K
+                            </p>
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                AI Response:
+                            </p>
+                            <img
+                                src="assets/V.png"
+                                alt="AI Generated Image"
+                                class="half-size"
+                            />
+                            <p style="font-weight: bold; margin-top: 1rem">
+                                Comment:
+                            </p>
+                            <p>
+                                The generated image is visually stunning and
+                                aligns well with the theme of visceral design.
+                                The use of vibrant colors, organic shapes, and
+                                ethereal elements effectively conveys the
+                                concept of intuitive beauty. The result is
+                                satisfying and captures the essence of the
+                                prompt.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
+        <script type="module" src="js/genai.js"></script>
     </body>
 </html>

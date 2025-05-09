@@ -1,0 +1,89 @@
+@import "../component_skeletons/accordion.css";
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-table th,
+.responsive-table td {
+    text-align: left;
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.responsive-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table,
+    .responsive-table tbody,
+    .responsive-table tr,
+    .responsive-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .responsive-table tr {
+        margin-bottom: 1rem;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+    .responsive-table td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .responsive-table td:last-child {
+        border-bottom: none;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        width: 45%;
+        padding-right: 1rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+.half-size {
+    width: 70%;
+    height: auto;
+}
+img{
+    display: block;
+    margin: 0;
+    padding:0;
+}
+.accordion{
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+    .accordion{
+        margin-bottom: 2.5rem;
+    }
+}
+.accordion-header{
+    background-color: var(--accent3-color);
+    padding-block: 1rem;
+}
+.accordion-header h3{
+    color: var(--light-color);
+    font-weight: 600;
+}

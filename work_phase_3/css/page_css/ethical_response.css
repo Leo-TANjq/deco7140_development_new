@@ -1,0 +1,71 @@
+@import "../component_skeletons/card.css";
+.tp-card img {
+    height: 70%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.tp-card {
+    width: 95%;
+    height: auto;
+    min-height: 150px;
+    margin-bottom: 1rem;
+}
+
+.response {
+    margin-left: 0.25rem;
+    border-left: 2px solid var(--secondary-color);
+    background-color: color-mix(in srgb, var(--accent3-color) 10%, transparent);
+    padding-left: var(--space-1);
+    padding-top: var(--space-1);
+}
+
+.response ul {
+    margin-inline-start: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.response ul li {
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-1);
+}
+
+@media (min-width: 768px) {
+    .tp-card {
+        min-height: 250px;
+    }
+    .tp-card p {
+        font-size: 1.2rem;
+    }
+    .response ul li::marker{
+        content: "⚙️";
+        font-size: 1.5em;
+        display: inline-block;
+    }
+    .response ul li li::marker{
+        content: "🛠️";
+        font-size: 1.5em;
+        display: inline-block;
+    }
+    #warning li::marker {
+        content: "⚡";
+    }
+    #success li::marker {
+        content: "🎇";
+    }
+    .response p {
+        margin-inline-start: var(--space-1);
+    }
+
+    .response ul {
+        margin-inline-start: var(--space-5);
+    }
+
+    .response {
+        margin-left: 0.5rem;
+    }
+}
