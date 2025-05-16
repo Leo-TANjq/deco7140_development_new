@@ -54,7 +54,7 @@ function setupMenu() {
             const category = button.dataset.category;
             const items = data[category];
             submenu.innerHTML = items
-                .map((item) => `<li>${item}</li>`)
+                .map((item) => `<li><a>${item}<a></li>`)
                 .join("");
         });
     });

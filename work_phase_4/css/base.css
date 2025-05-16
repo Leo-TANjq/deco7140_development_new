@@ -1,10 +1,13 @@
 :root {
-    --primary-color: #2C3E50;
+    --primary-color: #EF476F;
     --secondary-color: #5D5179;
     --text-color: #333;
-    --text-color2: #4B636E;
+    --text-color2: #183642;
+    --text-interactive: #313D5A;
+    --hover-color: #e5e7eb;
     --light-color: #F9FAFB;
-    --background-color: #f1dabf;
+    --background-color: #DBDAEA;
+    --border-color: #d2cfcf;
     --accent1-color: #F3D34A;
     --accent2-color: #F7AF9D;
     --accent3-color: #006D77;
@@ -25,6 +28,9 @@ body {
     font-family: "Outfit", sans-serif;
     font-size: 1rem;
     line-height: 1.6;
+}
+button{
+    font-family: "Outfit", sans-serif;
 }
 h1 {
     color: var(--primary-color); /* color applies to text */

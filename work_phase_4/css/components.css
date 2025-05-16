@@ -1,55 +1,51 @@
 #nav-desktop {
     display: none;
 }
-
-#nav-mobile a{
-    text-decoration: none;
-    color:var(--light-color);
-    font-size: 1.3rem;
-}
 .topbar {
-    background: #333;
-    color: white;
+    background-color: var(--light-color);
+    color: var(--text-color);
     padding: 0.5rem;
-    display: block;
+    display: flex;
     align-items: center;
     z-index: 9999;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
 }
-
+.topbar img {
+    display: block;
+}
 .menu-toggle {
     font-size: 1.5rem;
     margin-right: 0.3rem;
     background: none;
     border: none;
-    color: white;
     cursor: pointer;
+    font-weight: bold;
 }
-
 
 /* 主导航（大类） */
 .menu-wrapper {
     display: none;
     flex-direction: row;
-    background: #333; /* 整个下拉区域背景为黑色 */
-    color: white;
+    background: var(--light-color);
+    color: var(--text-color);
 }
 
 .menu-wrapper.show {
     display: flex;
-    height: auto; /* 改为自动高度 */
-    min-height: 0; /* 允许收缩到内容高度 */
-    max-height: 80vh; /* 可选：设置最大高度防止溢出 */
-    overflow-y: auto; /* 可选：内容过多时添加滚动条 */
+    height: auto;
+    min-height: 0;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-/* 左侧主菜单：竖排大类按钮 */
 .main-menu {
     display: flex;
     flex-direction: column;
-    background: #333;
+    background: var(--light-color);
     width: auto;
     white-space: nowrap;
-    position: relative; /* 为伪元素定位做准备 */
+    position: relative;
 }
 
 .menu-wrapper:not(.show-submenu) .menu-button {
@@ -63,7 +59,7 @@
     right: 0;
     bottom: -1px; /* 与border-bottom位置对齐 */
     height: 1px;
-    background: #444; /* 与border-bottom相同颜色 */
+    background: var(--border-color); /* 与border-bottom相同颜色 */
     width: 100vw; /* 延伸到视口宽度 */
     margin-left: calc(-1 * var(--menu-width, 0px)); /* 向左偏移菜单宽度 */
 }
@@ -71,24 +67,28 @@
 .menu-button {
     background: none;
     border: none;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    text-align: left;
     cursor: pointer;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--border-color);
     width: 100%;
     box-sizing: border-box;
     position: relative; /* 为伪元素定位做准备 */
     z-index: 1; /* 确保按钮内容在上层 */
+    transform: all 0.1s ease-in-out;
 }
 
 .menu-button.active {
-    background: #555;
+    background: var(--hover-color);
+    font-weight: 550;
+    color: var(--primary-color);
 }
 
 /* 右侧小类栏 */
 .submenu {
-    background: #ddd;
+    background: var(--light-color);
     flex: 1;
     display: none;
     flex-direction: column;
@@ -110,7 +110,7 @@
     right: 0;
     bottom: -1px;
     height: 1px;
-    background: #444;
+    background: #afacac;
     width: 100vw;
     margin-left: calc(-1 * var(--menu-width, 0px));
 }
@@ -125,31 +125,39 @@
 .menu-wrapper.show.show-submenu .menu-button::after {
     display: none;
 }
+.menu-button {
+    height: 44px; /* 固定高度（根据实际需要调整） */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
 .submenu li {
-    padding: 1rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
     border-bottom: 1px solid #ccc;
-    color: black;
+    padding: 0;
 }
 
-.submenu li:hover {
-    background: #ccc;
-}
-
-.submenu li.active {
-    font-weight: bold;
-    background: #bbb;
+.submenu li a {
+    padding: 0.8rem 1rem;
+    width: 100%;
+    line-height: 1.2;
 }
 
 #nav-desktop {
     display: none;
-    position: fixed; /* 为子元素定位做准备 */;
+    position: fixed; /* 为子元素定位做准备 */
     top: 0;
     width: 100vw;
-    background-color: var(--secondary-color);
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    background-color: var(--light-color);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
     z-index: 9999;
 }
-#nav-desktop ul{
+#nav-desktop ul {
     display: flex;
     position: relative;
     flex-direction: row;
@@ -158,79 +166,116 @@
     margin: 0;
     padding: 0;
 }
-#nav-desktop ul li > a {
-    display: block;
+
+#nav-desktop ul > li > a {
+    position: relative;
+    display: inline-block;
     padding: 0.8rem 0;
-    font-size: 1.2rem; 
     text-decoration: none;
-    color: var(--light-color);
-    transition: all 0.2s ease;
-    border-radius: 6px;
+    color: var(--text-interactive);
+    transition: color 0.2s ease;
 }
 
-#nav-mobile ul li > a:hover,
-#nav-mobile ul li > a:focus,
-#nav-desktop ul li > a:hover,
-#nav-desktop ul li > a:focus {
-    transform: scale(1.05);
-    font-weight: bold;
-}
-
-#nav-mobile ul li > a:hover::before,
-#nav-desktop ul li > a:hover::before,
-#nav-mobile ul li > a:focus::before,
-#nav-desktop ul li > a:focus::before {
-    content: '['; 
+#nav-desktop ul > li > a::after {
+    content: "";
     position: absolute;
-    left: -10px;
-    bottom: 10px;
-    font-size: 1.5rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
 }
 
-#nav-mobile ul li > a:hover::after,
-#nav-desktop ul li > a:hover::after,
-#nav-mobile ul li > a:focus::after,
-#nav-desktop ul li > a:focus::after {
-    content: ']'; 
-    position: absolute; 
-    font-size: 1.5rem; 
-    bottom: 10px;
+/* ✅ 只要鼠标在 li 范围内（包括子菜单），主链接高亮 + 下划线 */
+#nav-desktop ul > li:hover > a,
+#nav-desktop ul > li:focus-within > a {
+    color: var(--primary-color);
+}
+
+#nav-desktop ul > li:hover > a::after,
+#nav-desktop ul > li:focus-within > a::after {
+    transform: scaleX(1);
 }
 
 #nav-desktop .subweb {
     display: none;
     position: absolute;
-    left: 0;          /* 对齐导航栏左边缘 */         /* 对齐导航栏右边缘 */
-    top: 100%;        /* 紧贴导航栏下边缘 */
-    background: #ddd;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: var(--light-color);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--text-interactive);
     z-index: 9999;
-    width: 100%;      /* 宽度由 left/right 约束 */
-    margin: 0;        /* 清除可能的内外边距 */
-    padding: 0;
-    transform: translateY(0);
 }
 
-#nav-desktop ul li:hover .subweb {
-    display: block;
-}
-
-#nav-desktop .subweb a {
-    display: block;
-    padding: 0.5rem 0;
-    text-align: left;
-    color: #333; /* 根据需要调整文字颜色 */
-}
-
-#nav-desktop .subweb a:hover {
-    background: #ccc; /* 根据需要调整悬停背景色 */
+#nav-desktop ul > li:hover .subweb {
+    display: flex;
 }
 
 @media (min-width: 768px) {
-    #nav-mobile{
+    #nav-mobile {
         display: none;
     }
-    #nav-desktop{
+    #nav-desktop {
         display: block;
     }
-    
+}
+.subweb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: flex-start;
+    background: #f9fafc;
+}
+
+a.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit; /* 保持文字颜色 */
+}
+
+a.link-card:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-4px);
+}
+
+.card-image {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.card-image img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+    color: var(--text-color2);
+}
+
+.card-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.4;
 }
