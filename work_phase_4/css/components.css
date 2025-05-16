@@ -1,0 +1,236 @@
+#nav-desktop {
+    display: none;
+}
+
+#nav-mobile a{
+    text-decoration: none;
+    color:var(--light-color);
+    font-size: 1.3rem;
+}
+.topbar {
+    background: #333;
+    color: white;
+    padding: 0.5rem;
+    display: block;
+    align-items: center;
+    z-index: 9999;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    margin-right: 0.3rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* 主导航（大类） */
+.menu-wrapper {
+    display: none;
+    flex-direction: row;
+    background: #333; /* 整个下拉区域背景为黑色 */
+    color: white;
+}
+
+.menu-wrapper.show {
+    display: flex;
+    height: auto; /* 改为自动高度 */
+    min-height: 0; /* 允许收缩到内容高度 */
+    max-height: 80vh; /* 可选：设置最大高度防止溢出 */
+    overflow-y: auto; /* 可选：内容过多时添加滚动条 */
+}
+
+/* 左侧主菜单：竖排大类按钮 */
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    width: auto;
+    white-space: nowrap;
+    position: relative; /* 为伪元素定位做准备 */
+}
+
+.menu-wrapper:not(.show-submenu) .menu-button {
+    position: relative;
+}
+
+.menu-wrapper:not(.show-submenu) .menu-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px; /* 与border-bottom位置对齐 */
+    height: 1px;
+    background: #444; /* 与border-bottom相同颜色 */
+    width: 100vw; /* 延伸到视口宽度 */
+    margin-left: calc(-1 * var(--menu-width, 0px)); /* 向左偏移菜单宽度 */
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* 为伪元素定位做准备 */
+    z-index: 1; /* 确保按钮内容在上层 */
+}
+
+.menu-button.active {
+    background: #555;
+}
+
+/* 右侧小类栏 */
+.submenu {
+    background: #ddd;
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.main-menu .active + .submenu,
+.main-menu .active ~ .submenu {
+    display: flex;
+}
+
+.menu-wrapper.show-submenu .menu-button::after {
+    display: none;
+}
+.menu-wrapper:not(.show-submenu) .menu-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: #444;
+    width: 100vw;
+    margin-left: calc(-1 * var(--menu-width, 0px));
+}
+.menu-wrapper.show:not(.show-submenu) .menu-button {
+    position: relative;
+}
+
+.menu-wrapper.show:not(.show-submenu) .menu-button::after {
+    display: block;
+}
+
+.menu-wrapper.show.show-submenu .menu-button::after {
+    display: none;
+}
+.submenu li {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    color: black;
+}
+
+.submenu li:hover {
+    background: #ccc;
+}
+
+.submenu li.active {
+    font-weight: bold;
+    background: #bbb;
+}
+
+#nav-desktop {
+    display: none;
+    position: fixed; /* 为子元素定位做准备 */;
+    top: 0;
+    width: 100vw;
+    background-color: var(--secondary-color);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+#nav-desktop ul{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#nav-desktop ul li > a {
+    display: block;
+    padding: 0.8rem 0;
+    font-size: 1.2rem; 
+    text-decoration: none;
+    color: var(--light-color);
+    transition: all 0.2s ease;
+    border-radius: 6px;
+}
+
+#nav-mobile ul li > a:hover,
+#nav-mobile ul li > a:focus,
+#nav-desktop ul li > a:hover,
+#nav-desktop ul li > a:focus {
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+#nav-mobile ul li > a:hover::before,
+#nav-desktop ul li > a:hover::before,
+#nav-mobile ul li > a:focus::before,
+#nav-desktop ul li > a:focus::before {
+    content: '['; 
+    position: absolute;
+    left: -10px;
+    bottom: 10px;
+    font-size: 1.5rem;
+}
+
+#nav-mobile ul li > a:hover::after,
+#nav-desktop ul li > a:hover::after,
+#nav-mobile ul li > a:focus::after,
+#nav-desktop ul li > a:focus::after {
+    content: ']'; 
+    position: absolute; 
+    font-size: 1.5rem; 
+    bottom: 10px;
+}
+
+#nav-desktop .subweb {
+    display: none;
+    position: absolute;
+    left: 0;          /* 对齐导航栏左边缘 */         /* 对齐导航栏右边缘 */
+    top: 100%;        /* 紧贴导航栏下边缘 */
+    background: #ddd;
+    z-index: 9999;
+    width: 100%;      /* 宽度由 left/right 约束 */
+    margin: 0;        /* 清除可能的内外边距 */
+    padding: 0;
+    transform: translateY(0);
+}
+
+#nav-desktop ul li:hover .subweb {
+    display: block;
+}
+
+#nav-desktop .subweb a {
+    display: block;
+    padding: 0.5rem 0;
+    text-align: left;
+    color: #333; /* 根据需要调整文字颜色 */
+}
+
+#nav-desktop .subweb a:hover {
+    background: #ccc; /* 根据需要调整悬停背景色 */
+}
+
+@media (min-width: 768px) {
+    #nav-mobile{
+        display: none;
+    }
+    #nav-desktop{
+        display: block;
+    }
+    
+}

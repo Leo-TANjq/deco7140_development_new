@@ -3,16 +3,76 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Work Phase 4</title>
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <title>Work Phase 3</title>
     </head>
     <body>
-        <section>
-            <h1>Leo's Work Phase 4</h1>
-            <p>Here is the fourth phase of my work.</p>
-        </section>
-        <section>
-            <h2>Links</h2>
-            <a href="../index.html">Home Page</a>
-        </section>
+        <nav id="nav-mobile">
+            <div class="topbar">
+                <button class="menu-toggle" aria-label="Menu">☰</button>
+                <a href="#">🏠</a>
+            </div>
+            <div class="menu-wrapper">
+                <ul class="main-menu">
+                    <li>
+                        <button class="menu-button" data-category="A">A</button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="B">B</button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="C">C</button>
+                    </li>
+                </ul>
+                <ul class="submenu" id="submenu">
+                    <!--Insertion-->
+                </ul>
+            </div>
+        </nav>
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="../index.html">⏮️Return</a>
+                </li>
+                <li>
+                    <a href="index.html" aria-current="page">🏠Home</a>
+                </li>
+                <li>
+                    <a href="site_map.html">🗺️Site Map</a>
+                    <div class = "subweb">
+                        <a href="site_map.html">ABC</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="style_guide.html">🧭Style Guide</a>
+                </li>
+                <li>
+                    <a href="ethical_response.html" >💁Ethical Response</a>
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html">🤖GenAI Use</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <aside class="sidebar">Sidebar</aside>
+            <section class="content">Main Content</section>
+        </main>
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>
