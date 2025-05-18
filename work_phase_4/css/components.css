@@ -1,7 +1,23 @@
 #nav-desktop {
     display: none;
 }
-.topbar {
+#nav-mobile{
+    display: block;
+    position: fixed;
+    width: 100vw;
+}
+@media (min-width: 768px) {
+    #nav-mobile {
+        display: none;
+    }
+    #nav-desktop {
+        display: flex;
+    }
+}
+body {
+    overflow-x: hidden;
+}
+#nav-mobile .topbar {
     background-color: var(--light-color);
     color: var(--text-color);
     padding: 0.5rem;
@@ -57,11 +73,11 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -1px; /* 与border-bottom位置对齐 */
+    bottom: -1px;
     height: 1px;
-    background: var(--border-color); /* 与border-bottom相同颜色 */
-    width: 100vw; /* 延伸到视口宽度 */
-    margin-left: calc(-1 * var(--menu-width, 0px)); /* 向左偏移菜单宽度 */
+    background: var(--border-color);
+    width: 100vw;
+    margin-left: calc(-1 * var(--menu-width, 0px));
 }
 
 .menu-button {
@@ -75,8 +91,8 @@
     border-bottom: 1px solid var(--border-color);
     width: 100%;
     box-sizing: border-box;
-    position: relative; /* 为伪元素定位做准备 */
-    z-index: 1; /* 确保按钮内容在上层 */
+    position: relative;
+    z-index: 1;
     transform: all 0.1s ease-in-out;
 }
 
@@ -126,7 +142,7 @@
     display: none;
 }
 .menu-button {
-    height: 44px; /* 固定高度（根据实际需要调整） */
+    height: 44px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -145,26 +161,38 @@
     padding: 0.8rem 1rem;
     width: 100%;
     line-height: 1.2;
+    text-decoration: none;
+    color: var(--text-interactive);
 }
 
 #nav-desktop {
-    display: none;
-    position: fixed; /* 为子元素定位做准备 */
+    position: fixed;
+    width: 100%;
+}
+#nav-desktop .topbar{
+    display: flex;
+    position: relative;
     top: 0;
-    width: 100vw;
+    padding: 0;
+    width: 100%;
     background-color: var(--light-color);
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--border-color);
     z-index: 9999;
 }
+
+.topbar > a{
+    display: flex;
+    margin-block: auto;
+    flex: 0 0 10%;
+    justify-content: center;
+}
+
 #nav-desktop ul {
     display: flex;
-    position: relative;
-    flex-direction: row;
+    flex: 0 0 90%;
+    align-items: center;
     justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 #nav-desktop ul > li > a {
@@ -188,7 +216,6 @@
     transform-origin: left;
 }
 
-/* ✅ 只要鼠标在 li 范围内（包括子菜单），主链接高亮 + 下划线 */
 #nav-desktop ul > li:hover > a,
 #nav-desktop ul > li:focus-within > a {
     color: var(--primary-color);
@@ -215,14 +242,6 @@
     display: flex;
 }
 
-@media (min-width: 768px) {
-    #nav-mobile {
-        display: none;
-    }
-    #nav-desktop {
-        display: block;
-    }
-}
 .subweb {
     display: flex;
     flex-wrap: wrap;
@@ -244,7 +263,7 @@ a.link-card {
     padding: 1rem;
     text-align: center;
     text-decoration: none;
-    color: inherit; /* 保持文字颜色 */
+    color: inherit;
 }
 
 a.link-card:hover {
@@ -271,7 +290,7 @@ a.link-card:hover {
     font-size: 1.5rem;
     margin: 0.5rem 0;
     font-weight: 600;
-    color: var(--text-color2);
+    color: var(--text-interactive);
 }
 
 .card-text {

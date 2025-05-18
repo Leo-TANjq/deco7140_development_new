@@ -4,12 +4,20 @@ function setupMenu() {
     const menuButtons = document.querySelectorAll(".menu-button");
     const submenu = document.getElementById("submenu");
     const navbar = document.querySelector("#nav-mobile");
-    
 
+    // data 结构改成数组内对象，包含 text 和 url
     const data = {
-        A: ["🚀 1", "🛸 1-2", "🛸 1-2"],
-        B: ["🐼 2"],
-        C: ["⭐ 3"],
+        A: [
+            { text: "🚀 aaa", url: "https://example.com/rocket" },
+            { text: "🛸 1-2", url: "https://example.com/ufo1" },
+            { text: "🛸 1-2", url: "https://example.com/ufo2" },
+        ],
+        B: [
+            { text: "🐼 2", url: "https://example.com/panda" },
+        ],
+        C: [
+            { text: "⭐ 3", url: "https://example.com/star" },
+        ],
     };
 
     // 初始状态
@@ -20,17 +28,14 @@ function setupMenu() {
         menuWrapper.classList.remove("show");
     }
 
-    // 关闭菜单的函数
     function closeMenu() {
         resetMenuState();
     }
 
-    // 初始化时重置状态
     resetMenuState();
 
-    // 点击菜单切换按钮
     toggle.addEventListener("click", (e) => {
-        e.stopPropagation(); // 阻止事件冒泡
+        e.stopPropagation();
         const isOpening = !menuWrapper.classList.contains("show");
         
         if (isOpening) {
@@ -40,10 +45,9 @@ function setupMenu() {
         menuWrapper.classList.toggle("show");
     });
 
-    // 点击菜单按钮
     menuButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
-            e.stopPropagation(); // 阻止事件冒泡
+            e.stopPropagation();
             
             menuButtons.forEach((b) => b.classList.remove("active"));
             button.classList.add("active");
@@ -52,27 +56,23 @@ function setupMenu() {
             menuWrapper.classList.add("show-submenu");
 
             const category = button.dataset.category;
-            const items = data[category];
+            const items = data[category] || [];
             submenu.innerHTML = items
-                .map((item) => `<li><a>${item}<a></li>`)
+                .map((item) => `<li><a href="${item.url}">${item.text}</a></li>`)
                 .join("");
         });
     });
 
-    // 点击子菜单项
     submenu.addEventListener("click", (e) => {
-        e.stopPropagation(); // 阻止事件冒泡
+        e.stopPropagation();
     });
 
-    // 全局点击事件监听
     document.addEventListener("click", (e) => {
-        // 如果点击的不是导航栏内部元素，且菜单是展开状态，则关闭菜单
         if (!navbar.contains(e.target) && menuWrapper.classList.contains("show")) {
             closeMenu();
         }
     });
 
-    // 防止菜单内部点击事件冒泡
     menuWrapper.addEventListener("click", (e) => {
         e.stopPropagation();
     });
