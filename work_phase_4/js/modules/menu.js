@@ -5,18 +5,29 @@ function setupMenu() {
     const submenu = document.getElementById("submenu");
     const navbar = document.querySelector("#nav-mobile");
 
-    // data 结构改成数组内对象，包含 text 和 url
     const data = {
         A: [
-            { text: "🚀 aaa", url: "https://example.com/rocket" },
-            { text: "🛸 1-2", url: "https://example.com/ufo1" },
-            { text: "🛸 1-2", url: "https://example.com/ufo2" },
+            { text: "♨️Discussion Board", url: "discussion.html" },
+            { text: "♨️Chat", url: "not_prepared.html" },
         ],
         B: [
-            { text: "🐼 2", url: "https://example.com/panda" },
+            { text: "🎑Activities", url: "activitiies.html" },
+            { text: "🎑Rewards and Recognition", url: "not_prepared.html" },
+            { text: "🎑Game Board", url: "not_prepared.html" },
         ],
         C: [
-            { text: "⭐ 3", url: "https://example.com/star" },
+            { text: "🪪Profile Page", url: "profile.html" },
+            { text: "🪪Follows & Bans", url: "not_prepared.html" },
+            { text: "🪪Notifications", url: "not_prepared.html" },
+        ],
+        D: [
+            { text: "🧰Resources", url: "not_prepared.html" },
+            { text: "🧰Report", url: "report.html" },
+        ],
+        E: [
+            { text: "📖Guidelines & Instructions", url: "not_prepared.html" },
+            { text: "📖Policies & Criteria", url: "not_prepared.html" },
+            { text: "📖About Us", url: "about.html" },
         ],
     };
 

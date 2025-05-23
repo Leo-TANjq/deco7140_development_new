@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/index.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,10 +23,10 @@
         <title>Work Phase 3</title>
     </head>
     <body>
-        <nav id="nav-mobile">
+        <nav id="nav-mobile" aria-label="Main Navigation">
             <div class="topbar">
                 <button class="menu-toggle" aria-label="Menu">☰</button>
-                <a href="index.html"
+                <a href="index.html" aria-current="page"
                     ><img
                         src="images/logo.png"
                         alt="Siliconvey logo"
@@ -36,14 +37,28 @@
                 <ul class="main-menu">
                     <li>
                         <button class="menu-button" data-category="A">
-                            Connecta
+                            ♨️Connect
                         </button>
                     </li>
                     <li>
-                        <button class="menu-button" data-category="B">B</button>
+                        <button class="menu-button" data-category="B">
+                            🎑Engagement
+                        </button>
                     </li>
                     <li>
-                        <button class="menu-button" data-category="C">C</button>
+                        <button class="menu-button" data-category="C">
+                            🪪Account
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="D">
+                            🧰Support
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="E">
+                            📖About
+                        </button>
                     </li>
                 </ul>
                 <ul class="submenu" id="submenu">
@@ -53,7 +68,7 @@
         </nav>
         <nav id="nav-desktop" aria-label="Main Navigation">
             <div class="topbar">
-                <a href="index.html"
+                <a href="index.html" aria-current="page"
                     ><img
                         src="images/logo.png"
                         alt="Siliconvey logo"
@@ -61,7 +76,7 @@
                 /></a>
                 <ul>
                     <li>
-                        <a href="da.html">♨️Connect</a>
+                        <div class="superclass">♨️Connect</div>
                         <div class="subweb">
                             <a href="discussion.html" class="link-card">
                                 <div class="card-image">
@@ -92,23 +107,21 @@
                         </div>
                     </li>
                     <li>
-                        <a href="style_guide.html">🎑Engagement</a>
+                        <div class="superclass">🎑Engagement</div>
                         <div class="subweb">
-                            <a href="a.html" class="link-card">
+                            <a href="activities.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 1" />
                                 </div>
                                 <div class="card-content">
-                                    <h3 class="card-title">Activity</h3>
+                                    <h3 class="card-title">Activities</h3>
                                     <p class="card-text">
                                         Offers various interactive events and
-                                        challenges that you can join or create,
-                                        supporting the value of playfulness and
-                                        encouraging participation.
+                                        challenges that you can join or create.
                                     </p>
                                 </div>
                             </a>
-                            <a href="b.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 2" />
                                 </div>
@@ -122,7 +135,7 @@
                                     </p>
                                 </div>
                             </a>
-                            <a href="b.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 2" />
                                 </div>
@@ -139,9 +152,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="ethical_response.html">🪪Account</a>
+                        <div class="superclass">🪪Account</div>
                         <div class="subweb">
-                            <a href="a.html" class="link-card">
+                            <a href="profile.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 1" />
                                 </div>
@@ -153,7 +166,7 @@
                                     </p>
                                 </div>
                             </a>
-                            <a href="b.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 2" />
                                 </div>
@@ -166,7 +179,7 @@
                                     </p>
                                 </div>
                             </a>
-                            <a href="b.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 2" />
                                 </div>
@@ -183,9 +196,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="genai_mt_acknowledgement.html">🧰Support</a>
+                        <div class="superclass">🧰Support</div>
                         <div class="subweb">
-                            <a href="a.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 1" />
                                 </div>
@@ -198,7 +211,7 @@
                                     </p>
                                 </div>
                             </a>
-                            <a href="a.html" class="link-card">
+                            <a href="report.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 1" />
                                 </div>
@@ -213,9 +226,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="genai_mt_acknowledgement.html">📖About</a>
+                        <div class="superclass">📖About</div>
                         <div class="subweb">
-                            <a href="a.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 1" />
                                 </div>
@@ -230,7 +243,7 @@
                                     </p>
                                 </div>
                             </a>
-                            <a href="b.html" class="link-card">
+                            <a href="not_prepared.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 2" />
                                 </div>
@@ -245,7 +258,7 @@
                                     </p>
                                 </div>
                             </a>
-                            <a href="b.html" class="link-card">
+                            <a href="about.html" class="link-card">
                                 <div class="card-image">
                                     <img src="images/logo.png" alt="Image 2" />
                                 </div>
@@ -265,42 +278,17 @@
             </div>
         </nav>
         <main>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
+            <div class="banner">
+                <img src="images/welcome.jpg" alt="Welcome" />
+                <div class="annotation">
+                    <img src="images/logo.png" alt="Logo" />
+                    <p>
+                        Welcome to our community — where ideas grow and
+                        friendships flourish.
+                    </p>
+                    <a href="profile.html"><button class="link-button">⚜️Join our community</button></a>
+                </div>
+            </div>
         </main>
         <script type="module" src="js/index.js"></script>
     </body>
