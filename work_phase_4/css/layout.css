@@ -16,6 +16,12 @@ main{
     margin-top: 3.1rem;
 }
 
+.container{
+    width: 90vw;
+    min-height: 50vh;
+    margin: 0 auto;
+}
+
 .sidebar {
     background: #f4f4f4;
     padding: 1rem;

@@ -64,6 +64,11 @@ p {
     color: var(--text-color2);
 }
 
+.desktop-p
+{
+    display:none
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: 5.2rem;
@@ -76,6 +81,9 @@ p {
     }
     p {
         font-size: 1.4rem;
+    }
+    .desktop-p{
+        display: block;
     }
     .page-title {
         text-align: left;
