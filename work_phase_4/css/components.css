@@ -1,11 +1,12 @@
 #nav-desktop {
     display: none;
 }
-#nav-mobile{
+#nav-mobile {
     z-index: 100;
     display: block;
     position: fixed;
     width: 100vw;
+
 }
 @media (min-width: 768px) {
     #nav-mobile {
@@ -26,6 +27,11 @@ body {
     align-items: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--border-color);
+}
+.topbar > p{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-inline: auto;
 }
 .topbar img {
     display: block;
@@ -101,7 +107,7 @@ body {
 .menu-button.active {
     background: var(--hover-color);
     font-weight: 550;
-    color: var(--primary-color);
+    color: var(--link-color);
 }
 
 /* 右侧小类栏 */
@@ -172,7 +178,7 @@ body {
     position: fixed;
     width: 100%;
 }
-#nav-desktop .topbar{
+#nav-desktop .topbar {
     display: flex;
     position: relative;
     top: 0;
@@ -183,7 +189,7 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
-.topbar > a{
+.topbar > a {
     display: flex;
     margin-block: auto;
     flex: 0 0 10%;
@@ -214,14 +220,14 @@ body {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--link-color);
     transform: scaleX(0);
     transform-origin: left;
 }
 
 #nav-desktop ul > li:hover > .superclass,
 #nav-desktop ul > li:focus-within > .superclass {
-    color: var(--primary-color);
+    color: var(--link-color);
 }
 
 #nav-desktop ul > li:hover > .superclass::after,
@@ -300,4 +306,82 @@ a.link-card:hover {
     font-size: 1rem;
     color: var(--text-color);
     line-height: 1.4;
+}
+
+.site-footer {
+    background-color: var(--accent3-color);
+    border-top: 1px solid #e5e7eb;
+    padding: 20px 20px 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: var(--hover-color);
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.footer-brand h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.footer-brand p {
+    color: var(--light-color);
+    font-size: 13px;
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--hover-color);
+    text-decoration: none;
+}
+.footer-links a::before {
+    content: "🔗";
+}
+.footer-links a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 12px;
+    color: var(--accent1-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-brand {
+        text-align: left;
+    }
+    .footer-links a {
+        font-size: 0.9rem;
+    }
 }

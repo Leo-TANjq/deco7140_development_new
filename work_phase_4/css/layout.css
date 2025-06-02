@@ -1,7 +1,6 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 header,
@@ -12,14 +11,16 @@ footer {
     text-align: center;
 }
 
-main{
+main {
     margin-top: 3.1rem;
+    margin-bottom: 2rem;
+    min-height: 100vh;
 }
 
-.container{
-    width: 90vw;
+.container {
+    width: 95vw;
     min-height: 50vh;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
 .sidebar {
@@ -34,7 +35,8 @@ main{
 
 @media (min-width: 768px) {
     main {
-        margin-top: 3.2rem;
+        margin-top: 2.8rem;
+        margin-bottom: 3rem;
     }
 
     .sidebar {
@@ -43,6 +45,9 @@ main{
 
     .content {
         order: 2;
+    }
+    .container {
+        width: 90vw;
     }
 }
 

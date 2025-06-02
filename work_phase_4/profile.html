@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/profile.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <title>Siliconvey</title>
+    </head>
+    <body>
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <div class="topbar">
+                <button class="menu-toggle" aria-label="Menu">☰</button>
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+            </div>
+            <div class="menu-wrapper">
+                <ul class="main-menu">
+                    <li>
+                        <button class="menu-button" data-category="A">
+                            ♨️Connect
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="B">
+                            🎑Engagement
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="C">
+                            🪪Account
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="D">
+                            🧰Support
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="E">
+                            📖About
+                        </button>
+                    </li>
+                </ul>
+                <ul class="submenu" id="submenu">
+                    <!--Insertion-->
+                </ul>
+            </div>
+        </nav>
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <div class="topbar">
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <ul>
+                    <li>
+                        <div class="superclass">♨️Connect</div>
+                        <div class="subweb">
+                            <a href="discussion.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Discussion Board</h3>
+                                    <p class="card-text">
+                                        A centralized space where community
+                                        members engage in dialogue, exchange
+                                        ideas, and build connections around
+                                        shared interests.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Chat</h3>
+                                    <p class="card-text">
+                                        Private messaging space enabling
+                                        one-on-one interactions.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🎑Engagement</div>
+                        <div class="subweb">
+                            <a href="activities.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Activities</h3>
+                                    <p class="card-text">
+                                        Offers various interactive events and
+                                        challenges that you can join or create.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Rewards and Recognition
+                                    </h3>
+                                    <p class="card-text">
+                                        Highlights and rewards meaningful
+                                        participation over popularity.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Game Board</h3>
+                                    <p class="card-text">
+                                        A playful interface showcasing
+                                        challenges, mini-games, or interactive
+                                        features that celebrate active
+                                        participation.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🪪Account</div>
+                        <div class="subweb">
+                            <a href="profile.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Profile Page</h3>
+                                    <p class="card-text">
+                                        The central space for you to express
+                                        identity and share their background.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Follows & Bans</h3>
+                                    <p class="card-text">
+                                        Check & Manage your Follows and Bans
+                                        list here to make the contents all fit
+                                        you better.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Notifications</h3>
+                                    <p class="card-text">
+                                        Ensures you stay aware of relevant
+                                        activity without information overload,
+                                        contributing to feelings of connection
+                                        and responsiveness.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🧰Support</div>
+                        <div class="subweb">
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Resources</h3>
+                                    <p class="card-text">
+                                        Technical enhancements support users
+                                        with diverse access needs, expanding the
+                                        community’s reach and usability.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="report.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Report</h3>
+                                    <p class="card-text">
+                                        A clear, user-driven path for surfacing
+                                        inappropriate content or behavior.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">📖About</div>
+                        <div class="subweb">
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Guidelines & Instructions
+                                    </h3>
+                                    <p class="card-text">
+                                        Provides clear behavioral expectations,
+                                        reducing uncertainty and enabling
+                                        positive contribution.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Policies & Criteria
+                                    </h3>
+                                    <p class="card-text">
+                                        Clarifies moderation and recognition
+                                        standards, reinforcing trust in how the
+                                        platform is governed.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="about.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">About Us</h3>
+                                    <p class="card-text">
+                                        Humanizes the platform by introducing
+                                        the people and goals behind it, creating
+                                        emotional connection and community
+                                        credibility.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+                <h3>Register</h3>
+                <p>
+                    Fill in your info to become part of the community and get
+                    your own personalized profile card!
+                </p>
+                <form id="community-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">User Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Introduction (optional)</label>
+                        <input type="text" id="message" name="message" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo"
+                            >Your Avatar (optional, max 10MB)</label
+                        >
+                        <input
+                            type="file"
+                            id="photo"
+                            name="photo"
+                            accept="image/*"
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        style="font-size: 1rem"
+                    >
+                        Join the Community
+                    </button>
+
+                    <p
+                        id="form-feedback"
+                        class="form-feedback success"
+                        aria-live="polite"
+                        style="display: none"
+                    >
+                        Thanks for being part of our community!
+                    </p>
+                </form>
+                <h3>Profile Available</h3>
+                <p>Here’s a display of all your profile cards</p>
+                <section id="community-list">
+                    <h3>Community Members List</h3>
+                </section>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h2>Siliconvey</h2>
+                    <p>Connect. Share. Belong</p>
+                    <p>Developed by Leo Tan from UQ 48767262</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="not_prepared.html">FAQ</a>
+                    <a href="not_prepared.html">Service</a>
+                    <a href="not_prepared.html">Blog</a>
+                    <a href="not_prepared.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                Special Thanks for DECO7140 Teaching Team
+            </div>
+        </footer>
+        <script type="module" src="js/profile.js"></script>
+    </body>
+</html>

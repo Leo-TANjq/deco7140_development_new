@@ -1,0 +1,66 @@
+.account-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.account-list .account {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 15 / 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    border-bottom: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.account:hover{
+    background-color: var(--hover-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.account::after{
+    content: "↗️";
+    font-size: 1.5rem;
+    position: absolute;
+    right: 2.5rem;
+}
+.account .avatar {
+    width: 15%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.account .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.account .info {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.account .info .name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.account .info .email {
+    font-size: 0.9rem;
+    color: #666;
+}

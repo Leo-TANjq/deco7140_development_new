@@ -1,0 +1,362 @@
+@import "../component_skeletons/banner.css";
+@import "../component_skeletons/button.css";
+@import "../component_skeletons/viewer.css";
+@import "../component_skeletons/account.css";
+.img-desktop {
+    display: none;
+}
+.banner .annotation {
+    position: absolute;
+    width: 80%;
+    bottom: 8%;
+    left: 3%;
+}
+.banner img {
+    opacity: 0.5;
+}
+.annotation h4 {
+    color: var(--text-color2);
+    line-height: 0.5;
+}
+.annotation h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.banner .link-button {
+    position: absolute;
+    bottom: 5%;
+    right: 6%;
+}
+
+.activities {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.activities .title {
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+}
+
+.type-toggle {
+    margin-top: 0.6rem;
+    text-align: left;
+    border: 2px solid var(--border-color);
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    width: max-content;
+}
+.type-toggle button {
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    color: var(--text-interactive);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
+    border-radius: 5px;
+}
+.type-toggle button.left {
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+.type-toggle button.right {
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+.type-toggle button.active {
+    background-color: var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.activities .list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.activities .list {
+    display: none;
+}
+.activities .list.active {
+    display: flex;
+}
+.activity-block {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 0.5rem;
+}
+.activities .img-wrapper {
+    margin-inline: auto;
+    width: 70%;
+    max-width: 70%;
+    aspect-ratio: 1.4 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-inline: auto;
+}
+.text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.activity-block .name {
+    text-align: center;
+    margin-top: 0.8rem;
+}
+.activity-block .details {
+    padding-inline: 1rem;
+    margin-bottom: 1rem;
+}
+.activity-block .info {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.activity-block .join-button {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+}
+.activity-block a {
+    margin-inline: auto;
+    margin-bottom: 0.5rem;
+}
+
+.viewer-content > p {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.timetable {
+    width: 100%;
+    padding: 1rem;
+    font-family: sans-serif;
+    background: var(--light-color);
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.calendar-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+}
+
+.calendar-header h2 {
+    margin: 0 auto;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.calendar-header button {
+    background: #007bff;
+    color: var(--light-color);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.calendar-header button:hover {
+    background: #0056b3;
+}
+
+.calendar-scroll-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.calendar {
+    min-width: 480px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid var(--border-color);
+    width: 14.28%;
+    height: 60px;
+    vertical-align: top;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.calendar td {
+    background-color: transparent;
+}
+
+.calendar td .date,
+.calendar td .content {
+    font-family: "Outfit", sans-serif;
+    background-color: transparent;
+}
+
+.calendar td:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+.activity-calendar h2 {
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+.activity-calendar p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .img-mobile {
+        display: none;
+    }
+    .img-desktop {
+        display: block;
+    }
+    .banner img {
+        opacity: 0.8;
+    }
+    .banner:hover img {
+        opacity: 0.5;
+    }
+    .banner .link-button {
+        bottom: 8%;
+        right: 8%;
+        font-size: 2.5rem;
+        padding-inline: 2rem;
+        border-radius: 8px;
+    }
+    .annotation h4 {
+        font-size: 2.8rem;
+    }
+    .annotation h1 {
+        font-size: 5rem;
+        font-weight: 600;
+    }
+
+    .container {
+        margin-top: 3rem;
+    }
+    .activities {
+        margin-bottom: 2.5rem;
+    }
+    .activities .title {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    .title p {
+        margin-top: 0.5rem;
+    }
+    .type-toggle {
+        margin-top: 1rem;
+    }
+    .type-toggle button {
+        font-size: 1.2rem;
+    }
+
+    .activity-block {
+        flex-direction: row;
+        border-bottom: 2px solid var(--border-color);
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+    .activities .img-wrapper {
+        margin-inline: 0;
+        width: 350px;
+        max-width: 350px;
+        height: 350px;
+        max-height: 350px;
+        margin-right: 1rem;
+    }
+    .text-content {
+        flex: 0.9;
+        display: flex;
+        flex-direction: column;
+    }
+    .activity-block .name {
+        margin-inline: 0;
+        margin-top: 0.8rem;
+        text-align: left;
+    }
+
+    .activity-block .details {
+        font-size: 1.4rem;
+        padding-inline: 0;
+    }
+    .activity-block .info {
+        font-size: 1.4rem;
+        text-align: left;
+    }
+    .activity-block .join-button {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: auto;
+        height: auto;
+        padding-block: 0.4rem;
+        padding-inline: 1rem;
+    }
+    .activity-block a {
+        margin: auto;
+        height: auto;
+        padding: 0;
+    }
+    .activity-block a button {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .activity-calendar h2{
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+    .activity-calendar p{
+        text-align: left;
+    }
+    .timetable {
+        max-width: 90%;
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+    .calendar-header h2 {
+        font-size: 1.5rem;
+    }
+    .calendar {
+        font-size: 1rem;
+    }
+    .calendar td {
+        height: 80px;
+        padding: 6px;
+    }
+    .calendar td .date {
+        font-size: 1rem;
+    }
+    .calendar td .content {
+        font-size: 1rem;
+    }
+}

@@ -1,7 +1,6 @@
-/* 魔法风格字体导入 */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500&display=swap');
 
-/* 卡片容器 - 46.8%长宽比 */
+
 .self-card {
     position: relative;
     width: 90%;

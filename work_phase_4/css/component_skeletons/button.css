@@ -9,18 +9,17 @@ button{
     text-align: center;
     background-color: #0BA000;
     color: white;
-    border: 3px solid #0BA000;
+    border: 1px solid #0BA000;
     border-radius: 6px;
     transition: all 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .join-button:hover {
-    border: 3px solid var(--text-color2);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .join-button:active {
-    border: 3px solid #1D460E;   
+    border: 1px solid #1D460E;   
     background-color: #1D460E;
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -87,7 +86,7 @@ button.disabled {
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
-    background-color: var(--primary-color);
+    background-color: var(--link-color);
     color: white;
     border-radius: 6px;
     transition: all 0.2s ease;
@@ -103,7 +102,7 @@ button.disabled {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 768px) {
-    .annotation .link-button {
+    .link-button {
         font-size: 1rem;
         opacity: 0.7;
     }
@@ -111,4 +110,28 @@ button.disabled {
         opacity: 1;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
+}
+.primary-button {
+    padding:0.3rem;
+    cursor: pointer;
+    min-width: 4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #0BA000;
+    color: white;
+    border: 3px solid #0BA000;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.primary-button:hover {
+    border: 3px solid var(--text-color2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+}
+.primary-button:active {
+    border: 3px solid #1D460E;
+    background-color: #1D460E;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

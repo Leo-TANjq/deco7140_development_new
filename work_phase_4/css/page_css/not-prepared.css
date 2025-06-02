@@ -1,0 +1,37 @@
+@import "../component_skeletons/button.css";
+.type-toggle {
+    margin-top: 0.6rem;
+    text-align: left;
+    border: 2px solid var(--border-color);
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    width: max-content;
+}
+.type-toggle button{
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    color: var(--text-interactive);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.type-toggle button.left{
+    border-left: none;
+}
+.type-toggle button.right{
+    border-right: none;
+}
+.type-toggle button.active{
+    background-color: var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+.activities .list {
+    display: none;
+}
+.activities .list.active {
+    display: flex;
+}

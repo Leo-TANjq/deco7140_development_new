@@ -8,30 +8,29 @@ function setupMenu() {
     const data = {
         A: [
             { text: "♨️Discussion Board", url: "discussion.html" },
-            { text: "♨️Chat", url: "not_prepared.html" },
+            { text: "♨️Chat (Coming Soon)", url: "not_prepared.html" },
         ],
         B: [
-            { text: "🎑Activities", url: "activitiies.html" },
-            { text: "🎑Rewards and Recognition", url: "not_prepared.html" },
-            { text: "🎑Game Board", url: "not_prepared.html" },
+            { text: "🎑Activities", url: "activities.html" },
+            { text: "🎑Recognition (Coming Soon)", url: "not_prepared.html" },
+            { text: "🎑Game Board (Coming Soon)", url: "not_prepared.html" },
         ],
         C: [
-            { text: "🪪Profile Page", url: "profile.html" },
-            { text: "🪪Follows & Bans", url: "not_prepared.html" },
-            { text: "🪪Notifications", url: "not_prepared.html" },
+            { text: "🪪Profile Page ", url: "profile.html" },
+            { text: "🪪Follows & Bans (Coming Soon)", url: "not_prepared.html" },
+            { text: "🪪Notifications (Coming Soon)", url: "not_prepared.html" },
         ],
         D: [
-            { text: "🧰Resources", url: "not_prepared.html" },
+            { text: "🧰Resources (Coming Soon)", url: "not_prepared.html" },
             { text: "🧰Report", url: "report.html" },
         ],
         E: [
-            { text: "📖Guidelines & Instructions", url: "not_prepared.html" },
-            { text: "📖Policies & Criteria", url: "not_prepared.html" },
+            { text: "📖Guidelines (Coming Soon)", url: "not_prepared.html" },
+            { text: "📖Policies & Criteria (Coming Soon)", url: "not_prepared.html" },
             { text: "📖About Us", url: "about.html" },
         ],
     };
 
-    // 初始状态
     function resetMenuState() {
         menuButtons.forEach((b) => b.classList.remove("active"));
         submenu.style.display = "none";

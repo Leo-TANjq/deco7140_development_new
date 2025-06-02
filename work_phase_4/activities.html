@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/activities.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <title>Activities</title>
+    </head>
+    <body>
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <div class="topbar">
+                <button class="menu-toggle" aria-label="Menu">☰</button>
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <p>Activities</p>
+            </div>
+            <div class="menu-wrapper">
+                <ul class="main-menu">
+                    <li>
+                        <button class="menu-button" data-category="A">
+                            ♨️Connect
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="B">
+                            🎑Engagement
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="C">
+                            🪪Account
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="D">
+                            🧰Support
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="E">
+                            📖About
+                        </button>
+                    </li>
+                </ul>
+                <ul class="submenu" id="submenu">
+                    <!--Insertion-->
+                </ul>
+            </div>
+        </nav>
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <div class="topbar">
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <ul>
+                    <li>
+                        <div class="superclass">♨️Connect</div>
+                        <div class="subweb">
+                            <a href="discussion.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Discussion Board</h3>
+                                    <p class="card-text">
+                                        A centralized space where community
+                                        members engage in dialogue, exchange
+                                        ideas, and build connections around
+                                        shared interests.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Chat</h3>
+                                    <p class="card-text">
+                                        Private messaging space enabling
+                                        one-on-one interactions.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🎑Engagement</div>
+                        <div class="subweb">
+                            <a href="activities.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Activities</h3>
+                                    <p class="card-text">
+                                        Offers various interactive events and
+                                        challenges that you can join or create.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Rewards and Recognition
+                                    </h3>
+                                    <p class="card-text">
+                                        Highlights and rewards meaningful
+                                        participation over popularity.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Game Board</h3>
+                                    <p class="card-text">
+                                        A playful interface showcasing
+                                        challenges, mini-games, or interactive
+                                        features that celebrate active
+                                        participation.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🪪Account</div>
+                        <div class="subweb">
+                            <a href="profile.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Profile Page</h3>
+                                    <p class="card-text">
+                                        The central space for you to express
+                                        identity and share their background.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Follows & Bans</h3>
+                                    <p class="card-text">
+                                        Check & Manage your Follows and Bans
+                                        list here to make the contents all fit
+                                        you better.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Notifications</h3>
+                                    <p class="card-text">
+                                        Ensures you stay aware of relevant
+                                        activity without information overload,
+                                        contributing to feelings of connection
+                                        and responsiveness.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🧰Support</div>
+                        <div class="subweb">
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Resources</h3>
+                                    <p class="card-text">
+                                        Technical enhancements support users
+                                        with diverse access needs, expanding the
+                                        community’s reach and usability.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="report.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Report</h3>
+                                    <p class="card-text">
+                                        A clear, user-driven path for surfacing
+                                        inappropriate content or behavior.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">📖About</div>
+                        <div class="subweb">
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Guidelines & Instructions
+                                    </h3>
+                                    <p class="card-text">
+                                        Provides clear behavioral expectations,
+                                        reducing uncertainty and enabling
+                                        positive contribution.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Policies & Criteria
+                                    </h3>
+                                    <p class="card-text">
+                                        Clarifies moderation and recognition
+                                        standards, reinforcing trust in how the
+                                        platform is governed.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="about.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">About Us</h3>
+                                    <p class="card-text">
+                                        Humanizes the platform by introducing
+                                        the people and goals behind it, creating
+                                        emotional connection and community
+                                        credibility.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <button id="global-close-viewer" aria-label="Close viewer">✖</button>
+        <main>
+            <div class="banner">
+                <img
+                    class="img-mobile"
+                    src="images/passion-m.png"
+                    alt="Featured Activity"
+                />
+                <img
+                    class="img-desktop"
+                    src="images/passion-d.png"
+                    alt="Featured Activity"
+                />
+                <div class="annotation">
+                    <h4>🔥Hot Pick:</h4>
+                    <h1>Mic Drop Online</h1>
+                </div>
+                <button class="link-button jump">Explore</button>
+            </div>
+            <div class="container">
+                <section class="activities">
+                    <div class="title">
+                        <h2>Event Hub</h2>
+                        <p>
+                            Explore what’s happening in our hobby circle — from
+                            creative nights to fun challenges. Don’t just
+                            scroll, jump in and be part of the action!
+                        </p>
+                        <div class="type-toggle">
+                            <button class="left" data-type="ongoing">
+                                Ongoing</button
+                            ><button data-type="upcoming">Upcoming</button
+                            ><button data-type="planing">In-Planning</button
+                            ><button class="right" data-type="past">
+                                Past
+                            </button>
+                        </div>
+                    </div>
+                    <div class="list ongoing">
+                        <div class="activity-block">
+                            <div class="img-wrapper"> <img src="images/act 1.png" alt="Activity 1" /></div>
+                            <div class="text-content">
+                                <div class="name">
+                                    <h3>Creative Collab Night</h3>
+                                </div>
+                                <div class="details">
+                                    A fun online gathering where members teamed
+                                    up to co-create digital art live! New
+                                    friendships formed and sketches flew across
+                                    screens—don’t miss the next one!
+                                </div>
+                                <div class="info">
+                                    Status: 🔥<span class="positive"
+                                        >Ongoing</span
+                                    >
+                                </div>
+                                <div class="info">
+                                    🗓️Date: Every weekend from May 24 to June 8
+                                </div>
+                                <div class="info">🕒Time: Start from 7pm</div>
+                            </div>
+                            <button class="join-button" data-toggle-viewer>
+                                Jump In!
+                            </button>
+                            <aside class="viewer" aria-hidden="true">
+                                <div class="viewer-content">
+                                    <h4 class="hero-text">
+                                        Choose Your Identity to Join
+                                    </h4>
+                                    <h3>Creative Collab Night</h3>
+                                    <p>
+                                        Pick an identity from your list and jump
+                                        right into the fun!
+                                    </p>
+                                    <div class="account-list"></div>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="activity-block" id="featured">
+                            <div class="img-wrapper">
+                                <img
+                                    src="images/passion.png"
+                                    alt="Activity 2"
+                                />
+                            </div>
+                            <div class="text-content">
+                                <div class="name">
+                                    <h3>Community Open Mic</h3>
+                                </div>
+                                <div class="details">
+                                    Singers, poets, and storytellers took the
+                                    virtual stage to showcase their passions.
+                                    From soulful ballads to spoken word, the
+                                    talent was real and the support even more
+                                    so.
+                                </div>
+                                <div class="info">
+                                    Status: 🔥<span class="positive"
+                                        >Ongoing</span
+                                    >
+                                </div>
+                                <div class="info">🗓️Date: June 2 to June 5</div>
+                                <div class="info">🕒Time: All day</div>
+                            </div>
+                            <button class="join-button" data-toggle-viewer>
+                                Jump In!
+                            </button>
+                            <aside class="viewer" aria-hidden="true">
+                                <div class="viewer-content">
+                                    <h4 class="hero-text">
+                                        Choose Your Identity to Join
+                                    </h4>
+                                    <h3>Community Open Mic</h3>
+                                    <p>
+                                        Pick an identity from your list and jump
+                                        right into the fun!
+                                    </p>
+                                    <div class="account-list"></div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <div class="list upcoming">
+                        <div class="activity-block">
+                            <div class="img-wrapper">
+                                <img src="images/act 4.png" alt="Activity 4" />
+                            </div>
+                            <div class="text-content">
+                                <div class="name">
+                                    <h3>In-Person Meetup</h3>
+                                </div>
+                                <div class="details">
+                                    Join us for a casual offline gathering —
+                                    connect, chat, and have fun with fellow
+                                    members!
+                                </div>
+                                <div class="info">
+                                    Status:
+                                    <span class="negative">Upcoming</span>
+                                </div>
+                                <div class="info">📍Location: [Location]</div>
+                                <div class="info">🗓️Date: June 20</div>
+                                <div class="info">🕒Time: 3:00pm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list planing">
+                        <div class="activity-block">
+                            <div class="img-wrapper">
+                                <img src="images/act 3.png" alt="Activity 3" />
+                            </div>
+                            <div class="text-content">
+                                <div class="name">
+                                    <h3>Retro Game Showdown</h3>
+                                </div>
+                                <div class="details">
+                                    A thrilling night of pixel-powered battles!
+                                    Members competed in classic arcade games.
+                                </div>
+                                <div class="info positive">
+                                    This event is still in the planning stage —
+                                    why not join the discussion and help shape
+                                    it?
+                                </div>
+                            </div>
+                            <a href="discussion.html"
+                                ><button class="link-button">
+                                    Discussion Board
+                                </button></a
+                            >
+                        </div>
+                    </div>
+                    <div class="list past">
+                        <div class="activity-block">
+                            <div class="img-wrapper">
+                                <img src="images/act 5.png" alt="Activity 5" />
+                            </div>
+                            <div class="text-content">
+                                <div class="name"><h3>Board Game Bash</h3></div>
+                                <div class="details">
+                                    Bring your game face and join fellow
+                                    community members for a day of strategy,
+                                    laughter, and classic tabletop fun. Whether
+                                    you’re a seasoned player or a total newbie,
+                                    there’s a seat at the table for you. Let’s
+                                    roll!
+                                </div>
+                                <div class="info">
+                                    Status:
+                                    <span class="negative">Finished</span>
+                                </div>
+                                <div class="info">📍Location: [Location]</div>
+                                <div class="info">🗓️Date: May 19</div>
+                                <div class="info">🕒Time: 3:00pm</div>
+                            </div>
+                            <a href="not_prepared.html"
+                                ><button class="link-button">
+                                    Moments(not prepared)
+                                </button></a
+                            >
+                        </div>
+                    </div>
+                </section>
+                <section class="activity-calendar">
+                    <h2>Activity Calendar</h2>
+                    <p>
+                        Stay in the loop! Check out all upcoming, ongoing, and
+                        past events — all in one colorful calendar.
+                    </p>
+                    <div class="timetable">
+                        <div class="calendar-header">
+                            <button id="prevMonth">&larr;</button>
+                            <h2 id="calendarTitle">June 2025</h2>
+                            <button id="nextMonth">&rarr;</button>
+                        </div>
+
+                        <div class="calendar-scroll-container">
+                            <table class="calendar">
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendarBody">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h2>Siliconvey</h2>
+                    <p>Connect. Share. Belong</p>
+                    <p>Developed by Leo Tan from UQ 48767262</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="not_prepared.html">FAQ</a>
+                    <a href="not_prepared.html">Service</a>
+                    <a href="not_prepared.html">Blog</a>
+                    <a href="not_prepared.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                Special Thanks for DECO7140 Teaching Team
+            </div>
+        </footer>
+        <script type="module" src="js/activities.js"></script>
+    </body>
+</html>
