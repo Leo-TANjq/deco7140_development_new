@@ -1,7 +1,10 @@
 import { postFormData } from './modules/postFormData.js';
 import { fetchGetData } from "./modules/getData.js";
+import { setupMenu } from "./modules/menu.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+    setupMenu();
+    
     const form = document.getElementById('community-form');
     const feedback = document.getElementById('form-feedback');
 
@@ -21,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     'uqcloud_zone_id': '78e5a047'
                 }
             );
-
+            if(success){
+                success = response.ok && data.status === 'success';
+            }
             if (success) {
                 feedback.textContent = data.message || 'Submission successful!';
                 feedback.className = 'form-feedback success';

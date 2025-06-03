@@ -14,7 +14,7 @@ const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
         console.log("📦 returned data:", data);
 
         return {
-            success: response.ok,  // ✅ 更通用
+            success: response.ok,
             data,
         };
     } catch (error) {
@@ -36,10 +36,10 @@ function initJoin() {
                 .querySelector(".name h3")
                 .textContent.trim();
 
-            // 创建一个虚拟 form 元素（不插入 DOM）
+
             const form = document.createElement("form");
 
-            // 添加 input 字段
+
             const fields = {
                 event_name: eventName,
                 location: "none",
@@ -55,7 +55,7 @@ function initJoin() {
                 input.value = value;
                 form.appendChild(input);
             }
-            const endpointUrl = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/"; // ← 替换成你的实际接口
+            const endpointUrl = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/";
             const result = await postFormData(form, endpointUrl, {
                 student_number: "s4896726",
                 uqcloud_zone_id: "78e5a047",

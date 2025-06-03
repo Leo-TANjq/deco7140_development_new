@@ -32,9 +32,16 @@ function initToggle() {
             setTimeout(() => {
                 const target = document.getElementById("featured");
                 if (target) {
-                    target.scrollIntoView({
+                    const rect = target.getBoundingClientRect();
+                    const offset =
+                        rect.top +
+                        window.scrollY -
+                        window.innerHeight / 2 +
+                        rect.height / 2;
+
+                    window.scrollTo({
+                        top: offset,
                         behavior: "smooth",
-                        block: "start",
                     });
                 }
             }, 20);

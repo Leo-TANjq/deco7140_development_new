@@ -1,0 +1,29 @@
+.img-wrapper {
+    margin-inline: auto;
+    width: 70%;
+    max-width: 70%;
+    aspect-ratio: 1.4 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-inline: auto;
+}
+@media (min-width: 768px) {
+    .activities .img-wrapper {
+        margin-inline: 0;
+        width: 350px;
+        max-width: 350px;
+        height: 350px;
+        max-height: 350px;
+        margin-right: 1rem;
+    }
+}

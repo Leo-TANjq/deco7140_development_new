@@ -49,6 +49,7 @@
 
 
 .form-feedback {
+    margin-inline: 0.5rem;
     margin-top: 1rem;
     font-size: 0.95rem;
     font-weight: 600;

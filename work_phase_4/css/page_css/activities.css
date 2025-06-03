@@ -2,6 +2,7 @@
 @import "../component_skeletons/button.css";
 @import "../component_skeletons/viewer.css";
 @import "../component_skeletons/account.css";
+@import "../component_skeletons/img.css";
 .img-desktop {
     display: none;
 }
@@ -94,42 +95,19 @@
     border-bottom: 2px solid var(--border-color);
     margin-bottom: 0.5rem;
 }
-.activities .img-wrapper {
-    margin-inline: auto;
-    width: 70%;
-    max-width: 70%;
-    aspect-ratio: 1.4 / 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-.img-wrapper img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin-inline: auto;
-}
-.text-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+
 .activity-block .name {
     text-align: center;
     margin-top: 0.8rem;
 }
 .activity-block .details {
     padding-inline: 1rem;
-    margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
 }
 .activity-block .info {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 .activity-block .join-button {
     font-size: 1.2rem;
@@ -287,18 +265,11 @@
         margin-bottom: 1rem;
         padding-bottom: 1rem;
     }
-    .activities .img-wrapper {
-        margin-inline: 0;
-        width: 350px;
-        max-width: 350px;
-        height: 350px;
-        max-height: 350px;
-        margin-right: 1rem;
-    }
     .text-content {
         flex: 0.9;
         display: flex;
         flex-direction: column;
+        gap: 10px;
     }
     .activity-block .name {
         margin-inline: 0;
@@ -309,10 +280,12 @@
     .activity-block .details {
         font-size: 1.4rem;
         padding-inline: 0;
+        margin-bottom: 1rem;
     }
     .activity-block .info {
         font-size: 1.4rem;
         text-align: left;
+        margin-bottom: 1rem;
     }
     .activity-block .join-button {
         font-size: 1.5rem;

@@ -15,6 +15,13 @@
     padding: 0.5rem;
     cursor: pointer;
 }
+.account-list > p{
+    margin-block: 1rem;
+    color: var(--error-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .account:hover{
     background-color: var(--hover-color);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -25,6 +32,12 @@
     position: absolute;
     right: 2.5rem;
 }
+
+/* 修复后的选择器 - 当account有submitting类时隐藏箭头 */
+.account.submitting::after {
+    display: none;
+}
+
 .account .avatar {
     width: 15%;
     aspect-ratio: 1 / 1;
@@ -48,7 +61,6 @@
 .account .info {
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
     flex: 1;
     padding-left: 1rem;

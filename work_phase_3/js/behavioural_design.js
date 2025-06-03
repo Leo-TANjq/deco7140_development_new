@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     'uqcloud_zone_id': '78e5a047'
                 }
             );
-
+            if(success){
+                success = response.ok && data.status === 'success';
+            }
             if (success) {
                 feedback.textContent = data.message || 'Submission successful!';
                 feedback.className = 'form-feedback success';
