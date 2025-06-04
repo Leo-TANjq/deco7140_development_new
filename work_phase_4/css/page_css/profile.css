@@ -1,2 +1,124 @@
 @import "../component_skeletons/form.css";
 @import "../component_skeletons/button.css";
+@import "../component_skeletons/account.css";
+@import "../component_skeletons/viewer.css";
+#sidebar {
+    position: fixed;
+    width: 80vw;
+    background-color: var(--card-color);
+    border-radius: 8px;
+    bottom: -3px;
+    top: 45px;
+    z-index: 10;
+    overflow: visible;
+    transition: all 0.3s ease;
+    transform: translateX(0);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar.collapsed {
+    transform: translateX(-101%);
+    opacity: 0.5;
+}
+#sidebar-content {
+    position: relative;
+    height: 95%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 95%;
+    max-height: 95%;
+    padding-block: 0.5rem;
+}
+.sidebar-toggle {
+    position: absolute;
+    right: -20px;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20vh;
+    border-radius: 0px 4px 4px 0px;
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+#side-list {
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#side-list::-webkit-scrollbar {
+    display: none;
+}
+#sidebar .header {
+    display: flex;
+    align-items: center;
+}
+#sidebar h2 {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#sidebar .join-button {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-inline: 0.1rem;
+    border: none;
+    height: 1.8rem;
+    margin-left: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+#account-list {
+    width: 95%;
+}
+#account-list .name {
+    font-size: 1rem;
+}
+#account-list .email {
+    font-size: 0.8rem;
+}
+#account-list .account::after {
+    content: "Space >";
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-interactive);
+}
+.account:hover::after {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+#account-list .avatar {
+    width: 50px;
+    height: 50px;
+}
+
+#sidebar .view-form{
+    display: none;
+}
+#sidebar.show-form .view-form{
+    display: block;
+}
+#sidebar.show-form{
+    width: 100vw;
+}
+.view-form p{
+    padding-inline-start: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border-color);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form
+            action="https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/multiphotopost/"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            <!-- 必需参数 -->
+            <label for="author_name">作者名:</label>
+            <input
+                type="text"
+                id="author_name"
+                name="author_name"
+                required
+            /><br /><br />
+
+            <label for="post_title">文章标题:</label>
+            <input
+                type="text"
+                id="post_title"
+                name="post_title"
+                required
+            /><br /><br />
+
+            <!-- 可选参数 -->
+            <label for="description">描述:</label>
+            <textarea id="description" name="description"></textarea
+            ><br /><br />
+
+            <label for="photo1">图片1:</label>
+            <input
+                type="file"
+                id="photo1"
+                name="photo1"
+                accept="image/*"
+                size="20"
+            /><br /><br />
+
+            <!-- 可根据需要添加photo2到photo5的文件输入框 -->
+
+            <!-- 发送按钮 -->
+            <input type="submit" value="提交数据" />
+        </form>
+
+        <script>
+            // 添加请求头（需使用JavaScript fetch API实现）
+            document
+                .querySelector("form")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault(); // 阻止表单默认提交
+
+                    // 构建表单数据
+                    const formData = new FormData(this);
+
+                    // 添加自定义请求头（注意：跨域请求可能需要后端配置CORS）
+                    const headers = new Headers();
+                    headers.append("student_number", "s4896726");
+                    headers.append("uqcloud_zone_id", "78e5a047");
+
+                    // 发送Fetch请求
+                    fetch(this.action, {
+                        method: this.method,
+                        body: formData,
+                        headers: headers, // 注意：部分浏览器可能禁止修改Content-Type头，需后端支持
+                    })
+                        .then((response) => response.text())
+                        .then((data) => console.log("响应结果:", data))
+                        .catch((error) => console.error("错误:", error));
+                });
+        </script>
+    </body>
+</html>

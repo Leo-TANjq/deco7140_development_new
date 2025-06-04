@@ -3,8 +3,11 @@
 @import "../component_skeletons/account.css";
 @import "../component_skeletons/button.css";
 @import "../component_skeletons/form.css";
+header {
+    margin-top: 4.2rem;
+}
 .container {
-    margin-top: 4rem;
+    margin-top: 0;
 }
 header {
     text-align: center;
@@ -53,7 +56,7 @@ h1 {
 }
 .panel h2 {
     font-size: 1.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     text-align: center;
 }
 .panel p {
@@ -67,6 +70,13 @@ h1 {
 .panel.groups {
     background-color: var(--accent2-color);
 }
+
+.panel:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    transition: all 0.2s ease-in-out;
+}
+
 .group-box {
     display: flex;
     position: relative;
@@ -150,6 +160,11 @@ h1 {
     max-width: 85%;
     padding-top: 2rem;
     padding-inline: 0.8rem;
+    cursor: pointer;
+    border:2px solid transparent;
+}
+.panel.topic:hover {
+    border:2px solid var(--text-color2);
 }
 .topic .topic-box {
     background-color: var(--card-color);
@@ -230,12 +245,21 @@ h1 {
 .viewer-avatar {
     width: 3rem;
     height: 3rem;
+    max-width: 3rem;
+    max-height: 3rem;
     border-radius: 50%;
     border: 1px solid var(--border-color);
     margin-right: 1rem;
     object-fit: cover;
+    overflow: hidden;
 }
-
+.viewer-avatar .viewer-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
 .viewer-header {
     display: flex;
     align-items: center;
@@ -282,36 +306,6 @@ h1 {
     height: auto;
     border-radius: 8px;
     object-fit: cover;
-}
-
-.desktop-close-viewer {
-    position: fixed;
-    top: -30px;
-    right: 10px;
-    display: none;
-    border: none;
-    background: transparent;
-    font-size: 1.2em;
-    cursor: pointer;
-    z-index: 1000;
-    color: var(--text-color);
-}
-
-.desktop-close-viewer:hover {
-    color: var(--text-color2);
-}
-
-#mobile-close-viewer {
-    position: fixed;
-    top: 13px;
-    right: 10px;
-    display: none;
-    border: none;
-    background-color: transparent;
-    font-size: 1.2em;
-    cursor: pointer;
-    z-index: 1000;
-    color: var(--text-color);
 }
 
 .floating-button {
@@ -491,7 +485,7 @@ h1 {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border-radius: 8px;
-    background-color: transparent
+    background-color: transparent;
 }
 
 .comment.hidden {
@@ -539,7 +533,6 @@ h1 {
     text-overflow: ellipsis;
 }
 
-
 .viewer .comment-list {
     max-height: none;
     overflow: visible;
@@ -578,7 +571,187 @@ h1 {
 .viewer .hidden {
     display: flex !important;
 }
+/* Add these styles to your existing discussion.css */
+
+/* Comment form styles */
+.comment-form {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.comment-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.comment-input:focus {
+    outline: none;
+    border-color: var(--text-color2);
+}
+
+.comment-account-selection {
+    margin: 1rem 0;
+}
+
+.comment-account-selection p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.comment-account-selection .account-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.comment-account-selection .account {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.comment-account-selection .account:hover {
+    background-color: var(--hover-color);
+}
+
+.comment-account-selection .account.selected {
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.comment-account-selection .account .avatar {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.comment-submit {
+    background-color: var(--success-color);
+    color: var(--light-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.comment-submit:hover {
+    background-color: #45a049;
+}
+
+.comment-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Loading and error states */
+.loading-comments,
+.error-comments,
+.no-comments {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color2);
+    font-style: italic;
+}
+
+.error-comments {
+    color: var(--error-color);
+}
+
+/* Enhanced comment styles for viewer */
+.viewer .comment-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.viewer .comment-list {
+    margin-bottom: 2rem;
+}
+
+.viewer .comment {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.viewer .comment-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+}
+
+.viewer .comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment-account-selection .account-list {
+    width: 95%;
+}
+.comment-account-selection .account::after {
+    display: none;
+}
+#submitComment {
+    margin-top: 1rem;
+}
+#commentAccountList .avatar{
+    width:45px;
+    height: 45px;
+    border: 1px solid var(--border-color);
+}
 @media (min-width: 768px) {
+    header {
+        text-align: left;
+        margin-left: 1rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    .search-bar {
+        justify-content: left;
+        margin-left: 3rem;
+    }
+    .search-bar .search-button {
+        font-size: 1.2rem;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-top: 0;
+    }
+    .panel {
+        width: 55%;
+        padding: 2rem;
+    }
+    .panel.topic {
+        position: relative;
+        max-width: 45%;
+        margin: 0;
+        padding-block: 2rem;
+    }
     .viewer {
         width: 80%;
         top: 2.8rem;
@@ -588,14 +761,15 @@ h1 {
         padding-top: 2.5rem;
         transition: transform 0.2s ease;
     }
-    .desktop-close-viewer {
-        display: block;
-        top: 30px;
-        right: 30px;
-        font-size: 1.5rem;
-        font-weight: 800;
-    }
     #mobile-close-viewer {
         z-index: 0;
+    }
+    .comment-account-selection .account-list {
+        flex-direction: column;
+    }
+
+    .comment-account-selection .account {
+        width: 100%;
+        justify-content: flex-start;
     }
 }

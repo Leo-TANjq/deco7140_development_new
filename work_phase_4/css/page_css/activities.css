@@ -122,7 +122,17 @@
 
 .viewer-content > p {
     border-bottom: 2px solid var(--border-color);
-    padding-bottom: 1.2rem;
+    padding-bottom: 0;
+}
+.viewer-content .hero-text {
+    font-size: 1rem;
+    text-align: left;
+    margin: 0;
+}
+.viewer-content h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 .timetable {
     width: 100%;
@@ -281,6 +291,7 @@
         font-size: 1.4rem;
         padding-inline: 0;
         margin-bottom: 1rem;
+        text-align: left;
     }
     .activity-block .info {
         font-size: 1.4rem;
@@ -304,11 +315,11 @@
         font-size: 1.5rem;
         font-weight: 500;
     }
-    .activity-calendar h2{
+    .activity-calendar h2 {
         text-align: left;
         margin-bottom: 0.5rem;
     }
-    .activity-calendar p{
+    .activity-calendar p {
         text-align: left;
     }
     .timetable {
@@ -331,5 +342,19 @@
     }
     .calendar td .content {
         font-size: 1rem;
+    }
+
+    .viewer-content .hero-text {
+        font-size: 1.4rem;
+        text-align: left;
+        margin: 0;
+    }
+    .viewer-content h2 {
+        color: var(--primary-color);
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .viewer-content > p {
+        font-size: 1.2rem;
     }
 }

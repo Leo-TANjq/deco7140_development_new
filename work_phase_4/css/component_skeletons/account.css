@@ -9,24 +9,32 @@
     aspect-ratio: 15 / 1;
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
     border-bottom: 2px solid var(--border-color);
     border-radius: 8px;
     padding: 0.5rem;
     cursor: pointer;
 }
-.account-list > p{
+.account-list > p {
     margin-block: 1rem;
     color: var(--error-color);
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.account:hover{
+.account:hover {
     background-color: var(--hover-color);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
-.account::after{
+.account:hover .name {
+    text-decoration: underline;
+    color: var(--link-color);
+    font-weight: 400;
+}
+.account:hover .avatar {
+    border-color: var(--link-color);
+}
+.account::after {
     content: "↗️";
     font-size: 1.5rem;
     position: absolute;
@@ -39,14 +47,14 @@
 }
 
 .account .avatar {
-    width: 15%;
+    width: 10%;
     aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     border-radius: 50%;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     flex-shrink: 0;
 }
 

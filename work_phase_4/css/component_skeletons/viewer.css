@@ -22,16 +22,34 @@
     margin-inline: auto;
     padding-bottom: 10rem;
 }
-#global-close-viewer {
+.desktop-close-viewer {
     position: fixed;
-    top: 12px;
+    top: -30px;
     right: 10px;
     display: none;
     border: none;
     background: transparent;
     font-size: 1.2em;
     cursor: pointer;
-    z-index: 101;
+    z-index: 1000;
+    color: var(--text-color);
+}
+
+.desktop-close-viewer:hover {
+    color: var(--text-color2);
+}
+
+#mobile-close-viewer {
+    position: fixed;
+    top: 13px;
+    right: 10px;
+    display: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--text-color);
 }
 
 @media (min-width: 768px) {
@@ -43,9 +61,17 @@
         padding-top: 2.5rem;
         transition: transform 0.2s ease;
     }
-    #global-close-viewer {
+    #mobile-close-viewer {
         top: 50px;
         right: 30px;
         font-size: 1.5rem;
+        z-index: 0;
+    }
+    .desktop-close-viewer {
+        display: block;
+        top: 30px;
+        right: 30px;
+        font-size: 1.5rem;
+        font-weight: 800;
     }
 }

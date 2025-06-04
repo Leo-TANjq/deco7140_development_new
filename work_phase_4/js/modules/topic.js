@@ -1,15 +1,4 @@
 import { getAccount } from "./account.js";
-import { postFormData } from "./postFormData.js";
-function formatDateTime(date) {
-    const options = {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-    };
-    return new Date(date).toLocaleString("en-US", options);
-}
 
 export function initTopic() {
     const topicPanels = document.querySelectorAll(
@@ -23,6 +12,11 @@ export function initTopic() {
     const floatingButton = document.getElementById("floating-button");
     const submitViewer = document.getElementById("submitViewer");
     const submitContent = document.getElementById("submitContent");
+    topicContent.addEventListener("click", function (e) {
+        if (e.target.id === "submitComment") {
+            submitComment();
+        }
+    });
 
     // Event listeners for opening topic viewer
     topicPanels.forEach((panel) => {
@@ -64,15 +58,20 @@ export function initTopic() {
     });
 
     // Function to open topic viewer
-    function openViewer(panel) {
-        const avatar = panel.querySelector(".avatar")?.innerHTML || "";
+    async function openViewer(panel) {
+        const avatarElement = panel.querySelector(".avatar img");
+        const avatarSrc = avatarElement ? avatarElement.src : "";
         const name = panel.querySelector(".name")?.textContent || "Anonymous";
         const title =
-            panel.querySelector(".topic-box h2")?.textContent || "No Title";
+            panel.querySelector(".topic-box h2")?.textContent || "";
         const content =
-            panel.querySelector(".topic-box p")?.textContent || "No Content";
+            panel.querySelector(".topic-box p")?.textContent || "";
         const images = panel.querySelectorAll(".thumbnail-container img");
-        const topicId = panel.dataset.topicId;
+        const topicId = panel.querySelector(".topic-box")?.id;
+
+        if (topicId) {
+            topic.dataset.topicId = topicId;
+        }
 
         let imagesHTML = "";
         if (images.length > 0) {
@@ -83,89 +82,73 @@ export function initTopic() {
             imagesHTML += "</div>";
         }
 
-        topicContent.innerHTML = `
-            <div class="viewer-header">
-                ${
-                    avatar.includes("img")
-                        ? avatar.replace(
-                              'width="2rem" height="2rem"',
-                              'class="viewer-avatar"'
-                          )
-                        : `<div class="viewer-avatar" style="background-color: #eee;"></div>`
-                }
-                <div class="viewer-user-info">
-                    <span class="viewer-username">${name}</span>
-                    <span class="viewer-post-time">Posted just now</span>
+        const commentFormHTML = `
+        <div class="comment-form">
+            <textarea id="commentInput" placeholder="Write a comment..." class="comment-input"></textarea>
+            <button id="submitComment" class="comment-submit" disabled>Post Comment</button>
+            <div class="comment-account-selection">
+                <p>Comment as:</p>
+                <div class="account-list" id="commentAccountList">
+                    <div class="loading-accounts"></div>
                 </div>
             </div>
-            <h1 class="viewer-title">${title}</h1>
-            <div class="viewer-content-text">${content}</div>
-            ${imagesHTML}
-        `;
-
-        const comments = panel.querySelectorAll(".comment");
-        let commentsHTML = "";
-
-        if (comments.length > 0) {
-            commentsHTML =
-                '<div class="comment-section"><h3 class="viewer-comments-title">Comments</h3><div class="comment-list">';
-
-            comments.forEach((comment) => {
-                const avatar =
-                    comment.querySelector(".comment-avatar")?.outerHTML ||
-                    '<div class="comment-avatar"></div>';
-                const username =
-                    comment.querySelector(".comment-username")?.textContent ||
-                    "Anonymous";
-                const time =
-                    comment.querySelector(".comment-time")?.textContent ||
-                    "Just now";
-                const text =
-                    comment.querySelector(".comment-text")?.textContent || "";
-
-                commentsHTML += `
-            <div class="comment">
-                ${avatar}
-                <div class="comment-content">
-                    <div class="comment-user-info">
-                        <span class="comment-username">${username}</span>
-                        <span class="comment-time">${time}</span>
-                    </div>
-                    <div class="comment-text">${text}</div>
-                </div>
-            </div>
-        `;
-            });
-
-            commentsHTML += "</div></div>";
-        }
-
-        // Then add commentsHTML to the topicContent.innerHTML:
-        topicContent.innerHTML = `
-    <div class="viewer-header">
-        ${
-            avatar.includes("img")
-                ? avatar.replace(
-                      'width="2rem" height="2rem"',
-                      'class="viewer-avatar"'
-                  )
-                : `<div class="viewer-avatar" style="background-color: #eee;"></div>`
-        }
-        <div class="viewer-user-info">
-            <span class="viewer-username">${name}</span>
-            <span class="viewer-post-time">Posted just now</span>
         </div>
-    </div>
-    <h1 class="viewer-title">${title}</h1>
-    <div class="viewer-content-text">${content}</div>
-    ${imagesHTML}
-    ${commentsHTML}
+    `;
+
+        const avatarHTML = avatarSrc
+            ? `<div class="viewer-avatar">
+               <img src="${avatarSrc}" alt="${name}" class="viewer-avatar-img">
+           </div>`
+            : `<div class="viewer-avatar" style="background-color: #eee;"></div>`;
+
+        topicContent.innerHTML = `
+        <div class="viewer-header">
+            ${avatarHTML}
+            <div class="viewer-user-info">
+                <span class="viewer-username">${name}</span>
+                <span class="viewer-post-time">Posted just now</span>
+            </div>
+        </div>
+        <h1 class="viewer-title">${title}</h1>
+        <div class="viewer-content-text">${content}</div>
+        ${imagesHTML}
+        ${
+            panel.querySelectorAll(".comment").length > 0
+                ? `
+            <div class="comment-section">
+                <h3 class="viewer-comments-title">Comments</h3>
+                <div class="comment-list">
+                    ${Array.from(panel.querySelectorAll(".comment"))
+                        .map(
+                            (comment) =>
+                                `<div class="comment">${comment.innerHTML}</div>`
+                        )
+                        .join("")}
+                </div>
+            </div>
+        `
+                : ""
+        }
+        ${commentFormHTML}
     `;
 
         topic.classList.add("open");
         document.addEventListener("click", handleOutsideClick);
         closeViewerBtnM.style.display = "block";
         document.body.style.overflow = "hidden";
+
+        getAccount();
+
+        topicContent.addEventListener("click", function (e) {
+            const account = e.target.closest(".account");
+            if (account && commentAccountList.contains(account)) {
+                const accounts =
+                    commentAccountList.querySelectorAll(".account");
+                accounts.forEach((acc) => acc.classList.remove("selected"));
+                account.classList.add("selected");
+                document.getElementById("submitComment").disabled = false;
+            }
+        });
     }
 
     // Function to open submit viewer
@@ -209,6 +192,89 @@ export function initTopic() {
             accountList.addEventListener("click", handleAccountSelection);
         }
     }
+    async function submitComment() {
+        const topicId = topic.dataset.topicId;
+        const commentInput = document.getElementById("commentInput");
+        const commentText = commentInput.value.trim();
+        const accountList = document.getElementById("commentAccountList");
+        const selectedAccount = accountList.querySelector(".account.selected");
+
+        if (!commentText) {
+            alert("Please write a comment.");
+            return;
+        }
+
+        if (!selectedAccount) {
+            alert("Please select an account to comment as.");
+            return;
+        }
+
+        const personName = selectedAccount.querySelector(".name").textContent;
+        const accountAvatar = selectedAccount.querySelector(".avatar img")?.src;
+        const chatPostContent = `${accountAvatar} | ${commentText}`;
+
+        const formData = new FormData();
+        formData.append("person_name", personName);
+        formData.append("chat_post_title", topicId);
+        formData.append("chat_post_content", chatPostContent);
+
+        try {
+            const response = await fetch(
+                "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat/",
+                {
+                    method: "POST",
+                    headers: {
+                        student_number: "s4896726",
+                        uqcloud_zone_id: "78e5a047",
+                    },
+                    body: formData,
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            alert("Comment submitted successfully!");
+            commentInput.value = "";
+
+            document.getElementById("submitComment").disabled = true;
+
+            const accounts = accountList.querySelectorAll(".account");
+            accounts.forEach((acc) => acc.classList.remove("selected"));
+
+            const commentSection =
+                topicContent.querySelector(".comment-section");
+            if (!commentSection) {
+                const commentSectionHTML = `
+                <div class="comment-section">
+                    <h3 class="viewer-comments-title">Comments</h3>
+                    <div class="comment-list"></div>
+                </div>
+            `;
+                topicContent.insertAdjacentHTML(
+                    "beforeend",
+                    commentSectionHTML
+                );
+            }
+            const commentList = topicContent.querySelector(".comment-list");
+            const newCommentHTML = `
+            <div class="comment">
+                <div class="comment-avatar">
+                    <img src="${accountAvatar}" alt="${personName}">
+                </div>
+                <div class="comment-content">
+                    <span class="comment-author">${personName}</span>
+                    <p class="comment-text">${commentText}</p>
+                </div>
+            </div>
+        `;
+            commentList.insertAdjacentHTML("beforeend", newCommentHTML);
+        } catch (error) {
+            console.error("Error submitting comment:", error);
+            alert("Network error. Please try again later.");
+        }
+    }
 
     // Function to handle account selection and form submission
     function handleAccountSelection(e) {
@@ -219,7 +285,7 @@ export function initTopic() {
         e.stopPropagation();
 
         document.querySelectorAll(".account").forEach((acc) => {
-            acc.classList.remove("submitting");
+            acc.classList.remove("submitting", "selected");
         });
 
         accountElement.classList.add("submitting");
@@ -242,11 +308,6 @@ export function initTopic() {
             return;
         }
 
-        // 重置所有account的选中状态
-        document.querySelectorAll(".account").forEach((acc) => {
-            acc.classList.remove("submitting", "selected");
-        });
-
         accountElement.classList.add("submitting", "selected");
         feedback.className = "form-feedback submitting";
         feedback.textContent = "Submitting...";
@@ -268,141 +329,115 @@ export function initTopic() {
         const formData = new FormData();
         formData.append("author_name", accountName);
         formData.append("post_title", postTitle);
-        formData.append("description", postContent);
 
-        // Add avatar
-        if (accountAvatar && accountAvatar.startsWith("data:")) {
-            const blob = dataURLtoBlob(accountAvatar);
-            if (blob) {
-                formData.append("photo1", blob, "avatar.jpg");
-            }
-        }
+        const combinedDescription = accountAvatar
+            ? `${accountAvatar} | ${postContent}`
+            : postContent;
+        formData.append("description", combinedDescription);
 
-        // Add uploaded images
+        let hasError = false;
+        // Add uploaded image links
         uploadedImages.forEach((imgSrc, index) => {
             if (imgSrc && imgSrc.startsWith("data:")) {
                 const blob = dataURLtoBlob(imgSrc);
                 if (blob) {
+                    const extension = blob.type.includes("png") ? "png" : "jpg";
                     formData.append(
-                        `photo${index + 2}`,
+                        `photo${index + 1}`,
                         blob,
-                        `image${index + 2}.jpg`
+                        `image${index + 1}.${extension}`
                     );
+                } else {
+                    console.error(
+                        `Failed to convert image ${index + 1} to blob`
+                    );
+                    hasError = true;
                 }
             }
         });
 
+        if (hasError) {
+            feedback.textContent = "Image processing failed. Please try again.";
+            feedback.className = "form-feedback error";
+            accountElement.classList.remove("submitting");
+            return;
+        }
         // Submit the form
         submitPost(formData, accountElement, feedback);
     }
 
-    async function submitPost(formData, accountElement, feedbackElement) {
-        try {
-            const { success, data } = await postFormData(
-                formData,
-                "https://damp-castle-6239-1b70ee448fbd.herokuapp.com/decoapi/multiphotopost/",
-                {
-                    student_number: "s4896726",
-                    uqcloud_zone_id: "78e5a047",
-                }
-            );
-
-            if (success) {
-                feedbackElement.textContent =
-                    data.message || "Submission successful!";
-                feedbackElement.className = "form-feedback success";
-
-                // 不自动清除表单内容，保持用户输入
-                // 只重置图片上传区域
-                document.querySelector(".upload-grid").innerHTML = "";
-                createUploadContainer(document.querySelector(".upload-grid"));
-            } else {
-                feedbackElement.textContent =
-                    data.message ||
-                    "Submission failed. Please check your input.";
-                feedbackElement.className = "form-feedback error";
-            }
-        } catch (error) {
-            console.error("Submission error:", error);
-            feedbackElement.textContent =
-                "Network error. Please try again later.";
-            feedbackElement.className = "form-feedback error";
-        } finally {
-            // 3秒后移除反馈信息，但保持选中状态
-            setTimeout(() => {
-                feedbackElement.remove();
-                accountElement.classList.remove("submitting");
-            }, 3000);
-        }
-    }
-
-    // Helper function to convert data URL to Blob
     function dataURLtoBlob(dataURL) {
-        if (
-            !dataURL ||
-            typeof dataURL !== "string" ||
-            !dataURL.startsWith("data:")
-        ) {
-            console.error("Invalid data URL:", dataURL);
+        if (!dataURL || !dataURL.startsWith("data:")) {
+            console.error("Invalid Data URL format");
             return null;
         }
 
         try {
-            const arr = dataURL.split(",");
-            const mimeMatch = arr[0].match(/:(.*?);/);
+            const parts = dataURL.split(",");
+            if (parts.length !== 2) {
+                throw new Error("Invalid Data URL structure");
+            }
+
+            const mimeMatch = parts[0].match(/:(.*?);/);
             if (!mimeMatch) {
-                throw new Error("Invalid data URL format");
+                throw new Error("Cannot extract MIME type");
             }
 
             const mime = mimeMatch[1];
-            const bstr = atob(arr[1]);
-            const u8arr = new Uint8Array(bstr.length);
+            let base64 = parts[1];
 
-            for (let i = 0; i < bstr.length; i++) {
-                u8arr[i] = bstr.charCodeAt(i);
+            base64 = base64.replace(/\s/g, "");
+
+            if (!/^[A-Za-z0-9+/]*={0,2}$/.test(base64)) {
+                throw new Error("Invalid Base64 format");
             }
 
-            return new Blob([u8arr], { type: mime });
+            const binStr = atob(base64);
+            const len = binStr.length;
+            const arr = new Uint8Array(len);
+
+            for (let i = 0; i < len; i++) {
+                arr[i] = binStr.charCodeAt(i);
+            }
+
+            return new Blob([arr], { type: mime });
         } catch (error) {
-            console.error("Error converting data URL to Blob:", error);
+            console.error("DataURL to Blob conversion failed:", error);
             return null;
         }
     }
-
     // Function to submit post data
     async function submitPost(formData, accountElement, feedbackElement) {
         try {
-            const { success, data } = await postFormData(
-                formData,
+            const response = await fetch(
                 "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/multiphotopost/",
                 {
-                    student_number: "s4896726",
-                    uqcloud_zone_id: "78e5a047",
+                    method: "POST",
+                    headers: {
+                        student_number: "s4896726",
+                        uqcloud_zone_id: "78e5a047",
+                    },
+                    body: formData,
                 }
             );
 
-            if (success) {
+            if (!response.ok) {
                 feedbackElement.textContent =
-                    data.message || "Submission successful!";
-                feedbackElement.className = "form-feedback success";
-
-                // 不自动清除表单内容，保持用户输入
-                // 只重置图片上传区域
-                document.querySelector(".upload-grid").innerHTML = "";
-                createUploadContainer(document.querySelector(".upload-grid"));
-            } else {
-                feedbackElement.textContent =
-                    data.message ||
                     "Submission failed. Please check your input.";
                 feedbackElement.className = "form-feedback error";
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+
+            alert("Successfully Submit! ");
+
+            closeViewer();
+            location.reload();
         } catch (error) {
             console.error("Submission error:", error);
             feedbackElement.textContent =
                 "Network error. Please try again later.";
             feedbackElement.className = "form-feedback error";
         } finally {
-            // 3秒后移除反馈信息，但保持选中状态
             setTimeout(() => {
                 feedbackElement.remove();
                 accountElement.classList.remove("submitting");
@@ -428,193 +463,107 @@ export function initTopic() {
         // Initialize with one empty upload container
         uploadGrid.innerHTML = "";
         createUploadContainer(uploadGrid);
+    }
+}
+function createUploadContainer(parent) {
+    if (parent.querySelectorAll(".upload-container").length >= 5) return;
+    const imageContainers = parent.querySelectorAll(".upload-container img");
+    const allContainers = parent.querySelectorAll(".upload-container");
+    if (allContainers.length != imageContainers.length) return;
 
-        function createUploadContainer(parent) {
-            if (parent.querySelectorAll(".upload-container").length >= 4)
-                return;
+    const container = document.createElement("div");
+    container.className = "upload-container";
 
-            const container = document.createElement("div");
-            container.className = "upload-container";
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.multiple = false;
+    fileInput.accept = "image/*";
+    fileInput.style.display = "none";
 
-            const fileInput = document.createElement("input");
-            fileInput.type = "file";
-            fileInput.multiple = false;
-            fileInput.accept = "image/*";
-            fileInput.style.display = "none";
+    const placeholder = document.createElement("div");
+    placeholder.className = "upload-placeholder";
+    placeholder.textContent = "+";
 
-            const placeholder = document.createElement("div");
-            placeholder.className = "upload-placeholder";
-            placeholder.textContent = "+";
+    container.appendChild(fileInput);
+    container.appendChild(placeholder);
+    parent.appendChild(container);
 
-            container.appendChild(fileInput);
-            container.appendChild(placeholder);
-            parent.appendChild(container);
-
-            // Click handler for this container
-            container.addEventListener("click", (e) => {
-                if (!e.target.classList.contains("remove-image")) {
-                    fileInput.click();
-                }
-            });
-
-            fileInput.addEventListener("change", (e) => {
-                if (e.target.files.length > 0) {
-                    const file = e.target.files[0];
-                    const reader = new FileReader();
-
-                    reader.onload = (event) => {
-                        // Replace with image preview
-                        container.innerHTML = `
-                            <img src="${event.target.result}" alt="Preview">
-                            <button class="remove-image">×</button>
-                        `;
-
-                        // Add remove handler
-                        container
-                            .querySelector(".remove-image")
-                            .addEventListener("click", (e) => {
-                                e.stopPropagation();
-                                removeImageContainer(container, parent);
-                            });
-
-                        // Add new container if needed
-                        if (
-                            parent.querySelectorAll(".upload-container")
-                                .length < 4 &&
-                            parent.querySelectorAll(".upload-container img")
-                                .length < 4
-                        ) {
-                            createUploadContainer(parent);
-                        }
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+    // Click handler for this container
+    container.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("remove-image")) {
+            fileInput.click();
         }
+    });
 
-        function removeImageContainer(container, parent) {
-            const allContainers = parent.querySelectorAll(".upload-container");
-            const imageContainers = parent.querySelectorAll(
-                ".upload-container img"
-            );
+    fileInput.addEventListener("change", async (e) => {
+        if (e.target.files.length > 0) {
+            const file = e.target.files[0];
 
-            // Always remove the clicked container
-            container.remove();
-
-            // If we just deleted an image and have no more images, ensure at least one upload container
-            if (imageContainers.length === 1 && allContainers.length === 1) {
-                createUploadContainer(parent);
-            }
-            // If we're below max capacity, we might need to add back an upload container
-            else if (allContainers.length < 4) {
-                // Check if we have any empty upload containers left
-                const hasEmptyContainer = Array.from(allContainers).some(
-                    (cont) => cont.querySelector(".upload-placeholder")
+            // Add file size check
+            if (file.size > 10 * 1024 * 1024) {
+                // 10MB limit
+                alert(
+                    "Image file is too large. Please select an image smaller than 10MB."
                 );
+                return;
+            }
 
-                if (!hasEmptyContainer) {
+            try {
+                // Show loading state
+                placeholder.textContent = "Processing...";
+
+                // Compress image
+                const compressedFile = await compressImage(file);
+
+                // Use compressed file
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    // Replace with image preview
+                    container.innerHTML = `
+                   <img src="${event.target.result}" alt="Preview">
+                   <button class="remove-image">×</button>
+               `;
+
+                    // Add remove handler
+                    container
+                        .querySelector(".remove-image")
+                        .addEventListener("click", (e) => {
+                            e.stopPropagation();
+                            container.remove();
+                            createUploadContainer(parent);
+                        });
                     createUploadContainer(parent);
-                }
+                };
+
+                reader.readAsDataURL(compressedFile);
+            } catch (error) {
+                console.error("Image processing failed:", error);
+                alert("Image processing failed. Please try another image.");
+                placeholder.textContent = "+"; // Restore original state
             }
         }
-    }
-}
-
-function formatDateTime(date) {
-    const options = {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-    };
-    return new Date(date).toLocaleString("en-US", options);
-}
-
-// 获取评论函数
-async function fetchComments(topicId) {
-    try {
-        const response = await fetch(
-            "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/getchat/",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    chat_post_title: topicId.toString(),
-                    student_number: "s4896726",
-                    uqcloud_zone_id: "78e5a047",
-                }),
-            }
-        );
-
-        if (!response.ok) {
-            throw new Error("Failed to fetch comments");
-        }
-
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Error fetching comments:", error);
-        return [];
-    }
-}
-
-// 显示评论函数
-function displayComments(comments, commentListElement) {
-    commentListElement.innerHTML = "";
-
-    comments.forEach((comment) => {
-        const [avatarUrl, content] = comment.chat_post_content.split(" | ");
-
-        const commentElement = document.createElement("div");
-        commentElement.className = "comment";
-        commentElement.innerHTML = `
-            <div class="comment-avatar" style="background-image: url(${avatarUrl})"></div>
-            <div class="comment-content">
-                <div class="comment-user-info">
-                    <span class="comment-username">${comment.person_name}</span>
-                    <span class="comment-time">${formatDateTime(
-                        comment.chat_date_time
-                    )}</span>
-                </div>
-                <div class="comment-text">${content}</div>
-            </div>
-        `;
-
-        commentListElement.appendChild(commentElement);
     });
 }
+function compressImage(file, maxWidth = 1200, quality = 0.8) {
+    return new Promise((resolve) => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const img = new Image();
 
-// 发送评论函数
-async function postComment(topicId, personName, content, avatarUrl) {
-    try {
-        const response = await fetch(
-            "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/postchat/",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    person_name: personName,
-                    chat_post_title: topicId.toString(),
-                    chat_post_content: `${avatarUrl} | ${content}`,
-                    student_number: "s4896726",
-                    uqcloud_zone_id: "78e5a047",
-                }),
+        img.onload = () => {
+            let { width, height } = img;
+            if (width > maxWidth) {
+                height = (height * maxWidth) / width;
+                width = maxWidth;
             }
-        );
 
-        if (!response.ok) {
-            throw new Error("Failed to post comment");
-        }
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(img, 0, 0, width, height);
 
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Error posting comment:", error);
-        return null;
-    }
+            canvas.toBlob(resolve, "image/jpeg", quality);
+        };
+
+        img.src = URL.createObjectURL(file);
+    });
 }

@@ -301,58 +301,105 @@
                 </ul>
             </div>
         </nav>
+        <button id="mobile-close-viewer" aria-label="Close viewer">✖</button>
         <main>
-            <div class="container">
-                <h3>Register</h3>
-                <p>
-                    Fill in your info to become part of the community and get
-                    your own personalized profile card!
-                </p>
-                <form id="community-form" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="name">User Name</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Introduction (optional)</label>
-                        <input type="text" id="message" name="message" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="photo"
-                            >Your Avatar (optional, max 10MB)</label
-                        >
-                        <input
-                            type="file"
-                            id="photo"
-                            name="photo"
-                            accept="image/*"
-                        />
-                    </div>
-
+            <div id="sidebar" class="collapsed">
+                <div id="sidebar-content">
                     <button
-                        type="submit"
-                        class="primary-button"
-                        style="font-size: 1rem"
+                        id="sidebar-toggle"
+                        class="sidebar-toggle"
+                        aria-label="Toggle sidebar"
                     >
-                        Join the Community
+                        <span class="toggle-icon">&gt;</span>
                     </button>
+                    <div id="side-list">
+                        <div class="view-account">
+                            <div class="header">
+                                <h2>Accounts</h2>
+                                <button class="join-button" id="add-account">
+                                    Add
+                                </button>
+                            </div>
+                            <div class="account-list" id="account-list"></div>
+                        </div>
+                        <div class="view-form">
+                            <button class="desktop-close-viewer">✕</button>
+                            <h2>Register</h2>
+                            <p>
+                                Fill in your info to become part of the
+                                community and get your own personalized profile
+                                card!
+                            </p>
+                            <form
+                                id="community-form"
+                                enctype="multipart/form-data"
+                            >
+                                <div class="form-group">
+                                    <label for="name">User Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                    />
+                                </div>
 
-                    <p
-                        id="form-feedback"
-                        class="form-feedback success"
-                        aria-live="polite"
-                        style="display: none"
-                    >
-                        Thanks for being part of our community!
-                    </p>
-                </form>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message"
+                                        >Introduction (optional)</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="message"
+                                        name="message"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="photo"
+                                        >Your Avatar (optional, max 10MB)</label
+                                    >
+                                    <input
+                                        type="file"
+                                        id="photo"
+                                        name="photo"
+                                        accept="image/*"
+                                    />
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    class="primary-button"
+                                    style="font-size: 1rem"
+                                >
+                                    Join the Community
+                                </button>
+
+                                <p
+                                    id="form-feedback"
+                                    class="form-feedback success"
+                                    aria-live="polite"
+                                    style="display: none"
+                                >
+                                    Thanks for being part of our community!
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
                 <h3>Profile Available</h3>
                 <p>Here’s a display of all your profile cards</p>
                 <section id="community-list">

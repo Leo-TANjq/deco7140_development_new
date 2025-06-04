@@ -302,7 +302,7 @@
                 </ul>
             </div>
         </nav>
-        <button id="global-close-viewer" aria-label="Close viewer">✖</button>
+        <button id="mobile-close-viewer" aria-label="Close viewer">✖</button>
         <main>
             <div class="banner">
                 <img
@@ -342,7 +342,9 @@
                     </div>
                     <div class="list ongoing">
                         <div class="activity-block">
-                            <div class="img-wrapper"> <img src="images/act 1.png" alt="Activity 1" /></div>
+                            <div class="img-wrapper">
+                                <img src="images/act 1.png" alt="Activity 1" />
+                            </div>
                             <div class="text-content">
                                 <div class="name">
                                     <h3>Creative Collab Night</h3>
@@ -363,15 +365,23 @@
                                 </div>
                                 <div class="info">🕒Time: Start from 7pm</div>
                             </div>
-                            <button class="join-button" data-toggle-viewer>
+                            <button
+                                class="openviewer join-button"
+                                data-viewer-id="viewer1"
+                            >
                                 Jump In!
                             </button>
-                            <aside class="viewer" aria-hidden="true">
+                            <aside
+                                class="viewer"
+                                id="viewer1"
+                                aria-hidden="true"
+                            >
+                                <button class="desktop-close-viewer">✕</button>
                                 <div class="viewer-content">
                                     <h4 class="hero-text">
                                         Choose Your Identity to Join
                                     </h4>
-                                    <h3>Creative Collab Night</h3>
+                                    <h2>Creative Collab Night</h2>
                                     <p>
                                         Pick an identity from your list and jump
                                         right into the fun!
@@ -406,15 +416,23 @@
                                 <div class="info">🗓️Date: June 2 to June 5</div>
                                 <div class="info">🕒Time: All day</div>
                             </div>
-                            <button class="join-button" data-toggle-viewer>
+                            <button
+                                class="openviewer join-button"
+                                data-viewer-id="viewer2"
+                            >
                                 Jump In!
                             </button>
-                            <aside class="viewer" aria-hidden="true">
+                            <aside
+                                class="viewer"
+                                id="viewer2"
+                                aria-hidden="true"
+                            >
+                                <button class="desktop-close-viewer">✕</button>
                                 <div class="viewer-content">
                                     <h4 class="hero-text">
                                         Choose Your Identity to Join
                                     </h4>
-                                    <h3>Community Open Mic</h3>
+                                    <h2>Community Open Mic</h2>
                                     <p>
                                         Pick an identity from your list and jump
                                         right into the fun!

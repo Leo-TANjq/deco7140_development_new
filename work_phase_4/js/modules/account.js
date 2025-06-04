@@ -21,7 +21,7 @@ export function getAccount() {
         data.forEach((member) => {
             const photoSrc =
                 member.photo ||
-                "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='30' r='20' fill='%23ccc'/><rect x='25' y='55' width='50' height='30' fill='%23ccc'/></svg>";
+                "images/default.png";
 
             const card = document.createElement("div");
             card.className = "account";
