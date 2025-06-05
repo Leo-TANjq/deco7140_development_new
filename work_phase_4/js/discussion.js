@@ -14,6 +14,7 @@ import { setSearch } from "./modules/search.js";
  * */
 
 const header = { student_number: "s4896726", uqcloud_zone_id: "78e5a047" };
+const indentifier = "test";
 /**
  * VARIABLES
  * Define values that will change e.g. user inputs, counters, etc.
@@ -328,7 +329,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         console.log("No data received or error occurred");
     }
-    initTopic();
+    initTopic(indentifier);
     initThumbnailLimit();
     setupMenu();
     initViewer();

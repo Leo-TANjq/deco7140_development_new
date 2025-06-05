@@ -1,11 +1,10 @@
 const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
     const formData = new FormData(formEl);
-
     try {
         const response = await fetch(endpointUrl, {
-            method: 'POST',
+            method: "POST",
             headers: customHeaders,
-            body: formData
+            body: formData,
         });
 
         const data = await response.json();
@@ -17,7 +16,7 @@ const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
     } catch (error) {
         return {
             success: false,
-            data: { message: 'Network or server error.', error },
+            data: { message: "Network or server error.", error },
         };
     }
 };

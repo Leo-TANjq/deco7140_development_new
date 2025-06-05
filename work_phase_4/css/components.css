@@ -118,7 +118,11 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
-
+.submenu li a.active {
+    background: var(--hover-color);
+    font-weight: 550;
+    color: var(--link-color);
+}
 .main-menu .active + .submenu,
 .main-menu .active ~ .submenu {
     display: flex;
@@ -383,5 +387,64 @@ a.link-card:hover {
     }
     .footer-links a {
         font-size: 0.9rem;
+    }
+}
+
+
+.menu-button.current-page {
+    position: relative;
+    background: linear-gradient(90deg, var(--link-color), var(--accent1-color));
+    color: white;
+    font-weight: 500;
+}
+
+.submenu li a.current-page {
+    background: var(--link-color);
+    color: white;
+    font-weight: 500;
+    position: relative;
+}
+
+.submenu li a.current-page::before {
+    content: "▶";
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+    #nav-desktop ul > li.current-page > .superclass {
+        color: var(--link-color);
+        font-weight: 600;
+        position: relative;
+    }
+    
+    #nav-desktop ul > li.current-page > .superclass::before {
+        content: "📍";
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+    #nav-desktop ul > li.current-page > .superclass::after {
+        transform: scaleX(1);
+        background-color: var(--link-color);
+    }
+    
+    #nav-desktop a.link-card.current-page {
+        background: linear-gradient(135deg, var(--link-color), var(--accent2-color));
+        color: white;
+        transform: translateY(-6px);
+        box-shadow: 0 4px 12px rgba(239, 71, 111, 0.3);
+    }
+    
+    #nav-desktop a.link-card.current-page .card-title {
+        color: white;
+    }
+    
+    #nav-desktop a.link-card.current-page::before {
+        content: "📍";
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 1.2rem;
     }
 }

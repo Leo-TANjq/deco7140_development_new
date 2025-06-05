@@ -32,6 +32,7 @@
                         alt="Siliconvey logo"
                         style="height: 30px"
                 /></a>
+                <p>Home</p>
             </div>
             <div class="menu-wrapper">
                 <ul class="main-menu">
@@ -213,25 +214,25 @@
                     <li>
                         <div class="superclass">🧰Support</div>
                         <div class="subweb">
-                            <a href="not_prepared.html" class="link-card">
+                            <a href="resources.html" class="link-card">
                                 <div class="card-image">
-                                    <img
-                                        src="images/coming.png"
-                                        alt="coming soon"
-                                    />
+                                    <img src="images/logo.png" alt="logo" />
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title">Resources</h3>
                                     <p class="card-text">
                                         Technical enhancements support users
-                                        with diverse access needs, expanding the
-                                        community’s reach and usability.
+                                        with diverse access ne eds, expanding
+                                        the community’s reach and usability.
                                     </p>
                                 </div>
                             </a>
                             <a href="report.html" class="link-card">
                                 <div class="card-image">
-                                    <img src="images/logo.png" alt="logo" />
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title">Report</h3>
@@ -317,13 +318,18 @@
                             <div class="header">
                                 <h2>Accounts</h2>
                                 <button class="join-button" id="add-account">
-                                    Add
+                                    Add +
                                 </button>
                             </div>
                             <div class="account-list" id="account-list"></div>
                         </div>
                         <div class="view-form">
-                            <button class="desktop-close-viewer">✕</button>
+                            <button
+                                class="desktop-close-viewer"
+                                style="position: absolute"
+                            >
+                                ✕
+                            </button>
                             <h2>Register</h2>
                             <p>
                                 Fill in your info to become part of the
@@ -333,55 +339,82 @@
                             <form
                                 id="community-form"
                                 enctype="multipart/form-data"
+                                class="form-container"
                             >
-                                <div class="form-group">
-                                    <label for="name">User Name</label>
+                                <div class="form-group relative">
+                                    <label for="name" class="form-label"
+                                        >User Name</label
+                                    >
                                     <input
                                         type="text"
                                         id="name"
                                         name="name"
                                         required
+                                        class="form-input"
+                                        placeholder="How should we call you?"
                                     />
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
+                                <div class="form-group relative">
+                                    <label for="email" class="form-label"
+                                        >Email Address</label
+                                    >
                                     <input
                                         type="email"
                                         id="email"
                                         name="email"
                                         required
+                                        class="form-input"
+                                        placeholder="Your email address"
                                     />
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="message"
+                                <div class="form-group relative">
+                                    <label for="message" class="form-label"
                                         >Introduction (optional)</label
                                     >
-                                    <input
-                                        type="text"
+                                    <textarea
                                         id="message"
                                         name="message"
-                                    />
+                                        rows="3"
+                                        class="form-input resize-none"
+                                        placeholder="Something about you..."
+                                    ></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="photo"
+                                    <label class="form-label"
                                         >Your Avatar (optional, max 10MB)</label
                                     >
+                                    <div
+                                        class="file-upload"
+                                        id="file-upload-area"
+                                    >
+                                        <p class="file-upload-text">
+                                            <span class="font-medium"
+                                                >Click to upload</span
+                                            >
+                                            or drag and drop
+                                        </p>
+                                        <p class="file-upload-text-sm">
+                                            PNG, JPG or GIF (MAX. 10MB)
+                                        </p>
+                                    </div>
                                     <input
                                         type="file"
-                                        id="photo"
+                                        id="file-input"
                                         name="photo"
-                                        accept="image/*"
+                                        accept="image/png, image/jpeg, image/gif"
+                                        style="display: none"
+                                    />
+                                    <img
+                                        id="image-preview"
+                                        class="image-preview"
+                                        alt="Preview of your avatar"
                                     />
                                 </div>
 
-                                <button
-                                    type="submit"
-                                    class="primary-button"
-                                    style="font-size: 1rem"
-                                >
+                                <button type="submit" class="join-button">
                                     Join the Community
                                 </button>
 
@@ -400,11 +433,168 @@
             </div>
 
             <div class="container">
-                <h3>Profile Available</h3>
-                <p>Here’s a display of all your profile cards</p>
-                <section id="community-list">
-                    <h3>Community Members List</h3>
-                </section>
+                <div class="container">
+                    <section class="profile-header">
+                        <h1 class="profile-title">Profile Page</h1>
+                        <p
+                            class="hero-text"
+                            style="margin-inline: auto; text-align: center"
+                        >
+                            Switch it up. Create. Customize. Connect.
+                        </p>
+                    </section>
+                    <div class="display" id="display">
+                        <h2>Example</h2>
+                        <p>
+                            Here is an example of how your profile card looks
+                            like and is customized.Start with an account. Stay
+                            for the identity.
+                        </p>
+                        <button class="link-button" id="start">
+                            Start Now!
+                        </button>
+                        <div class="user-profile-card">
+                            <div class="profile-avatar-section">
+                                <img
+                                    src="images/act 1.png"
+                                    alt="MountainGoat42's Profile"
+                                    class="profile-avatar"
+                                />
+                                <div class="profile-basic-info">
+                                    <h2 class="user-name">MountainGoat42</h2>
+                                    <p class="user-email">climb@rocks.net</p>
+                                    <div class="experience-badge">
+                                        Intermediate Climber
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-details-section">
+                                <div class="profile-section">
+                                    <h3 class="section-title">
+                                        Climbing Focus
+                                    </h3>
+                                    <ul class="profile-list">
+                                        <li>Lead Climbing</li>
+                                        <li>Redpoint Project</li>
+                                    </ul>
+                                </div>
+
+                                <div class="profile-section">
+                                    <h3 class="section-title">About Me</h3>
+                                    <p class="long-text">
+                                        I enjoy indoor and outdoor climbing and
+                                        am working on my endurance.
+                                    </p>
+                                    <p class="long-text">
+                                        <strong>Favourite crag:</strong> Frog
+                                        Buttress
+                                    </p>
+                                </div>
+
+                                <div class="profile-meta">
+                                    <p class="created-date">
+                                        Joined: May 18, 2025
+                                    </p>
+                                    <p class="website-link">
+                                        <a
+                                            href="https://yourdomain/abc123"
+                                            target="_blank"
+                                            >View Personal Website</a
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="create-profile-form">
+                            <div class="user-profile-card">
+                                <div class="profile-avatar-section">
+                                    <img
+                                        src="images/act 1.png"
+                                        alt="User's Profile"
+                                        class="profile-avatar"
+                                    />
+                                    <div class="profile-basic-info">
+                                        <h2 class="user-name">User Name</h2>
+                                        <p class="user-email">
+                                            user@example.com
+                                        </p>
+                                        <input
+                                            type="text"
+                                            name="experience_level"
+                                            class="experience-badge"
+                                            placeholder="Tagline"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="profile-details-section">
+                                    <div class="profile-section">
+                                        <div class="section-title">
+                                            <input
+                                                type="text"
+                                                class="experience-badge"
+                                                name="section1"
+                                                placeholder="Section 1"
+                                            />
+                                        </div>
+                                        <ul class="profile-list">
+                                            <li>
+                                                <input
+                                                    type="text"
+                                                    name="custom_field_1"
+                                                    class="experience-badge"
+                                                    placeholder="Show something you like"
+                                                />
+                                            </li>
+                                            <li>
+                                                <input
+                                                    type="text"
+                                                    name="custom_field_2"
+                                                    class="experience-badge"
+                                                    placeholder="Show something you like"
+                                                />
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="profile-section">
+                                        <h3 class="section-title">
+                                            <input
+                                                type="text"
+                                                class="experience-badge"
+                                                name="section2"
+                                                placeholder="Section 2"
+                                            />
+                                        </h3>
+                                        <textarea
+                                            class="long-text-input"
+                                            placeholder="More about yourself..."
+                                            name="custom_field_longtext_1"
+                                        ></textarea>
+                                        <textarea
+                                            class="long-text-input"
+                                            placeholder="More about yourself..."
+                                            name="custom_field_longtext_2"
+                                        ></textarea>
+                                    </div>
+
+                                    <div class="profile-meta">
+                                        <p class="created-date">
+                                            Joined: [Date]
+                                        </p>
+                                        <input
+                                            type="text"
+                                            name="link"
+                                            class="experience-badge"
+                                            placeholder="Your Link can be put here"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="site-footer">

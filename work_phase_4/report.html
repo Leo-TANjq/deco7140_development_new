@@ -5,8 +5,8 @@
         <title>Fetch Test</title>
     </head>
     <body>
-        <h1>API 内容测试</h1>
-        <pre id="output">正在加载数据...</pre>
+        <h1>API Test</h1>
+        <pre id="output">Loading...</pre>
 
         <script>
             const fetchGetData = (url, headers = {}) => {
@@ -26,7 +26,8 @@
                     });
             };
 
-            const url = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/multiphotopost/"; // 替换为你要测试的网址
+            const url =
+                "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericuserprofile/";
             const headers = {
                 student_number: "s4896726",
                 uqcloud_zone_id: "78e5a047",
@@ -36,7 +37,7 @@
                 if (data) {
                     output.textContent = JSON.stringify(data, null, 2);
                 } else {
-                    output.textContent = "没有获取到任何内容或发生错误。";
+                    output.textContent = "No Error.";
                 }
             });
         </script>

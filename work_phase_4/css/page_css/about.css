@@ -1,0 +1,41 @@
+@import "../component_skeletons/banner.css";
+@import "../component_skeletons/button.css";
+@import "../component_skeletons/card.css";
+.banner .annotation {
+    position: absolute;
+    width: 45%;
+    top: 20%;
+}
+.annotation p {
+    margin-left: 0.6rem;
+}
+.annotation .link-button {
+    margin-left: 0.6rem;
+    margin-top: 0.6rem;
+    font-size: 0.7rem;
+}
+@media (min-width: 768px) {
+    .banner .annotation {
+        top: 5%;
+    }
+    .annotation p {
+        margin-top: 2.5rem;
+    }
+    .annotation button {
+        margin-bottom: 2rem;
+    }
+    .annotation .link-button {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
+        padding: 0.8rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 10px;
+        width: 18rem;
+    }
+    .annotation p {
+        width: 80%;
+        margin-left: 1.5rem;
+    }
+}

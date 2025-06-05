@@ -720,6 +720,7 @@ h1 {
     height: 45px;
     border: 1px solid var(--border-color);
 }
+
 @media (min-width: 768px) {
     header {
         text-align: left;
@@ -771,5 +772,19 @@ h1 {
     .comment-account-selection .account {
         width: 100%;
         justify-content: flex-start;
+    }
+
+    .form-group label {
+        font-size: 1.2rem;
+    }
+    input {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    textarea {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.2rem;
+        width: 100%;
     }
 }

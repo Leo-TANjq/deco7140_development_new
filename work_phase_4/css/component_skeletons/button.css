@@ -1,15 +1,25 @@
-button{
+button {
     font-weight: bold;
 }
+.join-button.cancel {
+    background-color: #c90209;
+    border: 1px solid #c90209;
+}
+.join-button.cancel:active {
+    border: 1px solid #850308;
+    background-color: #850308;
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .join-button {
-    padding:0.3rem;
+    padding: 0.3rem;
     cursor: pointer;
     min-width: 4rem;
     font-size: 1.2rem;
     text-align: center;
-    background-color: #0BA000;
+    background-color: #0ba000;
     color: white;
-    border: 1px solid #0BA000;
+    border: 1px solid #0ba000;
     border-radius: 6px;
     transition: all 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -19,14 +29,19 @@ button{
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .join-button:active {
-    border: 1px solid #317e15;   
+    border: 1px solid #317e15;
     background-color: #317e15;
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+.join-button:disabled {
+    background-color: #b0abab;
+    border: none;
+    cursor: default;
+}
 .dropdown-btn {
     border: none;
-    background-color: #E3EBFF;
+    background-color: #e3ebff;
     font-weight: bold;
     font-size: 1rem;
     color: var(--text-color);
@@ -43,7 +58,7 @@ button{
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 .search-button {
-    padding:0.3rem;
+    padding: 0.3rem;
     cursor: pointer;
     min-width: 4rem;
     font-size: 1rem;
@@ -58,7 +73,6 @@ button{
 .search-button:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transform: translateY(-1px);
-
 }
 .search-button:active {
     background-color: #235181;
@@ -68,14 +82,14 @@ button{
 button.disabled {
     cursor: not-allowed;
     padding: 0.5rem;
-    border: 3px solid #90323D;
+    border: 3px solid #90323d;
     border: None;
-    background-color: #90323D;
+    background-color: #90323d;
     color: white;
 }
 
-.link-button{
-    padding:0.3rem;
+.link-button {
+    padding: 0.3rem;
     opacity: 1;
     padding-right: 0.4rem;
     padding-bottom: 0.4rem;
@@ -95,7 +109,7 @@ button.disabled {
     opacity: 1;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
-.link-button:active {   
+.link-button:active {
     background-color: #bc4863;
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -111,14 +125,14 @@ button.disabled {
     }
 }
 .primary-button {
-    padding:0.3rem;
+    padding: 0.3rem;
     cursor: pointer;
     min-width: 4rem;
     font-size: 1.2rem;
     text-align: center;
-    background-color: #0BA000;
+    background-color: #0ba000;
     color: white;
-    border: 3px solid #0BA000;
+    border: 3px solid #0ba000;
     border-radius: 6px;
     transition: all 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -126,11 +140,10 @@ button.disabled {
 .primary-button:hover {
     border: 3px solid var(--text-color2);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
 }
 .primary-button:active {
-    border: 3px solid #1D460E;
-    background-color: #1D460E;
+    border: 3px solid #1d460e;
+    background-color: #1d460e;
     transform: translateY(2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

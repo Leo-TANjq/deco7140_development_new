@@ -1,6 +1,6 @@
 import { getAccount } from "./account.js";
 
-export function initTopic() {
+export function initTopic(indentifier = "") {
     const topicPanels = document.querySelectorAll(
         ".panel.topic, .panel[data-topic-id]"
     );
@@ -137,7 +137,7 @@ export function initTopic() {
         closeViewerBtnM.style.display = "block";
         document.body.style.overflow = "hidden";
 
-        getAccount();
+        getAccount(indentifier);
 
         topicContent.addEventListener("click", function (e) {
             const account = e.target.closest(".account");
@@ -180,7 +180,7 @@ export function initTopic() {
             </form>
         `;
 
-        getAccount();
+        getAccount(indentifier);
         setupImageUpload();
         submitViewer.classList.add("open");
         document.addEventListener("click", handleOutsideClickSubmit);

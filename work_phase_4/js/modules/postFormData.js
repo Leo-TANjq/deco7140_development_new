@@ -9,7 +9,6 @@ const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
         });
 
         const data = await response.json();
-
         return {
             success: response.ok,
             data,

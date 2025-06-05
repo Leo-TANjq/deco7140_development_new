@@ -14,7 +14,7 @@ import { initJoin } from "./modules/join.js";
  * Define values that don't change e.g. page titles, URLs, etc.
  * */
 
-
+const indentifier = "test";
 /**
  * VARIABLES
  * Define values that will change e.g. user inputs, counters, etc.
@@ -37,5 +37,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initTimetable();
     initViewer();
     initJoin();
-    getAccount();
+    getAccount(indentifier);
 });

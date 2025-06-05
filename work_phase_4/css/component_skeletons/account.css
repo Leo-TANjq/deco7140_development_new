@@ -17,6 +17,7 @@
 }
 .account-list > p {
     margin-block: 1rem;
+    margin-left: 0.8rem;
     color: var(--error-color);
     font-size: 1.2rem;
     font-weight: 600;
@@ -83,4 +84,7 @@
 .account .info .email {
     font-size: 0.9rem;
     color: #666;
+}
+.account-list .link-button{
+    margin-left: 1rem
 }

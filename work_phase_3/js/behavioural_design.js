@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             );
             if(success){
-                success = response.ok && data.status === 'success';
+                success = data.status === 'success';
             }
             if (success) {
                 feedback.textContent = data.message || 'Submission successful!';

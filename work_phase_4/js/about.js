@@ -2,7 +2,7 @@
 * IMPORTS
 * Keep track of external modules being used
 * */
-import { initGalleryViewer } from './modules/viewer.js';
+import { setupMenu } from './modules/menu.js';
 
 /**
 * CONSTANTS
@@ -28,5 +28,5 @@ import { initGalleryViewer } from './modules/viewer.js';
 
 // when the page fully loads
 document.addEventListener("DOMContentLoaded", () => {
-    initGalleryViewer();
+    setupMenu();
 });
