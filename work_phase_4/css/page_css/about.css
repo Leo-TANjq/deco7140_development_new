@@ -14,6 +14,11 @@
     margin-top: 0.6rem;
     font-size: 0.7rem;
 }
+.container {
+    width: 95vw;
+    min-height: 100vh;
+    margin: 2rem auto;
+}
 @media (min-width: 768px) {
     .banner .annotation {
         top: 5%;
@@ -37,5 +42,254 @@
     .annotation p {
         width: 80%;
         margin-left: 1.5rem;
+    }
+}
+
+.about-intro {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.about-intro h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission-statement {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mission-statement h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.mission-statement p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #34495e;
+}
+
+.community-values {
+    padding: 2rem;
+}
+
+.community-values h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.community-values ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.community-values li {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.community-values li:hover {
+    transform: translateY(-5px);
+}
+
+.community-values strong {
+    display: block;
+    margin: 0.5rem 0;
+    color: #2c3e50;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-intro {
+        margin: 2rem auto;
+    }
+
+    .about-intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .lead-text {
+        font-size: 1.1rem;
+    }
+
+    .mission-statement {
+        padding: 2rem;
+    }
+
+    .community-values ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 开发历程部分样式 */
+.development-journey {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.development-journey h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.journey-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.phase-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.phase-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.phase-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.phase-card:hover .view-more {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.phase-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.phase-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.phase-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.phase-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.phase-features span {
+    background: #e9f7fe;
+    color: #3498db;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.view-more {
+    color: #3498db;
+    font-weight: 600;
+    text-align: right;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    transform: translateY(5px);
+    align-self: flex-end;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .about-intro {
+        padding: 0;
+    }
+    .development-journey {
+        padding: 0;
+        margin-top: 3rem;
+        margin-left: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .development-journey h2 {
+        font-size: 1.8rem;
+    }
+
+    .journey-intro {
+        font-size: 1rem;
+    }
+
+    .phase-cards {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .phase-card {
+        padding: 1.5rem;
+        width: 100%; /* 确保卡片宽度为100% */
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box; /* 确保padding不会增加总宽度 */
     }
 }

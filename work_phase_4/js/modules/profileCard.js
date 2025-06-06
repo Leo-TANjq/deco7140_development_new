@@ -252,7 +252,7 @@ function showCreateProfileForm(name, email, avatar, identifier = "") {
                 <button type="submit" class="join-button">Create!</button>
                 <button type="button" id="cancel-create-profile" class="join-button cancel">Cancel</button>
             </div>
-            <div id="create-feedback"class="form-feedback" style="display: block;">test</div>
+            <div id="create-feedback"class="form-feedback" style="display: block;"></div>
         </form>
     `;
 
@@ -378,13 +378,12 @@ function showCreateProfileForm(name, email, avatar, identifier = "") {
             feedback.textContent = "Profile created successfully!";
             feedback.className = "form-feedback success";
 
-            // 延迟显示成功消息，避免立即被清除
             setTimeout(() => {
                 const displayArea = document.querySelector(".display");
                 displayArea.innerHTML = "";
                 const profileCard = createProfileCard(result, identifier);
                 displayArea.appendChild(profileCard);
-            }, 1500); // 1.5秒后跳转
+            }, 1500);
         } catch (error) {
             console.error("Error creating profile:", error);
             feedback.textContent = "Error creating profile. Please try again.";
