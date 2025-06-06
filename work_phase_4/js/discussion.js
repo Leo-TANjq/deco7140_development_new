@@ -50,11 +50,18 @@ function createTopicPanels(posts) {
 
             const name = document.createElement("div");
             name.className = "name";
-            name.textContent = post.author_name;
+            const nameText = document.createTextNode(post.author_name);
+            const span = document.createElement("span");
+            span.className = "post-time";
+            const time = formatCommentTime(post.date_posted);
+            span.textContent = " " + time;
+            name.appendChild(nameText);
+            name.appendChild(span);
 
             const topicBox = document.createElement("div");
             topicBox.className = "topic-box";
             topicBox.id = `post-${post.id}`;
+            topicBox.dataset.datePosted = post.date_posted;
 
             const textContent = document.createElement("div");
             textContent.className = "text-content";

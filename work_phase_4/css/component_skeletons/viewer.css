@@ -62,8 +62,8 @@
         transition: transform 0.2s ease;
     }
     #mobile-close-viewer {
-        top: 50px;
-        right: 30px;
+        top: 0px;
+        right: 0px;
         font-size: 1.5rem;
         z-index: 0;
     }

@@ -1,3 +1,4 @@
+/* Mobile Navigation */
 #nav-desktop {
     display: none;
 }
@@ -6,8 +7,9 @@
     display: block;
     position: fixed;
     width: 100vw;
-
 }
+
+/* Desktop Navigation Media Query */
 @media (min-width: 768px) {
     #nav-mobile {
         display: none;
@@ -16,9 +18,12 @@
         display: flex;
     }
 }
+
 body {
     overflow-x: hidden;
 }
+
+/* Mobile Navigation Topbar */
 #nav-mobile .topbar {
     background-color: var(--light-color);
     color: var(--text-color);
@@ -28,14 +33,18 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--border-color);
 }
-.topbar > p{
+
+.topbar > p {
     font-size: 1.4rem;
     font-weight: 500;
     margin-inline: auto;
 }
+
 .topbar img {
     display: block;
 }
+
+/* Menu Toggle Button */
 .menu-toggle {
     font-size: 1.5rem;
     margin-right: 0.3rem;
@@ -43,9 +52,19 @@ body {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    /* Keyboard navigation styles */
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
-/* 主导航（大类） */
+.menu-toggle:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+    background-color: var(--hover-color);
+}
+
+/* Main Menu Container */
 .menu-wrapper {
     display: none;
     flex-direction: row;
@@ -62,6 +81,7 @@ body {
     overflow-y: auto;
 }
 
+/* Main Menu Items */
 .main-menu {
     display: flex;
     flex-direction: column;
@@ -87,6 +107,7 @@ body {
     margin-left: calc(-1 * var(--menu-width, 0px));
 }
 
+/* Menu Button Styles */
 .menu-button {
     background: none;
     border: none;
@@ -101,7 +122,20 @@ body {
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    transform: all 0.1s ease-in-out;
+    transition: all 0.2s ease;
+}
+
+/* Menu Button Focus and Active States */
+.menu-button:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: -2px;
+    background-color: var(--hover-color);
+    font-weight: 550;
+}
+
+.menu-button:hover {
+    background-color: var(--hover-color);
+    color: var(--link-color);
 }
 
 .menu-button.active {
@@ -110,7 +144,7 @@ body {
     color: var(--link-color);
 }
 
-/* 右侧小类栏 */
+/* Submenu Container */
 .submenu {
     background: var(--light-color);
     flex: 1;
@@ -118,19 +152,23 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
+
 .submenu li a.active {
     background: var(--hover-color);
     font-weight: 550;
     color: var(--link-color);
 }
+
 .main-menu .active + .submenu,
 .main-menu .active ~ .submenu {
     display: flex;
 }
 
+/* Submenu Visibility Rules */
 .menu-wrapper.show-submenu .menu-button::after {
     display: none;
 }
+
 .menu-wrapper:not(.show-submenu) .menu-button::after {
     content: "";
     position: absolute;
@@ -142,6 +180,7 @@ body {
     width: 100vw;
     margin-left: calc(-1 * var(--menu-width, 0px));
 }
+
 .menu-wrapper.show:not(.show-submenu) .menu-button {
     position: relative;
 }
@@ -153,6 +192,8 @@ body {
 .menu-wrapper.show.show-submenu .menu-button::after {
     display: none;
 }
+
+/* Menu Button Height and Alignment */
 .menu-button {
     height: 44px;
     display: flex;
@@ -160,6 +201,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Submenu List Items */
 .submenu li {
     height: 44px;
     display: flex;
@@ -169,19 +211,37 @@ body {
     padding: 0;
 }
 
+/* Submenu Links */
 .submenu li a {
     padding: 0.8rem 1rem;
     width: 100%;
     line-height: 1.2;
     text-decoration: none;
     color: var(--text-interactive);
+    transition: all 0.2s ease;
 }
 
+/* Submenu Link Focus and Hover States */
+.submenu li a:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: -2px;
+    background-color: var(--hover-color);
+    color: var(--link-color);
+    font-weight: 550;
+}
+
+.submenu li a:hover {
+    background-color: var(--hover-color);
+    color: var(--link-color);
+}
+
+/* Desktop Navigation */
 #nav-desktop {
     z-index: 100;
     position: fixed;
     width: 100%;
 }
+
 #nav-desktop .topbar {
     display: flex;
     position: relative;
@@ -200,6 +260,7 @@ body {
     justify-content: center;
 }
 
+/* Desktop Navigation List */
 #nav-desktop ul {
     display: flex;
     flex: 0 0 90%;
@@ -207,6 +268,7 @@ body {
     justify-content: space-around;
 }
 
+/* Desktop Navigation Main Items */
 #nav-desktop ul > li > .superclass {
     position: relative;
     display: inline-block;
@@ -215,6 +277,16 @@ body {
     color: var(--text-interactive);
     transition: color 0.2s ease;
     cursor: pointer;
+    /* Make focusable for keyboard navigation */
+    outline: none;
+    border-radius: 4px;
+}
+
+/* Desktop Navigation Focus States */
+#nav-desktop ul > li > .superclass:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+    color: var(--link-color);
 }
 
 #nav-desktop ul > li > .superclass::after {
@@ -227,6 +299,7 @@ body {
     background-color: var(--link-color);
     transform: scaleX(0);
     transform-origin: left;
+    transition: transform 0.2s ease;
 }
 
 #nav-desktop ul > li:hover > .superclass,
@@ -239,6 +312,7 @@ body {
     transform: scaleX(1);
 }
 
+/* Desktop Submenu */
 #nav-desktop .subweb {
     display: none;
     position: absolute;
@@ -251,10 +325,12 @@ body {
     z-index: 101;
 }
 
-#nav-desktop ul > li:hover .subweb {
+#nav-desktop ul > li:hover .subweb,
+#nav-desktop ul > li:focus-within .subweb {
     display: flex;
 }
 
+/* Desktop Submenu Container */
 .subweb {
     display: flex;
     flex-wrap: wrap;
@@ -264,6 +340,7 @@ body {
     background: #f9fafc;
 }
 
+/* Desktop Link Cards */
 a.link-card {
     display: flex;
     flex-direction: column;
@@ -272,11 +349,19 @@ a.link-card {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
     color: inherit;
+}
+
+/* Desktop Link Card Focus and Hover States */
+a.link-card:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+    background-color: #e5e7eb;
+    transform: translateY(-4px);
 }
 
 a.link-card:hover {
@@ -312,6 +397,7 @@ a.link-card:hover {
     line-height: 1.4;
 }
 
+/* Footer Styles */
 .site-footer {
     background-color: var(--accent3-color);
     border-top: 1px solid #e5e7eb;
@@ -320,7 +406,6 @@ a.link-card:hover {
     font-size: 14px;
     color: var(--hover-color);
 }
-
 
 .footer-container {
     max-width: 1200px;
@@ -345,7 +430,6 @@ a.link-card:hover {
     font-size: 13px;
 }
 
-
 .footer-links {
     display: flex;
     gap: 20px;
@@ -357,9 +441,11 @@ a.link-card:hover {
     color: var(--hover-color);
     text-decoration: none;
 }
+
 .footer-links a::before {
     content: "🔗";
 }
+
 .footer-links a:hover {
     color: var(--link-color);
     text-decoration: underline;
@@ -390,7 +476,7 @@ a.link-card:hover {
     }
 }
 
-
+/* Current Page Indicators */
 .menu-button.current-page {
     position: relative;
     background: linear-gradient(90deg, var(--link-color), var(--accent1-color));
@@ -417,34 +503,78 @@ a.link-card:hover {
         font-weight: 600;
         position: relative;
     }
-    
-    #nav-desktop ul > li.current-page > .superclass::before {
-        content: "📍";
-        margin-right: 0.5rem;
-        font-size: 1.2rem;
-    }
-    
+
     #nav-desktop ul > li.current-page > .superclass::after {
         transform: scaleX(1);
         background-color: var(--link-color);
     }
-    
+
     #nav-desktop a.link-card.current-page {
-        background: linear-gradient(135deg, var(--link-color), var(--accent2-color));
+        background: linear-gradient(
+            135deg,
+            var(--link-color),
+            var(--accent2-color)
+        );
         color: white;
         transform: translateY(-6px);
         box-shadow: 0 4px 12px rgba(239, 71, 111, 0.3);
     }
-    
+
     #nav-desktop a.link-card.current-page .card-title {
         color: white;
     }
-    
+
     #nav-desktop a.link-card.current-page::before {
         content: "📍";
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    margin-top: 3.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.breadcrumbs a {
+    color: var(--text-interactive);
+    transition: all 0.1s ease;
+    font-size: 1rem;
+}
+
+.breadcrumbs p {
+    color: var(--text-color);
+    transition: all 0.1s ease;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .breadcrumbs {
+        font-size: 1.1rem;
+        margin-top: 3.2rem;
+        margin-left: 1rem;
+        justify-content: left;
+    }
+    .breadcrumbs a {
+        font-size: 1.2rem;
+    }
+    .breadcrumbs p {
         font-size: 1.2rem;
     }
 }

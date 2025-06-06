@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/resources.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <title>Not Prepared</title>
+    </head>
+    <body>
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <div class="topbar">
+                <button class="menu-toggle" aria-label="Menu">☰</button>
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <p>Home</p>
+            </div>
+            <div class="menu-wrapper">
+                <ul class="main-menu">
+                    <li>
+                        <button class="menu-button" data-category="A">
+                            ♨️Connect
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="B">
+                            🎑Engagement
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="C">
+                            🪪Account
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="D">
+                            🧰Support
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="E">
+                            📖About
+                        </button>
+                    </li>
+                </ul>
+                <ul class="submenu" id="submenu">
+                    <!--Insertion-->
+                </ul>
+            </div>
+        </nav>
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <div class="topbar">
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <ul>
+                    <li>
+                        <div class="superclass">♨️Connect</div>
+                        <div class="subweb">
+                            <a href="discussion.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Discussion Board</h3>
+                                    <p class="card-text">
+                                        A centralized platform where community
+                                        members engage in conversations,
+                                        exchange ideas, and build connections
+                                        around shared interests.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Chat</h3>
+                                    <p class="card-text">
+                                        A private messaging space enabling
+                                        one-on-one interactions.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🎑Engagement</div>
+                        <div class="subweb">
+                            <a href="activities.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Activities</h3>
+                                    <p class="card-text">
+                                        Offers a variety of interactive events
+                                        and challenges that you can participate
+                                        in or create.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Rewards and Recognition
+                                    </h3>
+                                    <p class="card-text">
+                                        Recognizes and rewards meaningful
+                                        participation rather than popularity.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Game Board</h3>
+                                    <p class="card-text">
+                                        A fun interface featuring challenges,
+                                        mini-games, or interactive elements that
+                                        celebrate active participation.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🪪Account</div>
+                        <div class="subweb">
+                            <a href="profile.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Profile Page</h3>
+                                    <p class="card-text">
+                                        The central hub for you to create and
+                                        manage your account details, customize
+                                        your information, and generate a unique
+                                        profile card that showcases your
+                                        identity.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Follows & Bans</h3>
+                                    <p class="card-text">
+                                        Check and manage your follows and bans
+                                        lists here to ensure the content suits
+                                        your preferences better.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Notifications</h3>
+                                    <p class="card-text">
+                                        Ensures you stay informed about relevant
+                                        activities without being overwhelmed by
+                                        information, contributing to a sense of
+                                        connection and responsiveness.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🧰Support</div>
+                        <div class="subweb">
+                            <a href="resources.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Resources</h3>
+                                    <p class="card-text">
+                                        Technical enhancements support users
+                                        with diverse access needs, expanding the
+                                        community's reach and usability.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="report.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Report</h3>
+                                    <p class="card-text">
+                                        A clear, user-driven process for
+                                        reporting inappropriate content or
+                                        behavior.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">📖About</div>
+                        <div class="subweb">
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Guidelines & Instructions
+                                    </h3>
+                                    <p class="card-text">
+                                        Provides clear behavioral expectations,
+                                        reducing uncertainty and enabling
+                                        positive contributions.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Policies & Criteria
+                                    </h3>
+                                    <p class="card-text">
+                                        Clarifies moderation and recognition
+                                        standards, reinforcing trust in how the
+                                        platform is governed.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="about.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">About Us</h3>
+                                    <p class="card-text">
+                                        Humanizes the platform by introducing
+                                        the people and goals behind it, creating
+                                        an emotional connection and community
+                                        credibility.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="container" style="margin-top: 0">
+                <h1 class="page-title">Supporting Resources</h1>
+                <p class="page-description">
+                    To ensure that all users can have the best experience, we
+                    provide the following supporting resources. These tools can
+                    help you better access and use our website.
+                </p>
+
+                <div class="type-toggle">
+                    <button class="active" data-type="browsers">
+                        Browsers
+                    </button>
+                    <button data-type="readers">Screen Readers</button>
+                    <button data-type="keyboard">Keyboard Navigation</button>
+                    <button data-type="font">Font Tools</button>
+                    <button data-type="contrast">Contrast Tools</button>
+                </div>
+
+                <div class="resources-container">
+                    <!-- Browser resources -->
+                    <div class="resource-list browsers active">
+                        <a
+                            href="https://www.google.com/chrome/"
+                            class="resource-card"
+                            target="_blank"
+                        >
+                            <div class="resource-image">
+                                <img
+                                    src="https://www.google.com/chrome/static/images/chrome-logo.svg"
+                                    alt="Google Chrome browser icon"
+                                    width="170"
+                                />
+                            </div>
+                            <div class="resource-content">
+                                <h3>Google Chrome</h3>
+                                <p>
+                                    Google Chrome is a fast, secure, and
+                                    user-friendly web browser suitable for all
+                                    devices. It offers a wide range of
+                                    accessibility features, including screen
+                                    reader support, keyboard navigation, and
+                                    customizable display options.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Screen reader resources -->
+                    <div class="resource-list readers">
+                        <a
+                            href="https://www.nvaccess.org/download/"
+                            class="resource-card"
+                            target="_blank"
+                        >
+                            <div class="resource-image">
+                                <img
+                                    src="https://www.nvaccess.org/wp-content/legacy/images/logo.png"
+                                    alt="NVDA Screen Reader Logo"
+                                />
+                            </div>
+                            <div class="resource-content">
+                                <h3>NVDA Screen Reader</h3>
+                                <p>
+                                    NVDA (NonVisual Desktop Access) is a free
+                                    and open-source screen reader that helps
+                                    visually impaired users operate computers.
+                                    It uses text-to-speech technology to read
+                                    the text on the screen, enabling visually
+                                    impaired users to access websites and
+                                    applications.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Keyboard navigation resources -->
+                    <div class="resource-list keyboard">
+                        <a
+                            href="https://www.microsoft.com/en-us/accessibility/windows"
+                            class="resource-card"
+                            target="_blank"
+                        >
+                            <div
+                                class="resource-image"
+                            >
+                                <img
+                                    src="https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png"
+                                    alt="Windows accessibility icon"
+                                />
+                            </div>
+                            <div class="resource-content">
+                                <h3>Windows Keyboard Navigation</h3>
+                                <p>
+                                    The Windows operating system comes with a
+                                    variety of keyboard navigation features,
+                                    such as Sticky Keys, Filter Keys, and Toggle
+                                    Keys, which help users operate the computer
+                                    more easily using the keyboard without
+                                    relying on the mouse.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Font tool resources -->
+                    <div class="resource-list font">
+                        <a
+                            href="https://www.dyslexiefont.com/en/typeface/"
+                            class="resource-card"
+                            target="_blank"
+                        >
+                            <div class="resource-image">
+                                <img
+                                    src="https://dyslexiefont.com/wp-content/uploads/2022/07/Dyslexie-Font-logo.svg"
+                                    alt="Dyslexie font icon"
+                                />
+                            </div>
+                            <div class="resource-content">
+                                <h3>Dyslexie Font</h3>
+                                <p>
+                                    Dyslexie is a font specifically designed for
+                                    people with dyslexia. Through unique letter
+                                    shapes and spacing, it makes text easier to
+                                    read. This font can help people with
+                                    dyslexia reduce reading errors and improve
+                                    reading speed and comprehension.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Contrast tool resources -->
+                    <div class="resource-list contrast">
+                        <a
+                            href="https://www.paciellogroup.com/color-contrast-checker/"
+                            class="resource-card"
+                            target="_blank"
+                        >
+                            <div class="resource-image">
+                                <img
+                                    src="https://www.tpgi.com/nitropack_static/mQEwzWSbUyjHeEeyxnxPBGwRyfDLSUho/assets/images/source/rev-23c3a40/www.tpgi.com/wp-content/themes/bedstone/images/logo.svg"
+                                    alt="Color contrast checker icon"
+                                />
+                            </div>
+                            <div class="resource-content">
+                                <h3>Color Contrast Checker</h3>
+                                <p>
+                                    The color contrast checker is a tool that
+                                    helps designers and developers ensure
+                                    sufficient contrast between the text and
+                                    background colors of a website, making the
+                                    content more readable for users with visual
+                                    impairments.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h2>Siliconvey</h2>
+                    <p>Connect. Share. Belong</p>
+                    <p>Developed by Leo Tan from UQ 48767262</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="not_prepared.html">FAQ</a>
+                    <a href="not_prepared.html">Service</a>
+                    <a href="not_prepared.html">Blog</a>
+                    <a href="not_prepared.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                Special Thanks to the DECO7140 Teaching Team
+            </div>
+        </footer>
+        <script type="module" src="js/resources.js"></script>
+    </body>
+</html>

@@ -17,7 +17,7 @@ button {
     min-width: 4rem;
     font-size: 1.2rem;
     text-align: center;
-    background-color: #0ba000;
+    background-color: #1c8901;
     color: white;
     border: 1px solid #0ba000;
     border-radius: 6px;
@@ -29,8 +29,8 @@ button {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .join-button:active {
-    border: 1px solid #317e15;
-    background-color: #317e15;
+    border: 1px solid #186f02;
+    background-color: #186f02;
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -89,15 +89,15 @@ button.disabled {
 }
 
 .link-button {
-    padding: 0.3rem;
+    padding: 0.4rem;
     opacity: 1;
-    padding-right: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
     cursor: pointer;
     border: none;
     min-width: 4rem;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 600;
     text-align: center;
     background-color: var(--link-color);
     color: white;

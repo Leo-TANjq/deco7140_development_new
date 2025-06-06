@@ -61,14 +61,16 @@ export function initTopic(indentifier = "") {
     async function openViewer(panel) {
         const avatarElement = panel.querySelector(".avatar img");
         const avatarSrc = avatarElement ? avatarElement.src : "";
-        const name = panel.querySelector(".name")?.textContent || "Anonymous";
-        const title =
-            panel.querySelector(".topic-box h2")?.textContent || "";
-        const content =
-            panel.querySelector(".topic-box p")?.textContent || "";
+        const nameElement = panel.querySelector(".name");
+        const name =
+            nameElement?.firstChild?.textContent?.trim() || "Anonymous";
+        const title = panel.querySelector(".topic-box h2")?.textContent || "";
+        const content = panel.querySelector(".topic-box p")?.textContent || "";
         const images = panel.querySelectorAll(".thumbnail-container img");
         const topicId = panel.querySelector(".topic-box")?.id;
-
+        const datePosted =
+            panel.querySelector(".topic-box")?.dataset.datePosted;
+        const formattedTime = datePosted ? datePosted : "Unkonwn Post Time";
         if (topicId) {
             topic.dataset.topicId = topicId;
         }
@@ -106,7 +108,7 @@ export function initTopic(indentifier = "") {
             ${avatarHTML}
             <div class="viewer-user-info">
                 <span class="viewer-username">${name}</span>
-                <span class="viewer-post-time">Posted just now</span>
+                <span class="viewer-post-time">Posted at ${formattedTime}</span>
             </div>
         </div>
         <h1 class="viewer-title">${title}</h1>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/genai.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <title>GenAI Usage</title>
+    </head>
+    <body>
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <div class="topbar">
+                <button class="menu-toggle" aria-label="Menu">☰</button>
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <p>Home</p>
+            </div>
+            <div class="menu-wrapper">
+                <ul class="main-menu">
+                    <li>
+                        <button class="menu-button" data-category="A">
+                            ♨️Connect
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="B">
+                            🎑Engagement
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="C">
+                            🪪Account
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="D">
+                            🧰Support
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-button" data-category="E">
+                            📖About
+                        </button>
+                    </li>
+                </ul>
+                <ul class="submenu" id="submenu">
+                    <!--Insertion-->
+                </ul>
+            </div>
+        </nav>
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <div class="topbar">
+                <a href="index.html" aria-current="page"
+                    ><img
+                        src="images/logo.png"
+                        alt="Siliconvey logo"
+                        style="height: 30px"
+                /></a>
+                <ul>
+                    <li>
+                        <div class="superclass">♨️Connect</div>
+                        <div class="subweb">
+                            <a href="discussion.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Discussion Board</h3>
+                                    <p class="card-text">
+                                        A centralized space where community
+                                        members engage in dialogue, exchange
+                                        ideas, and build connections around
+                                        shared interests.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Chat</h3>
+                                    <p class="card-text">
+                                        Private messaging space enabling
+                                        one-on-one interactions.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🎑Engagement</div>
+                        <div class="subweb">
+                            <a href="activities.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Activities</h3>
+                                    <p class="card-text">
+                                        Offers various interactive events and
+                                        challenges that you can join or create.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Rewards and Recognition
+                                    </h3>
+                                    <p class="card-text">
+                                        Highlights and rewards meaningful
+                                        participation over popularity.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Game Board</h3>
+                                    <p class="card-text">
+                                        A playful interface showcasing
+                                        challenges, mini-games, or interactive
+                                        features that celebrate active
+                                        participation.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🪪Account</div>
+                        <div class="subweb">
+                            <a href="profile.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Profile Page</h3>
+                                    <p class="card-text">
+                                        The central space for you to create and
+                                        manage your account list, customize your
+                                        details, and generate a unique profile
+                                        card that showcases who you are
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Follows & Bans</h3>
+                                    <p class="card-text">
+                                        Check & Manage your Follows and Bans
+                                        list here to make the contents all fit
+                                        you better.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Notifications</h3>
+                                    <p class="card-text">
+                                        Ensures you stay aware of relevant
+                                        activity without information overload,
+                                        contributing to feelings of connection
+                                        and responsiveness.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">🧰Support</div>
+                        <div class="subweb">
+                            <a href="resources.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Resources</h3>
+                                    <p class="card-text">
+                                        Technical enhancements support users
+                                        with diverse access ne eds, expanding
+                                        the community’s reach and usability.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="report.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Report</h3>
+                                    <p class="card-text">
+                                        A clear, user-driven path for surfacing
+                                        inappropriate content or behavior.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="superclass">📖About</div>
+                        <div class="subweb">
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Guidelines & Instructions
+                                    </h3>
+                                    <p class="card-text">
+                                        Provides clear behavioral expectations,
+                                        reducing uncertainty and enabling
+                                        positive contribution.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="not_prepared.html" class="link-card">
+                                <div class="card-image">
+                                    <img
+                                        src="images/coming.png"
+                                        alt="coming soon"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        Policies & Criteria
+                                    </h3>
+                                    <p class="card-text">
+                                        Clarifies moderation and recognition
+                                        standards, reinforcing trust in how the
+                                        platform is governed.
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="about.html" class="link-card">
+                                <div class="card-image">
+                                    <img src="images/logo.png" alt="logo" />
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">About Us</h3>
+                                    <p class="card-text">
+                                        Humanizes the platform by introducing
+                                        the people and goals behind it, creating
+                                        emotiona l connection and community
+                                        credibility.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a> &gt;
+            <a href="about.html" aria-current="page">About Us</a> &gt;
+            <p>GenAI Usage</p>
+        </div>
+        <main class="container" style="margin-top: 0">
+            <section class="about-intro" style="margin-top: 1rem">
+                <h1>GenAI Usage</h1>
+                <p class="lead-text">
+                    This page showcases how I’ve used Generative AI tools to
+                    support my website development — from coding assistance to
+                    component design and problem-solving. It also includes my
+                    reflections on the process and thoughts on how we can use AI
+                    more effectively in future projects.
+                </p>
+
+                <div class="development-journey">
+                    <h2>Case Study 1: Code Assistance</h2>
+                    <p class="journey-intro">
+                        This example outlines the workflow I followed to
+                        implement a background image upload feature for the
+                        profile card, with the support of AI tools. From initial
+                        layout planning to troubleshooting visual and responsive
+                        issues, I used GenAI assistance to refine technical
+                        decisions and enhance both usability and design
+                        consistency.
+                    </p>
+
+                    <div class="phase-cards">
+                        <div class="phase-card">
+                            <div class="phase-icon">✍️</div>
+                            <h3>Requirement Specification</h3>
+                            <div>
+                                <p class="hero-text">
+                                    My Submission (Initial Request):
+                                </p>
+                            </div>
+                            <p>
+                                "Implement an image upload interface at the
+                                form's bottom-right corner with these technical
+                                requirements: Preserve original image aspect
+                                ratio; Apply 60% opacity to background; Maintain
+                                visual hierarchy (content readability over
+                                background); Optimize button UX (discreet but
+                                discoverable)"
+                            </p>
+                        </div>
+
+                        <div
+                            href="../work_phase_2/index.html"
+                            class="phase-card"
+                        >
+                            <div class="phase-icon">🔍</div>
+                            <h3>Evaluation</h3>
+                            <div>
+                                <p class="hero-text">
+                                    My Technical Assessment:
+                                </p>
+                            </div>
+                            <div>
+                                <p style="color: var(--success-color)">
+                                    Functional Correctness:
+                                </p>
+                                <p>
+                                    Verified aspect ratio preservation
+                                    (background-size: cover)
+                                </p>
+                                <p>
+                                    Tested opacity implementation (opacity: 0.6
+                                    + white overlay)
+                                </p>
+                            </div>
+                            <div>
+                                <p style="color: var(--error-color)">
+                                    Functional Errors:
+                                </p>
+                                <p>
+                                    Identified incorrect DOM targeting (form vs.
+                                    card element)
+                                </p>
+                                <p>
+                                    Confirmed mobile responsiveness but noted
+                                    button positioning overflow
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            href="../work_phase_3/index.html"
+                            class="phase-card"
+                        >
+                            <div class="phase-icon">🛠️</div>
+                            <h3>Problem-Driven AI Iteration</h3>
+                            <div>
+                                <p class="hero-text">My Follow-Up Request:</p>
+                            </div>
+                            <div>
+                                <p>
+                                    After identifying DOM targeting errors and
+                                    mobile button overflow, I refined my AI
+                                    prompt to request a more precise query:
+                                    “Adjust image upload button to stay within
+                                    the visible form boundary on all screen
+                                    sizes; ensure it aligns to the card’s
+                                    bottom-right corner rather than the form.” I
+                                    also asked for a solution that preserved
+                                    accessibility and visual balance across
+                                    breakpoints.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="development-journey">
+                    <h2>Case Study 2: Component Design</h2>
+                    <p class="journey-intro">
+                        This case presents the development process of a
+                        three-month responsive timetable module, with support
+                        from GenAI tools. The project demonstrates how
+                        AI-assisted iterations helped refine UI layout,
+                        responsiveness, and user interaction logic—from a
+                        mobile-first calendar design to enhanced background
+                        customization features.
+                    </p>
+
+                    <div class="phase-cards">
+                        <!-- Requirement Phase -->
+                        <div class="phase-card">
+                            <div class="phase-icon">✍️</div>
+                            <h3>Requirement Specification</h3>
+                            <div>
+                                <p class="hero-text">
+                                    My Submission (Initial Request):
+                                </p>
+                            </div>
+                            <p>
+                                "Design a timetable interface with three
+                                calendar tables for May, June, and July 2025,
+                                rendered inside &lt;section
+                                class='timetable'&gt;. Display June by default,
+                                with arrows for switching months. Each day cell
+                                should support content insertion below the date
+                                label."
+                            </p>
+                        </div>
+
+                        <!-- Evaluation Phase -->
+                        <div class="phase-card">
+                            <div class="phase-icon">🔍</div>
+                            <h3>Evaluation</h3>
+                            <div>
+                                <p class="hero-text">
+                                    My Technical Assessment:
+                                </p>
+                            </div>
+                            <div>
+                                <p style="color: var(--success-color)">
+                                    Functional Correctness:
+                                </p>
+                                <p>
+                                    Confirmed that month switching logic worked
+                                    correctly with arrow controls and that
+                                    content could be injected per cell.
+                                </p>
+                                <p>
+                                    Verified calendar days render in correct
+                                    alignment using JS and dynamic date
+                                    generation.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="color: var(--error-color)">
+                                    Functional Issues:
+                                </p>
+                                <p>
+                                    Detected layout overflow on mobile view due
+                                    to large table width.
+                                </p>
+                                <p>
+                                    Observed that the calendar header (month +
+                                    arrows) scrolled away when swiping the table
+                                    horizontally on small screens.
+                                </p>
+                                <p>
+                                    Noted that even empty day cells appeared
+                                    with unintended background shading.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Problem-Driven Iteration Phase -->
+                        <div class="phase-card">
+                            <div class="phase-icon">🛠️</div>
+                            <h3>Problem-Driven AI Iteration</h3>
+                            <div>
+                                <p class="hero-text">My Follow-Up Request:</p>
+                            </div>
+                            <div>
+                                <p>
+                                    Based on the evaluation, I refined my prompt
+                                    to request a mobile-first CSS structure
+                                    using media queries for desktop support. I
+                                    also asked for a fixed calendar header that
+                                    remains centered while the table scrolls on
+                                    mobile.
+                                </p>
+                                <p>
+                                    Lastly, I requested the ability to assign
+                                    custom background colors to specific date
+                                    cells while keeping text background
+                                    transparent—this enabled clearer visual
+                                    markers for event days.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="development-journey">
+                    <h2>Case Study 3: Problem Solving</h2>
+                    <p class="journey-intro">
+                        This case documents our collaborative process to resolve
+                        the account list loading issue in the topic viewer
+                        component. Through iterative troubleshooting, we
+                        identified the root cause of the undefined error and
+                        implemented a solution while maintaining existing
+                        functionality.
+                    </p>
+
+                    <div class="phase-cards">
+                        <div class="phase-card">
+                            <div class="phase-icon">✍️</div>
+                            <h3>Requirement Specification</h3>
+                            <div>
+                                <p class="hero-text">
+                                    Initial Problem Statement:
+                                </p>
+                            </div>
+                            <p>
+                                "Fix the 'Uncaught TypeError: Cannot read
+                                properties of undefined (reading forEach)' error
+                                occurring when loading accounts in the topic
+                                viewer. Key constraints: Must maintain
+                                compatibility with existing getAccount()
+                                implementation; Should preserve the asynchronous
+                                loading behavior; Need to ensure account
+                                selection functionality remains intact."
+                            </p>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-icon">🔍</div>
+                            <h3>Evaluation</h3>
+                            <div>
+                                <p class="hero-text">Technical Assessment:</p>
+                            </div>
+                            <div>
+                                <p style="color: var(--success-color)">
+                                    Working Patterns:
+                                </p>
+                                <p>
+                                    Verified submitViewer successfully loads
+                                    accounts without await
+                                </p>
+                                <p>
+                                    Confirmed getAccount() populates DOM
+                                    elements directly
+                                </p>
+                            </div>
+                            <div>
+                                <p style="color: var(--error-color)">
+                                    Identified Issues:
+                                </p>
+                                <p>
+                                    Topic viewer incorrectly assumes
+                                    getAccount() returns Promise
+                                </p>
+                                <p>
+                                    Event listeners attached before DOM
+                                    population completes
+                                </p>
+                                <p>
+                                    Missing loading state during asynchronous
+                                    operation
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-icon">🛠️</div>
+                            <h3>Problem-Driven AI Iteration</h3>
+                            <div>
+                                <p class="hero-text">
+                                    Refined Solution Approach:
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Based on the working submitViewer pattern, I
+                                    requested: "Adapt the topic viewer's account
+                                    loading to mirror submitViewer's
+                                    implementation - remove await usage, add
+                                    loading state, and implement event
+                                    delegation for dynamic elements. Ensure the
+                                    solution: 1) Doesn't modify getAccount.js;
+                                    2) Maintains existing UI patterns; 3)
+                                    Handles empty states gracefully; 4)
+                                    Preserves all selection functionality."
+                                </p>
+                                <p>
+                                    Additional requirements included: "Implement
+                                    defensive checks for DOM elements and add
+                                    visual feedback during loading."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="development-journey">
+                    <h2>GenAI Reflection</h2>
+                    <p class="journey-intro">
+                        This section presents my reflections on using GenAI
+                        throughout the development process. It outlines key
+                        takeaways and practical strategies for effectively
+                        integrating AI support within a structured workflow.
+                    </p>
+
+                    <div class="reflection-list">
+                        <div class="reflection-item">
+                            <h3>💡Modular Thinking and Task Delegation</h3>
+                            <p>
+                                One major insight I gained is the value of
+                                establishing a clear design structure before
+                                involving AI. Instead of assigning large,
+                                complex tasks all at once, I found it much more
+                                effective to divide the work into well-defined,
+                                modular components.
+                            </p>
+                            <p>
+                                For example, in Case Study 1, rather than asking
+                                the AI to create an entirely new form with an
+                                image upload feature, I asked it to add an
+                                upload function to a form I had already built.
+                                This significantly reduced debugging complexity
+                                and made subsequent adjustments faster and more
+                                efficient.
+                            </p>
+                            <p>
+                                By guiding AI to complete specific and narrowly
+                                scoped modules, I achieved more consistent and
+                                higher-quality outcomes. This modular approach
+                                also made it easier to spot and fix issues,
+                                avoiding the inefficiencies that often arise
+                                when AI-generated work drifts away from the
+                                original design intent.
+                            </p>
+                        </div>
+
+                        <div class="reflection-item">
+                            <h3>💡Comprehension Through Visualization</h3>
+                            <p>
+                                Another essential strategy is making
+                                AI-generated outputs more transparent and easier
+                                to understand. To maintain control over the
+                                process, I often asked the AI to include
+                                explanatory comments, console logs, or visual
+                                indicators to clarify what was being
+                                implemented.
+                            </p>
+                            <p>
+                                These aids helped me grasp what instructions the
+                                AI followed, what logic it applied, and how the
+                                system behavior evolved. Sometimes, AI fails to
+                                recognize its own mistakes—only through clear
+                                visualization and thorough understanding can
+                                users effectively evaluate and guide the output.
+                            </p>
+                            <p>
+                                Full comprehension of AI-generated contributions
+                                is critical for maintaining design coherence,
+                                making informed decisions, and avoiding wasted
+                                effort due to misinterpretation or hidden
+                                errors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h2>Siliconvey</h2>
+                    <p>Connect. Share. Belong</p>
+                    <p>Developed by Leo Tan from UQ 48767262</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="not_prepared.html">FAQ</a>
+                    <a href="not_prepared.html">Service</a>
+                    <a href="not_prepared.html">Blog</a>
+                    <a href="not_prepared.html">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                Special Thanks for DECO7140 Teaching Team
+            </div>
+        </footer>
+        <script type="module" src="js/about.js"></script>
+    </body>
+</html>
