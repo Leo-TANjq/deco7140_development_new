@@ -246,9 +246,12 @@ function createCommentElement(comment, index) {
     const avatarUrl = contentParts[0];
 
     if (avatarUrl && avatarUrl.startsWith("http")) {
+        // 如果是默认头像，使用相对路径
         const avatarImg = document.createElement("img");
-        avatarImg.src = avatarUrl;
-        avatarImg.alt = `${comment.person_name}'s avartar'`;
+        avatarImg.src = avatarUrl.includes("default.png")
+            ? "images/default.png"
+            : avatarUrl;
+        avatarImg.alt = `${comment.person_name}'s avatar'`;
         avatarImg.style.width = "100%";
         avatarImg.style.height = "100%";
         avatarImg.style.objectFit = "cover";
