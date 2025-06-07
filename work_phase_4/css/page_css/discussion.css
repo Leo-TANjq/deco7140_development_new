@@ -761,7 +761,7 @@ h1 {
         margin: 0;
         padding-block: 2rem;
     }
-    .panel.topic p{
+    .panel.topic p {
         font-size: 1.2rem;
     }
     .text-content {
@@ -883,5 +883,27 @@ h1 {
     #new-topic:active {
         border: none;
         background-color: rgb(1, 99, 27);
+    }
+}
+.panel.topic {
+    width: 85%;
+    max-width: 85%;
+    margin: 1rem auto;
+    padding-top: 2rem;
+    padding-inline: 0.8rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+
+@media (min-width: 768px) {
+    .panel.topic {
+        width: 45%;
+        max-width: 45%;
+        margin: 0;
+    }
+
+    .container > .panel.topic:not([id^="example"]) {
+        flex: 0 0 auto;
     }
 }

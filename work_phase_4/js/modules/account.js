@@ -39,7 +39,11 @@ export function getAccount(identifier = "") {
         }
 
         filteredData.forEach((member) => {
-            const photoSrc = member.photo || "images/default.png";
+            const photoSrc = member.photo
+                ? member.photo.includes("default.png")
+                    ? "images/default.png"
+                    : member.photo
+                : "images/default.png";
             // Remove identifier from email if present
             const displayEmail = identifier
                 ? member.email.replace(`$%$${identifier}`, "")

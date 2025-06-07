@@ -16,7 +16,7 @@ export function initForm(identifier = "") {
         } catch (error) {
             return {
                 success: false,
-                data: { message: "Network or server error.", error },
+                data: { message: "Network or server error. (Try to upload a smaller photo)", error },
             };
         }
     };
@@ -74,7 +74,7 @@ export function initForm(identifier = "") {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        // 显示反馈信息并禁用提交按钮
+
         feedback.style.display = "block";
         feedback.textContent = "Submitting...";
         feedback.className = "form-feedback";
@@ -106,7 +106,7 @@ export function initForm(identifier = "") {
                 fileInput.value = "";
                 await getAccount(identifier);
 
-                // 1秒后关闭注册表单
+
                 setTimeout(() => {
                     const sidebar = document.getElementById("sidebar");
                     const viewAccount = document.querySelector(".view-account");
@@ -135,7 +135,7 @@ export function initForm(identifier = "") {
             }
         } catch (error) {
             console.error("Submission error:", error);
-            feedback.textContent = "Network error. Please try again later.";
+            feedback.textContent = "Network error. Please try again later or try uploading a photo of smaller size.";
             feedback.className = "form-feedback error";
         } finally {
             submitButton.disabled = false;

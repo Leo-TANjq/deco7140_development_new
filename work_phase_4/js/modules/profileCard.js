@@ -17,6 +17,11 @@ function createProfileCard(profile, identifier = "") {
                   .map((part) => (part === "$Null$" ? "" : part))
             : ["", "", ""];
 
+    const normalizedAvatarSrc = avatarSrc
+        ? avatarSrc.includes("default.png")
+            ? "images/default.png"
+            : avatarSrc
+        : "images/default.png";
     const card = document.createElement("div");
     card.className = "user-profile-card";
 
@@ -29,7 +34,7 @@ function createProfileCard(profile, identifier = "") {
 
     card.innerHTML = `
         <div class="profile-avatar-section">
-            <img src="${avatarSrc || "images/default.png"}" alt="${
+            <img src="${normalizedAvatarSrc}" alt="${
         profile.user_name
     }'s Profile" class="profile-avatar" />
             <div class="profile-basic-info">
@@ -148,6 +153,11 @@ function ensureHttpPrefix(url) {
 }
 
 function showCreateProfileForm(name, email, avatar, identifier = "") {
+    const normalizedAvatar = avatar
+        ? avatar.includes("default.png")
+            ? "images/default.png"
+            : avatar
+        : "images/default.png";
     const displayArea = document.querySelector(".display");
 
     displayArea.innerHTML = "";
@@ -159,7 +169,7 @@ function showCreateProfileForm(name, email, avatar, identifier = "") {
             <div class="user-profile-card">
                 <div class="profile-avatar-section">
                     <img
-                        src="${avatar || "images/default.png"}"
+                        src="${normalizedAvatar}"
                         alt="${name}'s Profile"
                         class="profile-avatar"
                     />
@@ -306,7 +316,7 @@ function showCreateProfileForm(name, email, avatar, identifier = "") {
     createForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        // 确保反馈元素可见
+
         feedback.style.display = "block";
         feedback.textContent = "Submitting...";
         feedback.className = "form-feedback processing";
@@ -386,7 +396,7 @@ function showCreateProfileForm(name, email, avatar, identifier = "") {
             }, 1500);
         } catch (error) {
             console.error("Error creating profile:", error);
-            feedback.textContent = "Error creating profile. Please try again.";
+            feedback.textContent = "Error creating profile. Try uploading a background image of smaller size.";
             feedback.className = "form-feedback error";
         } finally {
             submitButton.disabled = false;

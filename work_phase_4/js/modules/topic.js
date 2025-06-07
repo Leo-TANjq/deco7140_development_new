@@ -1,5 +1,5 @@
 import { getAccount } from "./account.js";
-
+import { initThumbnailLimit } from "./thumbnail-limit.js";
 export function initTopic(indentifier = "") {
     const topicPanels = document.querySelectorAll(
         ".panel.topic, .panel[data-topic-id]"
@@ -378,6 +378,10 @@ export function initTopic(indentifier = "") {
             feedback.style.display = "block";
             feedback.textContent = "Please fill in the title";
             feedback.className = "form-feedback error";
+            accountElement.classList.remove("submitting");
+            setTimeout(() => {
+                feedback.style.display = "none";
+            }, 1500);
             return;
         }
 
@@ -480,6 +484,8 @@ export function initTopic(indentifier = "") {
         }
     }
     // Function to submit post data
+    // In the submitPost function (around line 500), replace the current implementation with this:
+
     async function submitPost(formData, accountElement, feedbackElement) {
         try {
             const response = await fetch(
@@ -501,10 +507,21 @@ export function initTopic(indentifier = "") {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            alert("Successfully Submit! ");
+            const newPost = await response.json();
 
-            closeViewer();
-            location.reload();
+            // Show success feedback
+            feedbackElement.textContent = "Post created successfully!";
+            feedbackElement.className = "form-feedback success";
+
+            // Create and append the new post immediately
+            createAndDisplayNewPost(newPost);
+
+            // Delay the feedback removal and viewer closing
+            setTimeout(() => {
+                feedbackElement.remove();
+                accountElement.classList.remove("submitting");
+                closeViewer();
+            }, 200);
         } catch (error) {
             console.error("Submission error:", error);
             feedbackElement.textContent =
@@ -515,6 +532,166 @@ export function initTopic(indentifier = "") {
                 feedbackElement.remove();
                 accountElement.classList.remove("submitting");
             }, 3000);
+        }
+    }
+
+    // Add this new function to create and display the new post
+    function createAndDisplayNewPost(postData) {
+        // Format the post data to match what loadTopics expects
+        const formattedPost = {
+            id: postData.id,
+            author_name: postData.author_name,
+            post_title: postData.post_title,
+            description: postData.description,
+            photo1: postData.photo1,
+            photo2: postData.photo2,
+            photo3: postData.photo3,
+            photo4: postData.photo4,
+            photo5: postData.photo5,
+            date_posted: postData.date_posted,
+        };
+
+        // Create the panel element (same as before)
+        const panel = document.createElement("section");
+        panel.className = "panel topic";
+
+        const avatar = document.createElement("div");
+        avatar.className = "avatar";
+
+        // Extract avatar URL and actual description from description field
+        const descriptionParts = formattedPost.description.split(" | ");
+        let avatarUrl = descriptionParts[0].replace(/[ |]+$/, "");
+        const actualDescription = descriptionParts.slice(1).join(" | ");
+        const avatarImg = document.createElement("img");
+        avatarImg.src = avatarUrl;
+        avatarImg.alt = `${formattedPost.author_name}`;
+        avatar.appendChild(avatarImg);
+
+        const name = document.createElement("div");
+        name.className = "name";
+        const nameText = document.createTextNode(formattedPost.author_name);
+        const span = document.createElement("span");
+        span.className = "post-time";
+        const time = formatCommentTime(formattedPost.date_posted);
+        span.textContent = " " + time;
+        name.appendChild(nameText);
+        name.appendChild(span);
+
+        const topicBox = document.createElement("div");
+        topicBox.className = "topic-box";
+        topicBox.id = `post-${formattedPost.id}`;
+        topicBox.dataset.datePosted = formattedPost.date_posted;
+
+        const textContent = document.createElement("div");
+        textContent.className = "text-content";
+
+        const title = document.createElement("h2");
+        title.textContent = formattedPost.post_title;
+
+        const description = document.createElement("p");
+        description.textContent = actualDescription;
+
+        textContent.appendChild(title);
+        textContent.appendChild(description);
+
+        const thumbnailsWrapper = document.createElement("div");
+        thumbnailsWrapper.className = "thumbnails-wrapper";
+
+        // Add photos if they exist
+        for (let i = 1; i <= 5; i++) {
+            const photoKey = `photo${i}`;
+            if (formattedPost[photoKey]) {
+                const thumbnailContainer = document.createElement("div");
+                thumbnailContainer.className = "thumbnail-container";
+
+                const img = document.createElement("img");
+                img.src = formattedPost[photoKey];
+                img.alt = `${formattedPost.post_title}${i}`;
+
+                thumbnailContainer.appendChild(img);
+                thumbnailsWrapper.appendChild(thumbnailContainer);
+            }
+        }
+
+        topicBox.appendChild(textContent);
+        if (thumbnailsWrapper.children.length > 0) {
+            topicBox.appendChild(thumbnailsWrapper);
+        }
+
+        // Create empty comment section
+        const commentSection = document.createElement("div");
+        commentSection.className = "comment-section";
+        const commentList = document.createElement("div");
+        commentList.className = "comment-list";
+        commentSection.appendChild(commentList);
+        topicBox.appendChild(commentSection);
+
+        panel.appendChild(avatar);
+        panel.appendChild(name);
+        panel.appendChild(topicBox);
+
+        // Add the new post at the top of the container
+        const container = document.querySelector(".container");
+        const announcementPanel = container.querySelector(
+            ".panel.announcement"
+        );
+        const examplePanels = container.querySelectorAll(
+            ".panel.topic[id^='example']"
+        );
+        const lastExamplePanel = examplePanels[examplePanels.length - 1];
+        const insertAfterElement = lastExamplePanel || announcementPanel;
+
+        if (insertAfterElement) {
+            insertAfterElement.insertAdjacentElement("afterend", panel);
+        } else {
+            // Fallback - prepend to container if no reference elements found
+            container.prepend(panel);
+        }
+
+        setTimeout(() => {
+            const panelRect = panel.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const scrollPosition =
+                window.scrollY +
+                panelRect.top -
+                (viewportHeight / 2 - panelRect.height / 2);
+
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: "smooth",
+            });
+        }, 200); // Small delay to ensure DOM is updated
+
+        // Initialize event listeners for the new post
+        panel.addEventListener("click", function (e) {
+            if (e.target.tagName === "A" || e.target.closest("a")) {
+                return;
+            }
+            e.stopPropagation();
+            openViewer(panel);
+        });
+        initThumbnailLimit();
+    }
+
+    // Add this helper function to format time (similar to the one in loadTopics.js)
+    function formatCommentTime(dateTimeString) {
+        try {
+            const commentDate = new Date(dateTimeString);
+            const now = new Date();
+            const diffMs = now - commentDate;
+            const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+            const diffDays = Math.floor(diffHours / 24);
+
+            if (diffDays > 0) {
+                return `${diffDays} day${diffDays > 1 ? "s" : ""} ago`;
+            } else if (diffHours > 0) {
+                return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
+            } else {
+                const diffMinutes = Math.floor(diffMs / (1000 * 60));
+                return `${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
+            }
+        } catch (error) {
+            return "Just now";
         }
     }
 
@@ -537,106 +714,109 @@ export function initTopic(indentifier = "") {
         uploadGrid.innerHTML = "";
         createUploadContainer(uploadGrid);
     }
-}
-function createUploadContainer(parent) {
-    if (parent.querySelectorAll(".upload-container").length >= 5) return;
-    const imageContainers = parent.querySelectorAll(".upload-container img");
-    const allContainers = parent.querySelectorAll(".upload-container");
-    if (allContainers.length != imageContainers.length) return;
 
-    const container = document.createElement("div");
-    container.className = "upload-container";
+    function createUploadContainer(parent) {
+        if (parent.querySelectorAll(".upload-container").length >= 5) return;
+        const imageContainers = parent.querySelectorAll(
+            ".upload-container img"
+        );
+        const allContainers = parent.querySelectorAll(".upload-container");
+        if (allContainers.length != imageContainers.length) return;
 
-    const fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.multiple = false;
-    fileInput.accept = "image/*";
-    fileInput.style.display = "none";
+        const container = document.createElement("div");
+        container.className = "upload-container";
 
-    const placeholder = document.createElement("div");
-    placeholder.className = "upload-placeholder";
-    placeholder.textContent = "+";
+        const fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.multiple = false;
+        fileInput.accept = "image/*";
+        fileInput.style.display = "none";
 
-    container.appendChild(fileInput);
-    container.appendChild(placeholder);
-    parent.appendChild(container);
+        const placeholder = document.createElement("div");
+        placeholder.className = "upload-placeholder";
+        placeholder.textContent = "+";
 
-    // Click handler for this container
-    container.addEventListener("click", (e) => {
-        if (!e.target.classList.contains("remove-image")) {
-            fileInput.click();
-        }
-    });
+        container.appendChild(fileInput);
+        container.appendChild(placeholder);
+        parent.appendChild(container);
 
-    fileInput.addEventListener("change", async (e) => {
-        if (e.target.files.length > 0) {
-            const file = e.target.files[0];
-
-            // Add file size check
-            if (file.size > 10 * 1024 * 1024) {
-                // 10MB limit
-                alert(
-                    "Image file is too large. Please select an image smaller than 10MB."
-                );
-                return;
+        // Click handler for this container
+        container.addEventListener("click", (e) => {
+            if (!e.target.classList.contains("remove-image")) {
+                fileInput.click();
             }
+        });
 
-            try {
-                // Show loading state
-                placeholder.textContent = "Processing...";
+        fileInput.addEventListener("change", async (e) => {
+            if (e.target.files.length > 0) {
+                const file = e.target.files[0];
 
-                // Compress image
-                const compressedFile = await compressImage(file);
+                // Add file size check
+                if (file.size > 10 * 1024 * 1024) {
+                    // 10MB limit
+                    alert(
+                        "Image file is too large. Please select an image smaller than 10MB."
+                    );
+                    return;
+                }
 
-                // Use compressed file
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    // Replace with image preview
-                    container.innerHTML = `
+                try {
+                    // Show loading state
+                    placeholder.textContent = "Processing...";
+
+                    // Compress image
+                    const compressedFile = await compressImage(file);
+
+                    // Use compressed file
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        // Replace with image preview
+                        container.innerHTML = `
                    <img src="${event.target.result}" alt="Preview">
                    <button class="remove-image">×</button>
                `;
 
-                    // Add remove handler
-                    container
-                        .querySelector(".remove-image")
-                        .addEventListener("click", (e) => {
-                            e.stopPropagation();
-                            container.remove();
-                            createUploadContainer(parent);
-                        });
-                    createUploadContainer(parent);
-                };
+                        // Add remove handler
+                        container
+                            .querySelector(".remove-image")
+                            .addEventListener("click", (e) => {
+                                e.stopPropagation();
+                                container.remove();
+                                createUploadContainer(parent);
+                            });
+                        createUploadContainer(parent);
+                    };
 
-                reader.readAsDataURL(compressedFile);
-            } catch (error) {
-                console.error("Image processing failed:", error);
-                alert("Image processing failed. Please try another image.");
-                placeholder.textContent = "+"; // Restore original state
+                    reader.readAsDataURL(compressedFile);
+                } catch (error) {
+                    console.error("Image processing failed:", error);
+                    alert("Image processing failed. Please try another image.");
+                    placeholder.textContent = "+"; // Restore original state
+                }
             }
-        }
-    });
-}
-function compressImage(file, maxWidth = 1200, quality = 0.8) {
-    return new Promise((resolve) => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        const img = new Image();
+        });
+    }
+    function compressImage(file, maxWidth = 1200, quality = 0.8) {
+        return new Promise((resolve) => {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            const img = new Image();
 
-        img.onload = () => {
-            let { width, height } = img;
-            if (width > maxWidth) {
-                height = (height * maxWidth) / width;
-                width = maxWidth;
-            }
+            img.onload = () => {
+                let { width, height } = img;
+                if (width > maxWidth) {
+                    height = (height * maxWidth) / width;
+                    width = maxWidth;
+                }
 
-            canvas.width = width;
-            canvas.height = height;
-            ctx.drawImage(img, 0, 0, width, height);
+                canvas.width = width;
+                canvas.height = height;
+                ctx.drawImage(img, 0, 0, width, height);
 
-            canvas.toBlob(resolve, "image/jpeg", quality);
-        };
+                canvas.toBlob(resolve, "image/jpeg", quality);
+            };
 
-        img.src = URL.createObjectURL(file);
-    });
+            img.src = URL.createObjectURL(file);
+        });
+    }
 }
