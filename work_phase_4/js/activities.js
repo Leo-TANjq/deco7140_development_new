@@ -14,7 +14,7 @@ import { initJoin } from "./modules/join.js";
  * Define values that don't change e.g. page titles, URLs, etc.
  * */
 
-const indentifier = "test";
+const indentifier = "new";
 /**
  * VARIABLES
  * Define values that will change e.g. user inputs, counters, etc.

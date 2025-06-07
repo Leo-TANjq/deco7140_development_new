@@ -12,7 +12,7 @@ import { initProfileCard } from "./modules/profileCard.js";
  * CONSTANTS
  * Define values that don't change e.g. page titles, URLs, etc.
  * */
-const indentifier = "test";
+const indentifier = "new";
 /**
  * VARIABLES
  * Define values that will change e.g. user inputs, counters, etc.

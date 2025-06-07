@@ -14,7 +14,7 @@ import { setSearch } from "./modules/search.js";
  * */
 
 const header = { student_number: "s4896726", uqcloud_zone_id: "78e5a047" };
-const indentifier = "test";
+const indentifier = "new";
 /**
  * VARIABLES
  * Define values that will change e.g. user inputs, counters, etc.
@@ -29,7 +29,7 @@ function createTopicPanels(posts) {
     const container = document.querySelector(".container");
 
     posts.forEach((post) => {
-        if (Number(post.id) > 497) {
+        if (Number(post.id) > 627) {
             const panel = document.createElement("section");
             panel.className = "panel topic";
 

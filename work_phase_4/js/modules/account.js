@@ -14,7 +14,7 @@ export function getAccount(identifier = "") {
         if (!data) {
             containers.forEach((container) => {
                 container.innerHTML = `
-                <p>No account yet? Create one and join us today!</p>
+                <p>No account yet? Create one and join us immediately!</p>
                 <a href="profile.html" style="margin: 0"><button class="link-button" onclick="event.preventDefault(); window.location.href='profile.html'">⚜️Join Our Community</button></a>
         `;
             });
@@ -31,7 +31,7 @@ export function getAccount(identifier = "") {
         if (filteredData.length === 0) {
             containers.forEach((container) => {
                 container.innerHTML = `
-                <p>No account yet? Create one and join us today!</p>
+                <p>No account yet? Create one and join us immediately   !</p>
                 <a href="profile.html" style="margin: 0"><button class="link-button" onclick="event.preventDefault(); window.location.href='profile.html'">⚜️Join Our Community</button></a>
                 `;
             });

@@ -18,8 +18,11 @@ h1 {
     font-size: 2rem;
     font-weight: 600;
 }
-
+.intro {
+    display: none;
+}
 .search-bar {
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
@@ -64,7 +67,6 @@ h1 {
 }
 .panel.announcement {
     background-color: var(--accent1-color);
-    align-items: center;
 }
 
 .panel.groups {
@@ -181,8 +183,8 @@ h1 {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-clamp: 6;
-    -webkit-line-clamp: 6; /* 限制行数 */
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
 .panel .avatar {
@@ -759,7 +761,10 @@ h1 {
         margin: 0;
         padding-block: 2rem;
     }
-    .text-content{
+    .panel.topic p{
+        font-size: 1.2rem;
+    }
+    .text-content {
         padding-top: 0.8rem;
     }
     .panel .avatar {
@@ -768,7 +773,6 @@ h1 {
         left: 0.8rem;
         width: 3rem;
         height: 3rem;
-
     }
     .panel .name {
         position: absolute;
@@ -803,7 +807,40 @@ h1 {
         width: 100%;
         justify-content: flex-start;
     }
+    .comment-feedback-container {
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: middle;
+    }
 
+    .comment-feedback {
+        display: none;
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        margin-left: 8px;
+    }
+
+    .comment-feedback.error {
+        display: inline-block;
+        background-color: #ffebee;
+        color: var(--error-color);
+        border: 1px solid #ef9a9a;
+    }
+
+    .comment-feedback.success {
+        display: inline-block;
+        background-color: #e8f5e9;
+        color: var(--success-color);
+        border: 1px solid #a5d6a7;
+    }
+
+    .comment-feedback.submitting {
+        display: inline-block;
+        background-color: #e3f2fd;
+        color: #1565c0;
+        border: 1px solid #90caf9;
+    }
     .form-group label {
         font-size: 1.2rem;
     }
@@ -816,5 +853,35 @@ h1 {
         font-family: "Outfit", sans-serif;
         font-size: 1.2rem;
         width: 100%;
+    }
+}
+@media (min-width: 1024px) {
+    .intro {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 400px;
+        max-width: calc(100vw - 580px);
+    }
+    .intro > p {
+        position: relative;
+        color: var(--text-color2);
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    #new-topic {
+        position: absolute;
+        top: 0;
+        width: 45%;
+        margin-left: 1rem;
+        background-color: #45a049;
+        border-radius: 6px;
+    }
+    #new-topic:hover {
+        background-color: var(--success-color);
+    }
+    #new-topic:active {
+        border: none;
+        background-color: rgb(1, 99, 27);
     }
 }

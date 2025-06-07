@@ -8,7 +8,7 @@ export function initTopic(indentifier = "") {
     const topicContent = document.getElementById("topicContent");
     const closeViewerBtnD = document.querySelectorAll(".desktop-close-viewer");
     const closeViewerBtnM = document.getElementById("mobile-close-viewer");
-
+    const newButton = document.getElementById("new-topic");
     const floatingButton = document.getElementById("floating-button");
     const submitViewer = document.getElementById("submitViewer");
     const submitContent = document.getElementById("submitContent");
@@ -34,7 +34,10 @@ export function initTopic(indentifier = "") {
         e.stopPropagation();
         openSubmitViewer();
     });
-
+    newButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openSubmitViewer();
+    });
     // Event listeners for closing viewers
     closeViewerBtnD.forEach((button) => {
         button.addEventListener("click", closeViewer);
@@ -168,7 +171,7 @@ export function initTopic(indentifier = "") {
                 </div>
                 <div class="form-group">
                     <label>Images</label>
-                    <div class="upload-instruction">(Max 4 images)</div>
+                    <div class="upload-instruction">(Max 5 images)</div>
                     <div class="upload-grid">
                         <div class="upload-container" id="uploadTrigger">
                             <input type="file" id="postImages" multiple accept="image/*" style="display: none;">
@@ -200,14 +203,42 @@ export function initTopic(indentifier = "") {
         const commentText = commentInput.value.trim();
         const accountList = document.getElementById("commentAccountList");
         const selectedAccount = accountList.querySelector(".account.selected");
+        const submitButton = document.getElementById("submitComment");
+
+        // Create feedback container if it doesn't exist
+        let feedbackContainer = submitButton.parentElement.querySelector(
+            ".comment-feedback-container"
+        );
+        if (!feedbackContainer) {
+            feedbackContainer = document.createElement("div");
+            feedbackContainer.className = "comment-feedback-container";
+            submitButton.parentElement.insertBefore(
+                feedbackContainer,
+                submitButton.nextSibling
+            );
+        }
+
+        // Create feedback element if it doesn't exist
+        let feedbackElement =
+            feedbackContainer.querySelector(".comment-feedback");
+        if (!feedbackElement) {
+            feedbackElement = document.createElement("div");
+            feedbackElement.className = "comment-feedback";
+            feedbackContainer.appendChild(feedbackElement);
+        }
 
         if (!commentText) {
-            alert("Please write a comment.");
+            feedbackElement.textContent = "Please write a comment.";
+            feedbackElement.className = "comment-feedback error";
+            feedbackElement.style.display = "inline-block";
             return;
         }
 
         if (!selectedAccount) {
-            alert("Please select an account to comment as.");
+            feedbackElement.textContent =
+                "Please select an account to comment as.";
+            feedbackElement.className = "comment-feedback error";
+            feedbackElement.style.display = "inline-block";
             return;
         }
 
@@ -219,6 +250,12 @@ export function initTopic(indentifier = "") {
         formData.append("person_name", personName);
         formData.append("chat_post_title", topicId);
         formData.append("chat_post_content", chatPostContent);
+
+        // Show submitting state
+        feedbackElement.textContent = "Submitting...";
+        feedbackElement.className = "comment-feedback submitting";
+        feedbackElement.style.display = "inline-block";
+        submitButton.disabled = true;
 
         try {
             const response = await fetch(
@@ -237,44 +274,78 @@ export function initTopic(indentifier = "") {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            alert("Comment submitted successfully!");
+            // Show success feedback
+            feedbackElement.textContent = "Success!";
+            feedbackElement.className = "comment-feedback success";
             commentInput.value = "";
 
-            document.getElementById("submitComment").disabled = true;
-
+            // Reset account selection
             const accounts = accountList.querySelectorAll(".account");
             accounts.forEach((acc) => acc.classList.remove("selected"));
 
-            const commentSection =
-                topicContent.querySelector(".comment-section");
+            // Check if comment section exists, if not create it
+            let commentSection = topicContent.querySelector(".comment-section");
+            let commentList;
+
             if (!commentSection) {
-                const commentSectionHTML = `
-                <div class="comment-section">
-                    <h3 class="viewer-comments-title">Comments</h3>
-                    <div class="comment-list"></div>
-                </div>
-            `;
-                topicContent.insertAdjacentHTML(
-                    "beforeend",
-                    commentSectionHTML
+                commentSection = document.createElement("div");
+                commentSection.className = "comment-section";
+
+                const commentsTitle = document.createElement("h3");
+                commentsTitle.className = "viewer-comments-title";
+                commentsTitle.textContent = "Comments";
+
+                commentList = document.createElement("div");
+                commentList.className = "comment-list";
+
+                commentSection.appendChild(commentsTitle);
+                commentSection.appendChild(commentList);
+
+                const contentText = topicContent.querySelector(
+                    ".viewer-content-text"
                 );
+                const viewerImages =
+                    topicContent.querySelector(".viewer-images");
+                const insertAfter = viewerImages || contentText;
+
+                if (insertAfter) {
+                    insertAfter.insertAdjacentElement(
+                        "afterend",
+                        commentSection
+                    );
+                } else {
+                    topicContent.appendChild(commentSection);
+                }
+            } else {
+                commentList = commentSection.querySelector(".comment-list");
             }
-            const commentList = topicContent.querySelector(".comment-list");
+
             const newCommentHTML = `
-            <div class="comment">
-                <div class="comment-avatar">
-                    <img src="${accountAvatar}" alt="${personName}">
-                </div>
-                <div class="comment-content">
-                    <span class="comment-author">${personName}</span>
-                    <p class="comment-text">${commentText}</p>
-                </div>
+        <div class="comment">
+            <div class="comment-avatar">
+                <img src="${accountAvatar}" alt="${personName}">
             </div>
+            <div class="comment-content">
+                <span class="comment-author">${personName}</span>
+                <p class="comment-text">${commentText}</p>
+            </div>
+        </div>
         `;
-            commentList.insertAdjacentHTML("beforeend", newCommentHTML);
+
+            if (commentList) {
+                commentList.insertAdjacentHTML("beforeend", newCommentHTML);
+            }
+
+            // Hide feedback after 3 seconds
+            setTimeout(() => {
+                feedbackElement.style.display = "none";
+            }, 3000);
         } catch (error) {
             console.error("Error submitting comment:", error);
-            alert("Network error. Please try again later.");
+            feedbackElement.textContent = "Error. Please try again.";
+            feedbackElement.className = "comment-feedback error";
+        } finally {
+            submitButton.disabled = false;
         }
     }
 

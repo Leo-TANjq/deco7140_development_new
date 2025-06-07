@@ -101,7 +101,9 @@ export function initForm(identifier = "") {
                 feedback.textContent = data.message || "Submission successful!";
                 feedback.className = "form-feedback success";
                 form.reset();
-
+                imagePreview.src = "";
+                imagePreview.style.display = "none";
+                fileInput.value = "";
                 await getAccount(identifier);
 
                 // 1秒后关闭注册表单
@@ -122,6 +124,8 @@ export function initForm(identifier = "") {
                     sidebar.classList.remove("show-form");
                     desktopCloseViewer.style.display = "none";
                     mobileCloseViewer.style.display = "none";
+                    feedback.style.display = "none";
+                    form.clear();
                 }, 1000);
             } else {
                 feedback.textContent =
@@ -134,7 +138,6 @@ export function initForm(identifier = "") {
             feedback.textContent = "Network error. Please try again later.";
             feedback.className = "form-feedback error";
         } finally {
-            // 恢复提交按钮状态
             submitButton.disabled = false;
         }
     });
